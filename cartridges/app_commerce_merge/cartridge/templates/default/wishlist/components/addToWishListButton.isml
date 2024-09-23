@@ -1,0 +1,6 @@
+<button type="submit" class="btn btn-block btn-outline-primary add-to-wish-list add-to-wish-list-pdp ${product.availability != null && product.availability.outOfStock ? 'd-none':''}" ${!product.available ? "disabled" : ""} href="${URLUtils.url('Wishlist-AddProduct')}">
+    <i class="fa fa-heart-o"></i> <span>${Resource.msg('button.add_to_wishlist.txt', 'wishlist', null)}</span>
+</button>
+<button type="submit" class="btn btn-block btn-outline-primary add-to-wish-list remove-from-wishlist-pdp d-none ${product.availability != null && product.availability.outOfStock ? 'd-none':''}" ${!product.available ? "disabled" : ""} data-href="${URLUtils.url('Wishlist-RemoveProduct', 'pid', product.id)}">
+    <i class="fa fa-heart"></i> <span>${Resource.msg('button.remove_from_wishlist.txt', 'product', null)}</span>
+</button>

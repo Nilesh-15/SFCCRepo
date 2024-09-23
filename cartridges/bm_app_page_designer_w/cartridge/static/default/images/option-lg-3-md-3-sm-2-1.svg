@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30" height="18" version="1.1" viewBox="0 0 7.9375 4.7625" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" fill-rule="evenodd" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-width=".39688">
+  <rect transform="rotate(90)" x="1.7952" y="-1.4771" width="1.2705" height="1.047" ry=".13229" style="paint-order:markers fill stroke"/>
+  <g transform="rotate(90,2.8839,1.2858)">
+   <rect x="3.3888" y="1.2767" width="1.2704" height="1.047" ry=".13229" style="paint-order:markers fill stroke"/>
+   <rect x="3.4012" y="-2.1316" width="1.1529" height=".94304" ry=".13229" style="paint-order:markers fill stroke"/>
+   <rect x="3.393" y="-3.4299" width="1.1529" height=".94304" ry=".13229" style="paint-order:markers fill stroke"/>
+  </g>
+  <rect transform="rotate(90)" x="3.4089" y="-7.6002" width="2.4446" height="2.2375" ry=".13229" style="paint-order:markers fill stroke"/>
+  <rect transform="rotate(90)" x="1.8051" y="-4.3088" width="1.2704" height="1.047" ry=".13229" style="paint-order:markers fill stroke"/>
+ </g>
+ <g fill="none" stroke="#000" stroke-linecap="round" stroke-width=".39688">
+  <path d="m5.3658 1.0293 2.2266-0.00483"/>
+  <path d="m1.2376 0.9522 2.2266-0.0048257"/>
+ </g>
+</svg>

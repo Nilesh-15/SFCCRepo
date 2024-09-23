@@ -1,0 +1,21 @@
+{
+    "name":"Blog Landing Page",
+    "description":"Blog Landing Page",
+    "region_definitions":[
+      {
+        "id":"blogHeader",
+        "name":"Blog Header Section",
+        "max_components": 1,
+        "component_type_inclusions": [
+          { "type_id": "custom_assets.heroBanner" }
+        ]
+      },
+      {
+        "id":"blogMainSection",
+        "name":"Blog Main Section",
+        "component_type_exclusions": [
+          { "type_id": "custom_assets.blogDetail" }
+        ]
+      }
+    ]
+  }

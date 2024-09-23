@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col breadcrumb__content" role="navigation" aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+            <isloop items="${pdict.breadcrumbs}" var="breadcrumbValue" status="loopState">
+                 <isif condition="${loopState.first && breadcrumbValue.htmlValue !== 'Home'}">
+                    <li class="breadcrumb-item home-breadcrumb-item">${Resource.msg('breadcrumb.initial', 'search', null)}</li>
+                </isif>
+                <li class="breadcrumb-item">
+                    <isif condition="${loopState.last}">
+                        <a href="${breadcrumbValue.url}" aria-current="page">
+                            ${breadcrumbValue.htmlValue}
+                        </a>
+                        <iselse>
+                            <a href="${breadcrumbValue.url}">
+                                ${breadcrumbValue.htmlValue}
+                            </a>
+                    </isif>
+                </li>
+            </isloop>
+        </ol>
+    </div>
+</div>

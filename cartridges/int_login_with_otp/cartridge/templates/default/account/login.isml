@@ -1,0 +1,38 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/login/login.js');
+    </isscript>
+
+    <div class="hero slant-down login-banner">
+        <h1 class="page-title">${Resource.msg('header.hero.image.login', 'login', null)}</h1>
+    </div>
+    <iscomment>
+        <div class="container login-page">
+            <!---Breadcrumbs--->
+            <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+            <div class="row justify-content-center equal-height">
+                <div class="col-sm-8 col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="login-form-nav">
+                                <div class="load__forms">
+                                    <isinclude template="account/components/loginForm" />
+                                </div>
+                                <isinclude template="account/password/requestPasswordResetModal" />
+                                <isinclude template="account/components/oauth" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </iscomment>
+    <div class="container login-page">
+        <div class="row">
+            <div class="col-12">
+                <isinclude template="account/components/registerLoginModal" />
+            </div>
+        </div>
+    </div>
+</isdecorate>

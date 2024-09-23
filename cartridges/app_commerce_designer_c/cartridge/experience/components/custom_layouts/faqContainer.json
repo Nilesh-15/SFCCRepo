@@ -1,0 +1,72 @@
+{
+    "name": "FAQ Layout",
+    "description": "This is a FAQ layout component",
+    "group": "custom_layouts",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerOnline",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleOnline",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content Online/Offline",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "isOnline",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerContent",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "title",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Container FAQ",
+                                "subtitle": "Heading",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "textHeadline",
+                    "name": "Enter Below ",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "faqSection",
+            "name": "FAQs Section",
+            "component_type_inclusions": [
+                { "type_id": "custom_assets.questionAnswer" }
+            ]
+        }
+    ]
+}

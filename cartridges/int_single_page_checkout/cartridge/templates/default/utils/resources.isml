@@ -1,0 +1,4 @@
+<script>
+    window.preferences = <isprint value="${JSON.stringify(pdict.sitePreferences)}" encoding="off"/>;
+    window.resources = <isprint value="${JSON.stringify(pdict.resources)}" encoding="off"/>;
+</script>

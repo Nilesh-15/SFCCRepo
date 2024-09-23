@@ -1,0 +1,50 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/checkout/checkout.css');
+        assets.addJs('/js/checkoutRegistration.js');
+    </isscript>
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <div id="confirmation-page">
+        <h1 class="confirmation__page-title">${Resource.msg('title.order.summary.page', 'confirmation', null)}</h1>
+
+        <div class="container confirmation__receipt receipt <isif condition=" ${pdict.order.shipping.length > 1}">multi-ship</isif>">
+            <div class="row">
+                <div class="col-12 col-sm-5 confirmation__billing-section">
+                    <h2 class="confirmation__section-heading">
+                        ${Resource.msg('msg.placed.order.thank.you', 'confirmation', null)}
+                    </h2>
+                    <p class="confirmation__section-detail">
+                        ${Resource.msg('delivery.msg.information', 'confirmation', null)}
+                    </p>
+                    <div class="card confirm-details confirmation__billing-summary">
+                        <h2 class="card-header">${Resource.msg('title.billing.address', 'confirmation', null)}</h2>
+                        <div class="card-body">
+                            <isinclude template="checkout/billing/billingSummary" />
+                        </div>
+                    </div>
+                    <div class="confirmation__continue-btn">
+                        <a href="${URLUtils.url('Home-Show')}"
+                            class="btn btn-primary btn-block order-confirmation-continue-shopping" role="button"
+                            aria-pressed="true">
+                            ${Resource.msg('button.continue.shopping', 'confirmation', null)}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-7 confirmation__product-summary-section">
+                    <isif condition="${pdict.returningCustomer === false && pdict.order.orderEmail}">
+                        <div class="unregister-user confirmation__guest-user-section">
+                            <isinclude template="checkout/confirmation/confirmationCreateAccount" />
+                        </div>
+                    </isif>
+                    <isinclude template="checkout/confirmation/confirmationDetails" />
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

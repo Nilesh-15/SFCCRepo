@@ -1,0 +1,13 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+<isset name="isTextBoxOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isTextBoxOnline}">
+<div class="editorialRichText-component-container">
+    <div class="row ${pdict.customContainerName}">
+        <div class="col-12 text-center">
+            <isprint value="${pdict.richText}" encoding="off"/>
+        </div>
+    </div>
+</div>
+</isif>

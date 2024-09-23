@@ -1,0 +1,32 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/components/blogFeaturesTile.css');
+</isscript>
+<div class="blog-feature__tile-containers mt-2 ${pdict.pageID ? "col-sm-4 col-12" : "col-12"}">
+    <isset name="isBlogTileOnline" value="${(pdict.isOnline != null)}" scope="page" />
+    <isif condition="${isBlogTileOnline}">
+        <isif condition="${!empty(pdict.imagePath)}">
+            <picture class="blog-feature__tile-figure">
+                <source srcset="${pdict.imagePath}" media="(min-width: 992px)" />
+                <source srcset="${pdict.imagePath}" media="(min-width: 992px)" />
+                <img class="blog-listing-image img-fluid" src="${pdict.imagePath}"
+                    alt="${pdict.titleImg}" title="${pdict.titleImg}" />
+            </picture>
+        </isif>
+        <div class="blog-feature__text-body mb-3 mt-2">
+            <p class="blog-feature__date-info mb-1">
+                <isprint value="${pdict.readTime ? pdict.readTime : ''}" encoding="off" />
+                <isprint value="${pdict.readTime ? '|' : ''}" encoding="off" />
+                <isprint value="${pdict.creationDate ? pdict.creationDate : ''}" encoding="off" />
+            </p>
+            <h4 class="blog-feature__content-title text-left mb-3"><isprint value="${pdict.title ? pdict.title : ''}" encoding="off" /></h4>
+            <isset name="contentID" value="${pdict.pageID ? pdict.pageID : pdict.contentID }" scope="page" />      
+            <a href="${URLUtils.url('Page-Show', 'cid', contentID)}"
+                class="btn-outline-primary blog-feature__content-link">
+                <iscomment> <span class="">${Resource.msg('btn.label.blog.readmore', 'blogfeature', null)}</span>
+                </iscomment>
+                <span class="">Read More</span>
+            </a>
+        </div>
+    </isif>
+</div>

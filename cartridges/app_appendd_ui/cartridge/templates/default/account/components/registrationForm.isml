@@ -1,0 +1,69 @@
+<form action="${pdict.registerUrl}" class="register-form-modal" method="POST" name="register-form-modal">
+    <h3 class="login__heading-form">${Resource.msg('login.new.user.heading', 'login', null)}</h3>
+
+    <div class="form-group
+        <isif condition=" ${!!pdict.registerForm.customer.firstname.mandatory === true}">required</isif>">
+        <iscomment> <label class="form-control-label" for="registration-form-fname">
+                <isprint value="${pdict.registerForm.customer.firstname.label}" encoding="htmlcontent" />
+            </label> </iscomment>
+        <input type="text" class="form-control customerName" id="registration-form-fname"
+            data-missing-error="${Resource.msg('error.message.required', 'login', null)}"
+            aria-describedby="form-fname-error" placeholder="${pdict.registerForm.customer.firstname.label}" <isprint
+            value=${pdict.registerForm.customer.firstname.attributes} encoding="off" />/>
+        <div class="invalid-feedback" id="form-fname-error"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition=" ${!!pdict.registerForm.customer.lastname.mandatory === true}">required</isif>">
+        <iscomment> <label class="form-control-label" for="registration-form-lname">
+                <isprint value="${pdict.registerForm.customer.lastname.label}" encoding="htmlcontent" />
+            </label> </iscomment>
+        <input type="text" class="form-control customerName" id="registration-form-lname"
+            data-missing-error="${Resource.msg('error.message.required', 'login', null)}"
+            aria-describedby="form-lname-error" placeholder="${pdict.registerForm.customer.lastname.label}" <isprint
+            value=${pdict.registerForm.customer.lastname.attributes} encoding="off" />>
+        <div class="invalid-feedback" id="form-lname-error"></div>
+    </div>
+
+    <div class="form-group required login-form">
+        <iscomment> <label class="form-control-label" for="login-mobile-number">
+                <isprint value="${pdict.registerForm.customer.phonenumber.label}" encoding="htmlcontent" />
+            </label> </iscomment>
+        <i class="ind-tel-code"></i>
+        <input type="text" class="form-control user-mobileno" id="login-form-mobileno" pattern="[6-9]{1}[0-9]{9}"
+            placeholder="${Resource.msg('placeholder.input.login', 'login', null)}"
+            data-pattern-mismatch="${Resource.msg('error.pattern.mismatch', 'login', null)}"
+            data-missing-error="${Resource.msg('placeholder.input.login', 'forms', null)}" <isprint
+            value=${pdict.registerForm.customer.phonenumber.attributes} encoding="off" /> />
+        <div class="invalid-feedback" id="form-mobile-error"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition=" ${!!pdict.registerForm.customer.email.mandatory === true}">required</isif>">
+        <iscomment> <label class="form-control-label" for="registration-form-email">
+                <isprint value="${pdict.registerForm.customer.email.label}" encoding="htmlcontent" />
+            </label> </iscomment>
+        <input type="text" class="form-control" id="registration-form-email"
+            data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            data-pattern-mismatch="${Resource.msg('error.message.parse.email.profile.form', 'login', null)}"
+            aria-describedby="form-email-error" placeholder="${pdict.registerForm.customer.email.label}" <isprint
+            value=${pdict.registerForm.customer.email.attributes} encoding="off" />/>
+        <div class="invalid-feedback" id="form-email-error">
+            ${Resource.msg('login.email.already.exist', 'login', null)}</div>
+        <div class="email-validation text-danger"></div>
+    </div>
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+    <div class="login-btn login__sign-up">
+        <button type="submit" disabled class="signup-btn btn btn-primary">${Resource.msg('button.text.continue', 'login', null)}</button>
+    </div>
+    <div class="already__register text-danger error__msg d-none"></div>
+</form>
+<div class="or-separator"><span class='or-text'>${Resource.msg('label.login.or', 'login', null)}<span></div>
+<isinclude template="account/components/oauth" />
+<div class="account__register">
+    <span>
+        ${Resource.msg('label.already.account', 'login', null)}
+        <a href="${URLUtils.https('Login-Show')}" class="create_account link">${Resource.msg('label.login.link', 'login', null)}</a>
+    </span>
+</div>

@@ -1,0 +1,47 @@
+<isif condition="${pdict.name === null}">
+    <li class="nav-item d-md-none" role="menuitem">
+        <a href="${URLUtils.https('Login-Show')}" class="nav-link no-dropdown user-login-modal">
+            <iscomment> <i class="fa fa-sign-in" aria-hidden="true"></i> </iscomment>
+            <span class="user-message">${Resource.msg('link.header.login', 'account', null)}</span>
+        </a>
+    </li>
+<iselse/>
+    <li class="nav-item d-md-none dropdown menu__profile-mobile" role="menuitem">
+        <span class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
+            <iscomment> <i class="fa fa-sign-in" aria-hidden="true"></i> </iscomment>
+            <span class="user-message">${Resource.msg('label.account', 'account', null)}</span>
+        </span>
+        <ul class="dropdown-menu" role="menu" aria-hidden="true">
+            <li class="dropdown-item" role="menuitem">
+                <a href="${URLUtils.https('Account-Show')}" class="dropdown-link no-dropdown"
+                    role="button">${Resource.msg('link.header.profile', 'account', null)}</a>
+            </li>
+            <li class="dropdown-item" role="menuitem">
+                <a class="dropdown-link no-dropdown"
+                    title="${Resource.msg('account.sidebar.link.AddressBook', 'account', null)}"
+                    href="${URLUtils.url('Address-List', 'renderPage', true)}" data-url="${URLUtils.url('Address-List')}">
+                    ${Resource.msg('account.sidebar.link.AddressBook', 'account', null)}
+                </a>
+            </li>
+
+            <li class="dropdown-item" role="menuitem">
+                <a class="dropdown-link no-dropdown"
+                    title="${Resource.msg('account.sidebar.link.MyOrders', 'account', null)}"
+                    href="${URLUtils.url('Order-History', 'renderPage', true)}" data-url="${URLUtils.url('Order-History')}">
+                    ${Resource.msg('account.sidebar.link.MyOrders', 'account', null)}
+                </a>
+            </li>
+            <li class="dropdown-item" role="menuitem">
+                <a class="dropdown-link no-dropdown"
+                    title="${Resource.msg('account.sidebar.link.MyOrders', 'account', null)}"
+                    href="${URLUtils.url('Wishlist-Show', 'renderPage', true)}" data-url="${URLUtils.url('Wishlist-Show')}">
+                    ${Resource.msg('account.sidebar.link.MyWishlist', 'account', null)}
+                </a>
+            </li>
+            <li class="dropdown-item" role="menuitem">
+                <a href="${URLUtils.url('Login-Logout')}" class="dropdown-link no-dropdown"
+                    role="button">${Resource.msg('link.header.logout', 'account', null)}</a>
+            </li>
+        </ul>
+    </li>
+</isif>

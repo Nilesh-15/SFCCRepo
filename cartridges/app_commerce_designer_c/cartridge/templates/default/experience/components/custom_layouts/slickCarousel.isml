@@ -1,0 +1,20 @@
+<isset name="isSlickCarouselOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isSlickCarouselOnline}">
+    <div class="${pdict.containerClass}">
+        <isif condition="${pdict.title}">
+            <div class="carousel-header col-12">
+                <div class="carousel-title">
+                    <h2>
+                        <isprint value="${pdict.title}" encoding="off" />
+                    </h2>
+                    <isif condition="${pdict.subTitle}">
+                        <span>
+                            <isprint value="${pdict.subTitle}" encoding="off" />
+                        </span>
+                    </isif>
+                </div>
+            </div>
+        </isif>
+        <isprint value="${pdict.regions.slides.render()}" encoding="off" />
+    </div>
+</isif>

@@ -1,0 +1,13 @@
+<isdecorate template="common/layout/pageAccount">
+<div class="account-navigation-container">
+    <div class="container ${pdict.loggedIn ? '' : 'login-page'} account__wishList-landing-container">
+        <!---Breadcrumbs--->
+        <iscomment> <isinclude template="components/breadcrumbs/pageBreadcrumbs"/> </iscomment>
+        <isif condition="${pdict.loggedIn}">
+            <isinclude template="wishlist/components/wishlist" />
+        <iselse>
+            <isinclude template="wishlist/components/login" />
+        </isif>
+    </div>
+</div>
+</isdecorate>

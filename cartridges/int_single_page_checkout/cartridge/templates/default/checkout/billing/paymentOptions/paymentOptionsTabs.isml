@@ -1,0 +1,13 @@
+<input type="hidden" class="form-control selected-payment-method"
+    name="${pdict.forms.billingForm.paymentMethod.htmlName}" value="" />
+<isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption" status="loopstatus">
+    <isif condition="${dw.system.Site.current.getCustomPreferenceValue('enableCOD') && paymentOption.ID === 'CASH_ON_DELIVERY'}">
+        <div class="form-check col-12 border-custom">
+            <input id="${paymentOption.ID}" name="paymentMethod" type="radio" class="form-check-input"
+                value="${paymentOption.ID}" ${loopstatus.first ? 'checked' : ''}>
+            <label class="form-check-label" for="${paymentOption.ID}">
+                <span class="display-name">${paymentOption.name}</span>
+            </label>
+        </div>
+    </isif>
+</isloop>

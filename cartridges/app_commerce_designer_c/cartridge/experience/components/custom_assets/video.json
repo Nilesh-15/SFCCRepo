@@ -1,0 +1,163 @@
+{
+    "name": "Video Asset",
+    "description": "Video player given Video ID",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerOnline",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleOnline",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content Online/Offline",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "isOnline",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerVideoSection",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "videoSection",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Video Configuration",
+                                "subtitle": "URL Video",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "videoUrl",
+                    "name": "Enter Below",
+                    "description": "Example: https://archive.org/download/Popeye_forPresident/President_512kb.mp4",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerAutoplaySection",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "videoConfigAutoplay",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Autoplay On/Off",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "videoAutoplay",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "dividerControlSection",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "videoConfigControl",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Control On/Off",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "videoControl",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "dividerOverlay",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "videoOverlay",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Overlay",
+                                "subtitle": " ",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },                
+                {
+                    "id": "image",
+                    "name": "Thumbnail / Poster Image",
+                    "type": "image",
+                    "required": false                   
+                },
+                {
+                    "id": "targetUrl",
+                    "name": "Link",
+                    "description": "Specification for the link to where the user will be directed.",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "linkName",
+                    "name": "Link Label",
+                    "description": "The text to be displayed on Botton. If nothing is entered 'Shop Now' will be displayed.",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

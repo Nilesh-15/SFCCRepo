@@ -1,0 +1,78 @@
+{
+  "name": "Textbox",
+  "description": "This is the Textbox Component, can be used as Help or FAQ pages",
+  "group": "commerce_assets",
+  "attribute_definition_groups": [
+    {
+      "id": "dividerOnline",
+      "name": "",
+      "attribute_definitions": [
+          {
+              "id": "titleOnline",
+              "name": " ",
+              "required": false,
+              "type": "custom",
+              "editor_definition": {
+                  "type": "bp.heading",
+                  "configuration": {
+                      "options": {
+                          "title": "Content Online/Offline",
+                          "subtitle": "Check Box Below",
+                          "icon": "all devices"
+                      }
+                  }
+              }
+          },
+          {
+              "id": "isOnline",
+              "name": " ",
+              "type": "boolean",
+              "required": true
+          }
+      ]
+  },
+  {
+      "id": "dividerContainer",
+      "name": "",
+      "attribute_definitions": [
+          {
+              "id": "titleContainer",
+              "name": " ",
+              "required": false,
+              "type": "custom",
+              "editor_definition": {
+                  "type": "bp.heading",
+                  "configuration": {
+                      "options": {
+                          "title": "Container Layout",
+                          "subtitle": " ",
+                          "icon": "all devices"
+                      }
+                  }
+              }
+          },
+          {
+              "id": "customContainerName",
+              "name": "Custom Container Name",
+              "type": "string",
+              "required": false
+          }
+      ]
+    },
+    {
+      "id": "textContent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "richText",
+          "name": "content",
+          "description": "This is the rich text content area",
+          "type": "markup",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

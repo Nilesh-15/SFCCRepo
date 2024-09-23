@@ -1,0 +1,25 @@
+<isinclude template="components/modules" />
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/components/brandUsp.css');
+</isscript>
+
+<div class="${pdict.customContainerName}">
+    <div class="brandusp__container">
+        <isloop items="${pdict.brandUspList}" var="usp" status="loopstatus">
+            <div class="col-12 col-md-3 brandusp__main">
+                <div class="brandusp__wrap">
+                    <picture class="brandusp__picture">
+                        <source srcset="${usp.image.src.desktop}" media="(min-width:1024px)" />
+                        <source srcset="${usp.image.src.tablet}" media="(min-width: 768px)" />
+                        <img class="img-fluid" src="${usp.image.src.mobile}" alt="${usp.altText}" />
+                    </picture>
+                    <div class="brandusp__textblock textblock">
+                        <isprint value="${usp.title}" encoding="off" />
+                    </div>
+                </div>
+            </div>
+        </isloop>
+    </div>
+</div>

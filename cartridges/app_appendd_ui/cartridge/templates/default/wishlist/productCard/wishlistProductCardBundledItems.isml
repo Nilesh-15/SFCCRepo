@@ -1,0 +1,27 @@
+<isloop items="${item.bundleItems}" var="bundledLineItem">
+    <div class="col-12 col-md-4 bundled-item">
+            <div class="item-image">
+                <img class="product-image"
+                    src="${bundledLineItem.imageObj.small[0].url}"
+                    alt="${bundledLineItem.imageObj.small[0].alt}"
+                    title="${bundledLineItem.imageObj.small[0].title}"
+                >
+            </div>
+            <div class="item-attributes">
+                <h6>${bundledLineItem.name}</h6>
+
+                <isloop items="${bundledLineItem.variationAttributes}" var="attribute">
+                    <isloop items="${attribute.values}" var="eachValue">
+                        <isif condition="${!!eachValue.selected}" />
+                            <p class="line-item-attributes">${attribute.displayName}: ${eachValue.displayValue}</p>
+                        </isif>
+                    </isloop>
+                </isloop>
+                <div class="item-options">
+                    <isloop items="${bundledLineItem.options}" var="option">
+                        <div class="line-item-option">${option}</div>
+                    </isloop>
+                </div>
+            </div>
+        </div>
+</isloop>

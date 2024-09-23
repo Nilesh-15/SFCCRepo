@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="back-in-stock ${(pdict.obj.success && pdict.obj.isSubscribe) && (product.availability != null && product.availability.outOfStock) ? 'd-none':''}">
+        <div class="">
+            <input type="hidden" name="isCustomerAuth" class="isCustomerAuth" value="${customer.authenticated ? true : false}" />
+            <input type="hidden" name="checkStockRequest" class="backInStock-checkReq" value="${URLUtils.url('Product-CheckBackInStockNotification').toString()}" />
+        </div>
+        <div class="notify-form-container ${product.availability != null && product.availability.outOfStock ? '':'d-none'}">
+            <form action="${pdict.backInStockURL}" class="back-in-stock-form" method="POST">
+                <input type="hidden" name="stockProductId" class="backInStock-productId" value="${product.id}" />
+                <input type="email" name="customerEmail" class="stock-customer-email" value="" />
+                <div class="backInStock-error">
+                    <span class="text-danger backInStock-email-error"></span>
+                </div>
+                <button type="button" class="btn-back-in-stock">${Resource.msg('button.label','product',null)}</button>
+            </form>
+        </div>
+    </div>
+    <div class="already-subscribe-msg">
+        <span class="text-danger">${pdict.obj.msg != null ? pdict.obj.msg:''}</span>
+    </div>
+</div>

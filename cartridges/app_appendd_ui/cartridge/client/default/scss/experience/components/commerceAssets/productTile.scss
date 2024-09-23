@@ -1,0 +1,178 @@
+@import "../../../skin/skinVariables";
+@import "../../../functions/pxToRem";
+
+.product-grid {
+    @include media-breakpoint-down(sm) {
+        padding-left: pxToRem(15px);
+        padding-right: pxToRem(15px);
+    }
+    .col-lg-4,
+    .col-xl-3,
+    .col-6 {
+        @include media-breakpoint-up(md) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .col-6 {
+        @include media-breakpoint-down(sm) {
+            padding: pxToRem(9px);
+        }
+    }
+}
+
+.prod-tile__body {
+    .prod-tile__bottom {
+        align-self: flex-end;
+    }
+}
+
+.product-tile {
+    border: pxToRem(1px) solid var(--COLOR-BLACK);
+
+    .prod-tile {
+        &__body {
+            padding: pxToRem(18px) pxToRem(12px);
+            background-color: var(--COLOR-WHITE);
+            @include media-breakpoint-up(lg) {
+                padding: pxToRem(12px) pxToRem(24px) pxToRem(31px);
+            }
+        }
+
+        &__image-container {
+            position: relative;
+            @include media-breakpoint-down(sm) {
+                border-bottom: pxToRem(1px) solid var(--COLOR-BLACK);
+            }
+        }
+
+        &__wishlist-icon {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top: unset;
+
+            .custom-heart-icon::before {
+                content: " ";
+                background-image: url("../../images/all-icon-fragment.svg#icon-white-heart");
+                background-repeat: no-repeat;
+                display: block;
+                width: pxToRem(24px);
+                height: pxToRem(24px);
+                position: relative;
+                bottom: pxToRem(8px);
+                right: pxToRem(8px);
+                transform: scale(0.8);
+                @include media-breakpoint-up(lg) {
+                    bottom: pxToRem(12px);
+                    right: pxToRem(18px);
+                }
+            }
+
+            i.fa-heart-o {
+                color: var(--COLOR-WHITE);
+            }
+        }
+
+        &__detail-items {
+            display: flex;
+            justify-content: space-between;
+            height: pxToRem(42px);
+            overflow: hidden;
+            @include media-breakpoint-up(xl) {
+                height: pxToRem(50px);
+            }
+
+            .ratings {
+                display: flex;
+
+                .fa-star,
+                .fa-star-half-o,
+                .fa-star-o {
+                    &::before {
+                        content: "\2605";
+                        color: var(--LEAF-ORANGE);
+                        font-size: pxToRem(10px);
+
+                        @include media-breakpoint-up(xl) {
+                            font-size: pxToRem(18px);
+                        }
+                    }
+                }
+                .fa-star-half-o,
+                .fa-star-o {
+                    &::before {
+                        content: "\2730";
+                    }
+                }
+            }
+        }
+
+        &__title-link {
+            max-width: 65%;
+            overflow-wrap: anywhere;
+            a {
+                color: var(--ALCRO-ANIS-GREY) !important;
+                font-size: pxToRem(14px) !important;
+                font-weight: 600;
+
+                @include media-breakpoint-up(xl) {
+                    font-size: pxToRem(20px) !important;
+                }
+            }
+        }
+
+        &__bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .price {
+                font-size: pxToRem(8px);
+                @include media-breakpoint-up(xl) {
+                    font-size: pxToRem(14px);
+                }
+
+                .sales {
+                    .value {
+                        font-size: pxToRem(16px);
+                        line-height: pxToRem(18px);
+                        color: var(--ALCRO-ANIS-GREY);
+
+                        @include media-breakpoint-up(xl) {
+                            font-size: pxToRem(20px);
+                            line-height: pxToRem(30px);
+                        }
+                    }
+                }
+                .strike-through.list {
+                    .value {
+                        font-size: pxToRem(8px);
+                        color: var(--ALCRO-ANIS-GREY);
+                        @include media-breakpoint-up(xl) {
+                            font-size: pxToRem(12px);
+                        }
+                    }
+                }
+            }
+
+            .icon-bk-bg-shop-bag::before {
+                content: " ";
+                background-image: url("../../images/all-icon-fragment.svg#icon-black-bg-shopping-bag");
+                background-repeat: no-repeat;
+                display: block;
+                width: pxToRem(32px);
+                height: pxToRem(32px);
+                position: relative;
+                right: pxToRem(4px);
+                transform: scale(0.65);
+                @include media-breakpoint-up(lg) {
+                    width: pxToRem(35px);
+                    height: pxToRem(35px);
+                    transform: scale(0.97);
+                }
+            }
+        }
+    }
+}

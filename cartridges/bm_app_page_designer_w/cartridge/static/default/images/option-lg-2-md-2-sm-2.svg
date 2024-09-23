@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30" height="18" version="1.1" viewBox="0 0 7.9375 4.7625" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke="#000" stroke-width=".39688">
+  <g stroke-linecap="round">
+   <path d="m5.3748 1.3512 2.2266-0.00483"/>
+   <path d="m1.2376 0.9522 2.2266-0.0048257"/>
+  </g>
+  <g stroke-linecap="square">
+   <rect transform="rotate(90)" x="1.5772" y="-4.0633" width="1.8861" height="1.4475" ry=".13229" fill-rule="evenodd" style="paint-order:markers fill stroke"/>
+   <g stroke-linejoin="round">
+    <rect transform="rotate(90)" x="1.5772" y="-2.0401" width="1.8861" height="1.4475" ry=".13229" style="paint-order:markers fill stroke"/>
+    <rect transform="rotate(90)" x="2.1237" y="-7.6645" width="1.2456" height=".98359" ry=".13229" style="paint-order:markers fill stroke"/>
+    <rect transform="rotate(90)" x="2.1237" y="-6.2898" width="1.2457" height=".98359" ry=".13229" style="paint-order:markers fill stroke"/>
+    <rect transform="rotate(90)" x="3.7939" y="-7.6814" width="1.2456" height=".98359" ry=".13229" style="paint-order:markers fill stroke"/>
+    <rect transform="rotate(90)" x="3.7939" y="-6.3067" width="1.2456" height=".98359" ry=".13229" style="paint-order:markers fill stroke"/>
+   </g>
+  </g>
+ </g>
+</svg>

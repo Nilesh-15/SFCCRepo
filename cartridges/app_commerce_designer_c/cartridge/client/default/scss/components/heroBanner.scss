@@ -1,0 +1,48 @@
+@import "../variables";
+@import "../functions/pxToRem";
+
+.hero-banner {
+    @include media-breakpoint-up(md) {
+        position: absolute;
+        &.center {
+            &__left {
+                top: 50%;
+                left: pxToRem(30px);
+                text-align: left;
+                transform: translate(0, -50%);
+            }
+            &__right {
+                top: 50%;
+                right: pxToRem(30px);
+                transform: translate(0, -50%);
+            }
+        }
+    
+        &.centered {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .hover {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .under {
+            text-align: center;
+            position: relative;
+        }
+
+        h2 {
+            font-size: pxToRem(30px);
+        }
+        p {
+            font-size: pxToRem(14px);
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<form action="${pdict.actionUrl}" method="POST" name="verify-login-otp" class="verify-login-otp">
+    <h3 class="heading__otp text-center mb-3">${Resource.msg("label.number.verification", "login", null)}</h3>
+    <p class="otp-description">${Resource.msgf("login.enter.otp.number.msg", "login", null, pdict.maskedPhoneNumber)}</p>
+
+    <input type="hidden" name="firstname" class="firstname" value="${pdict.firstname}"/>
+    <input type="hidden" name="lastname" class="lastname" value="${pdict.lastname}"/>
+    <input type="hidden" name="email" class="email" value="${pdict.email}"/>
+    <input type="hidden" name="phonenumber" class="phonenumber" value="${pdict.phonenumber}"/>
+    <input type="hidden" name="isregister" class="isregister" value="${pdict.isRegister}"/>
+    
+    <div class="form-group login-form__otp-container text-center">
+        <label class="otp-label col-12">${Resource.msg('label.verification.code', 'login', null)}</label>
+        <input type="tel" class="form-control otp__pin" id="registration-form"
+            onkeypress="return /[0-9]/i.test(event.key)"
+            data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            aria-describedby="form-fname-error" <isprint value=${pdict.otploginForm.otp.attributes} encoding="off" />/>
+
+        <input type="tel" class="form-control otp__pin" onkeypress="return /[0-9]/i.test(event.key)"
+            id="registration-form" data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            aria-describedby="form-fname-error" <isprint value=${pdict.otploginForm.otp.attributes} encoding="off" />/>
+
+        <input type="tel" class="form-control otp__pin" id="registration-form"
+            onkeypress="return /[0-9]/i.test(event.key)"
+            data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            aria-describedby="form-fname-error" <isprint value=${pdict.otploginForm.otp.attributes} encoding="off" />/>
+
+        <input type="tel" class="form-control otp__pin" id="registration-form"
+            onkeypress="return /[0-9]/i.test(event.key)"
+            data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            aria-describedby="form-fname-error" <isprint value=${pdict.otploginForm.otp.attributes} encoding="off" />/>
+
+
+        <input type="tel" class="form-control otp__pin" id="registration-form"
+            onkeypress="return /[0-9]/i.test(event.key)"
+            data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            aria-describedby="form-fname-error" <isprint value=${pdict.otploginForm.otp.attributes} encoding="off" />/>
+
+        <input type="tel" class="form-control otp__pin" id="registration-form"
+            onkeypress="return /[0-9]/i.test(event.key)"
+            data-missing-error="${Resource.msg('error.message.required', 'forms', null)}"
+            aria-describedby="form-fname-error" <isprint value=${pdict.otploginForm.otp.attributes} encoding="off" />/>
+        <div class="invalid-feedback" id="form-fname-error"></div>
+    </div>
+
+    <div class="otp-mistmatch-error d-none">
+        <span class="otp_mistmatch_expired text-danger error__msg"></span>
+    </div>
+
+    <div class="form-group resend-module">
+        <div class="resendOTPContainer">
+            <input type="hidden" name="otpTimer" class="otp__timer" value="${pdict.otpTimer}" />
+            ${Resource.msg('login.resend.otp', 'login', null)}
+
+            <span id="resendOTPCounter">${Resource.msgf('login.bisleri.initial.time', 'login', null, pdict.otpTimer)}</span>
+        </div>
+        <div class="resendOTPLink d-none">
+            ${Resource.msg('label.create.account', 'login', null)}
+            <a href="javascript:0;" class="trigger-resend-otp link"
+                data-actionurl="${pdict.resendOTP}">${Resource.msg('login.resend.otp.link', 'login', null)}</a>
+        </div>
+    </div>
+
+
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+    <button type="submit" class="btn btn-primary verify-otp-btn mb-3" disabled>
+        ${Resource.msg('login.verifyotp.button', 'login', null)}
+    </button>
+</form>

@@ -1,0 +1,8 @@
+{
+    "hooks":[
+        {
+            "name": "app.payment.processor.cod",
+            "script": "./cartridge/scripts/hooks/payment/processor/cod.js"
+        }
+    ]
+}

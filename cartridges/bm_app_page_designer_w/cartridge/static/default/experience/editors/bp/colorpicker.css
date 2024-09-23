@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    padding-bottom: 5px;
+}
+.colorpicker-title {
+    margin: 0.7rem 0;
+}
+.colorpicker-value {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #E0E0E0;
+    color: #757575;
+    display: flex;
+    font-weight: 700;
+    padding: 10px;
+    position: relative;
+}
+.colorpicker-value:before {
+    content: '';
+    background: transparent;
+    position: absolute;
+    margin: auto;
+    right: 17px;
+    top: 5px;
+    bottom: 0;
+    display: block;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+    width: 7px;
+    height: 7px;
+    transform: translate(50%, -50%) rotate(-135deg);
+}
+.colorpicker-wrapper.m-open .colorpicker-value:before {
+    transform: translate(50%, -50%) rotate(45deg);
+    top: 9px;
+}
+.colorpicker-value.m-no_value .colorpicker-tip {
+    border: none;
+}
+.colorpicker-reset {
+    background: #fff;
+    display: inline-block;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    min-height: 2.25rem;
+    vertical-align: bottom;
+    padding: 0.75rem 1.2rem;
+    width: 70px;
+    cursor: pointer;
+}
+.colorpicker-tip {
+    display: inline-block;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 0.7rem;
+    border: 1px solid #f2f2f2;
+}
+.colorpicker-wrapper.m-open  + .colorpicker-palette_wrapper {
+    display: block;
+    margin-top: 20px;
+}
+.colorpicker-palette_wrapper {
+    display: none;
+}
+.colorpicker-palette_color, .colorpicker-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+.colorpicker-palette_color .colorpicker-color_area {
+    display: none;
+}
+.colorpicker-palette_color .colorpicker-color_item {
+    padding: 10px;
+    display: flex;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    color: #757575;
+    font-weight: 700;
+    align-items: center;
+    cursor: pointer;
+}
+.colorpicker-palette_color .colorpicker-color_area:checked + .colorpicker-color_item, .colorpicker-palette_inner.m-checked {
+    border-color: #0070d2;
+}
+.colorpicker-palette_inner {
+    position: relative;
+    width: 35%;
+    min-width: fit-content;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    padding: 0.75rem 1.2rem;
+    margin: 1.3rem 0 0;
+    color: #1171CF;
+}
+.colorpicker-add_color {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    padding: 0;
+    cursor: pointer;
+}

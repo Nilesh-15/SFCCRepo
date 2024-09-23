@@ -1,0 +1,8 @@
+@import "../skin/skinVariables";
+@import "../functions/pxToRem";
+
+.hero-banner {
+    @include media-breakpoint-up(md) {
+        position: relative;
+    }
+}

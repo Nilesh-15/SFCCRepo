@@ -1,0 +1,12 @@
+{
+    "hooks": [
+        {
+            "name": "app.payment.processor.razor_pay",
+            "script": "./cartridge/scripts/hooks/payment/processor/razorpay.js"
+        },
+        {
+            "name": "app.mailingList.subscribe",
+            "script": "./cartridge/scripts/hooks/email/emailSubcription.js"
+        }
+    ]
+}

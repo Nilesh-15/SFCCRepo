@@ -1,0 +1,23 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/components/faq.css');
+</isscript>
+
+<div class="faqs__pd-container">
+    <isset name="isFaqAvailable" value="${(pdict.isOnline != null && pdict.noOfComponents)}" scope="page" />
+    <isif condition="${isFaqAvailable}">
+        <h2 class="faqs__title-wrap text-center">
+            <isprint value="${pdict.textHeadline ? pdict.textHeadline : ''}" encoding="off" />
+        </h2>
+        <isif condition="${pdict.noOfComponents}">
+            <iscomment>Page designer faq's</iscomment>
+            <div class="faqs__section-regions regions-${pdict.noOfComponents}">
+                <div class="accordion" id="faqSection">
+                    <isprint
+                        value="${pdict.regions.faqSection.setComponentAttribute('parent_region', 'faqSection').render()}"
+                        encoding="off" />
+                </div>
+            </div>
+        </isif>
+    </isif>
+</div>

@@ -1,0 +1,26 @@
+<isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+<div class="account-navigation-container">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/profile.css');
+    </isscript>
+
+    <div class="account__edit-container">        
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="profile-header">${Resource.msg('label.personal.detail.edit', 'account', null)}</h2>
+                </div>
+                <div class="card-body">
+                    <form action="${URLUtils.url('Account-SaveProfile')}" class="edit-profile-form" method="POST" <isprint value="${pdict.profileForm.attributes}" encoding="off" />>
+                        <isinclude template="account/editProfileForm" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 account__back-to-account">
+            <a href="${URLUtils.url('Account-Show')}"
+                class="profile-back-to-account-link">${Resource.msg('link.profile.backtoprofile', 'account', null)}</a>
+        </div>
+    </div>
+</div>

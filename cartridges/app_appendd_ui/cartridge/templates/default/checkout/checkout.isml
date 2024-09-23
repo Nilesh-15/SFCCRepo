@@ -1,0 +1,101 @@
+<isdecorate template="common/layout/checkout">
+
+    <!----------------------------------------------------------------------------------->
+    <!-- Load Static Assets -->
+    <!----------------------------------------------------------------------------------->
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/checkout.js');
+        assets.addCss('/css/checkout/checkout.css');
+    </isscript>
+
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+
+    <div id="checkout-main" class="container data-checkout-stage <isif condition=" ${pdict.order.usingMultiShipping && pdict.order.shipping.length > 1}">multi-ship</isif>" data-customer-type="${pdict.customer.registeredUser ? 'registered' : 'guest'}" data-checkout-stage="${pdict.currentStage}"
+        data-checkout-get-url="${URLUtils.https('CheckoutServices-Get')}">
+
+        <h1 class="checkout__page-title">
+            ${Resource.msg('title.checkout', 'checkout', null)}
+        </h1>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="checkout__wrap-detail-section">
+                    <!----------------------------------------------------------------------------------->
+                    <!-- Checkout Forms: Shipping, Payment, Coupons, Billing, etc -->
+                    <!----------------------------------------------------------------------------------->
+
+                    <div class="alert alert-danger error-message d-none" role="alert">
+                        <p class="error-message-text"></p>
+                    </div>
+
+                    <!-- Step 1: Customer -->
+                    <iscomment>We only allow edits for non-registered customers</iscomment>
+                    <isif condition="${!pdict.customer.registeredUser}">
+                        <isinclude template="checkout/customer/customer" />
+                    </isif>
+
+                    <!-- Step 2: Shipping -->
+                    <isinclude template="checkout/shipping/shipping" />
+
+                    <!-- Step 3: Payment and Billing-->
+                    <isinclude template="checkout/billing/billing" />
+
+                    <!----------------------------------------------------------------------------------->
+                    <!-- Checkout Workflow Buttons -->
+                    <!----------------------------------------------------------------------------------->
+                    <div class="row">
+                        <div class="col-12 next-step-button">
+                            <div class="mb-sm-3">
+                                <button class="btn btn-primary btn-block single-page-checkout spc-btn" type="submit"
+                                    name="submit" data-url="${URLUtils.url('Checkout-SubmitSinglePage')}"
+                                    value="submit-payment">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!----------------------------------------------------------------------------------->
+            <!-- Order Totals, Details and Summary -->
+            <!----------------------------------------------------------------------------------->
+            <div class="col-12 col-md-6">
+                <div class="checkout__summary-sections">
+                    <isinclude template="checkout/orderProductSummary" />
+
+                    <div class="card checkout__order-summary-section">
+                        <div class="card-header">
+                            <h2 class="card-header-custom">${Resource.msg('heading.order.summary', 'checkout', null)}
+                            </h2>
+                        </div>
+                        <div class="card-body checkout__order-total-summary">
+                            <isinclude template="checkout/orderTotalSummary" />
+                        </div>
+
+                        <!--- Grand Total --->
+                        <div class="row grand-total leading-lines">
+                            <div class="col-6 ">
+                                <span class="order-receipt-label">
+                                    ${Resource.msg('label.order.grand.total', 'confirmation', null)}
+                                </span>
+                            </div>
+                            <div class="col-6 text-right">
+                                <span class="grand-total-sum">
+                                    ${pdict.order.totals.grandTotal}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <isinclude template="checkout/shipping/shippingAddressTemplate" />
+    <isinclude url="${URLUtils.url('Utils-GetResources')}" />
+</isdecorate>

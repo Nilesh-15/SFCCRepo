@@ -1,0 +1,19 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/video.css');
+</isscript>
+<isset name="isVideoComponentOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isVideoComponentOnline}">
+	<div class="video-content">
+		<video width="100%" muted loop ${pdict.autoplay} ${pdict.controller} poster="${pdict.image.src.desktop}">
+			<source src="${pdict.videoUrl}" type="video/mp4">
+		</video>
+		<div class="link-category">
+			<isif condition="${pdict.linkName != 'undefined'}">
+				<a href="${pdict.targetUrl}">
+					<isprint value="${pdict.linkName}" encoding="off" />
+				</a>
+			</isif>
+		</div>
+	</div>
+</isif>

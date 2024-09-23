@@ -1,0 +1,36 @@
+<div class="primary-images col-12 col-sm-6">
+    <div class="product-detail-slider-for">
+        <isloop items="${product.images['large']}" var="image" status="loopStatus">
+            <div class="item">
+                <picture class="">
+                    <source srcset="${!empty(image.sources) ? image.sources.desktop : image.url}" media="(min-width: 992px)"/>
+                    <source srcset="${!empty(image.sources) ? image.sources.tablet : image.url}" media="(min-width: 769px) and (max-width: 991px)"/>
+                    <source srcset="${!empty(image.sources) ? image.sources.mobile : image.url}" media="(max-width: 768px)"/>
+                    <img
+                        class="primary-images__image d-block img-fluid"
+                        src="${!empty(image.sources) ? image.sources.desktop : image.url}"
+                        alt="${image.alt.replace(/<\/?sup>/g, '')}"
+                        title="${image.title.replace(/<\/?sup>/g, '')}"
+                    />
+                </picture>
+            </div>
+        </isloop>
+    </div>
+    <div class="product-thumbnail-slider-nav hidden-md-down">
+        <isloop items="${product.images['small']}" var="image" status="loopStatus">
+            <div class="item col-12">
+                <picture>
+                    <source srcset="${!empty(image.sources) ? image.sources.desktop : image.url}" media="(min-width: 992px)"/>
+                    <source srcset="${!empty(image.sources) ? image.sources.tablet : image.url}" media="(min-width: 769px) and (max-width: 991px)"/>
+                    <source srcset="${!empty(image.sources) ? image.sources.mobile : image.url}" media="(max-width: 768px)"/>
+                    <img
+                        class="primary-images__image d-block img-fluid"
+                        src="${!empty(image.sources) ? image.sources.desktop : image.url}"
+                        alt="${image.alt.replace(/<\/?sup>/g, '')}"
+                        title="${image.title.replace(/<\/?sup>/g, '')}"
+                    />
+                </picture>
+            </div>
+        </isloop>
+    </div>
+</div>

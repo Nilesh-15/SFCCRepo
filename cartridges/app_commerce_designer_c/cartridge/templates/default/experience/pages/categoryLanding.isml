@@ -1,0 +1,22 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+<isdecorate template="common/layout/pdStorePage">
+    <isscript>        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/experience/storePage.css');
+        assets.addCss('/css/components/categoryLandingPage.css');
+    </isscript>
+    <div class="categoryLanding ${pdict.classCategory}" id="${pdict.page.ID}">
+        <div class="categoryLanding__top-wrapper">
+            <isprint value="${pdict.regions.top.setClassName(" col-12 categoryLanding__top-region").render()}"
+                encoding="off" />
+            
+            <div class="categoryLanding__title-section">
+                <h1 class="title">
+                    <isprint value="${pdict.page.ID ? pdict.page.name : ''}" encoding="off" />
+                </h1>
+            </div>
+        </div>
+
+        <isprint value="${pdict.regions.main.setClassName(" col-12").render()}" encoding="off" />
+        <isprint value="${pdict.regions.bottom.setClassName(" col-12").render()}" encoding="off" />
+    </div>
+</isdecorate>

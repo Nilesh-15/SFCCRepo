@@ -1,0 +1,40 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/components/imageAndText.css');
+</isscript>
+
+<isset name="isImageAndTextOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isImageAndTextOnline}">
+    <div class="container image-and-text ${pdict.customContainerName}">
+        <div class="row">
+            <div class="image-text-wrap ${pdict.mobileAlignment} ${pdict.desktopAlignment}">
+                <picture class="col-6 brand-img">
+                    <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)" />
+                    <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)" />
+                    <img class="img-fluid" src="${pdict.image.src.mobile}" alt="${pdict.alt ? pdict.alt : ''}"
+                        title="${pdict.alt ? pdict.alt : ''}" />
+                </picture>
+
+                <div class="col-6 image-text-side">
+                    <isif condition="${pdict.bwtImage != null}">
+                        <picture>
+                            <source srcset="${pdict.bwtImage.src.tablet}" media="(min-width: 768px)" />
+                            <source srcset="${pdict.bwtImage.src.desktop}" media="(min-width: 1024px)" />
+                            <a href="${pdict.bwtImageLink ? pdict.bwtImageLink : '#'}" aria-label="${pdict.alt}">
+                                <img class="img-fluid" src="${pdict.bwtImage.src.mobile}"
+                                    alt="${pdict.alt ? pdict.alt : ''}" title="${pdict.alt ? pdict.alt : ''}" />
+                            </a>
+                        </picture>
+                    </isif>
+                    <isif condition="${pdict.bwText != null}">
+                        <div class="text-section">
+                            <span>
+                                <isprint value="${pdict.bwText ? pdict.bwText : ''}" encoding="off" />
+                            </span>
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </div>
+    </div>
+</isif>

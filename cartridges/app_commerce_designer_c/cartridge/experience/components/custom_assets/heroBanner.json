@@ -1,0 +1,219 @@
+{
+    "name": "Hero Banner",
+    "description": "Banner is a basic component for promotions that designed to span whole page section and hold 16x9 image",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerOnline",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "contentOnline",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content Online/Offline",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "isOnline",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerImage",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleImage",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Banner Image",
+                                "subtitle" : "",
+                                "icon" : "all devices"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "backgroundImage",
+            "name": " ",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image (MD-LG)",
+                    "description": "Image used for banner",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "imageMobile",
+                    "name": "Image (SM exclusively)",
+                    "description": "In case if you need to provide different image for SM breakpoint",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "imageAlt",
+                    "name": "Image Alternative Text",
+                    "description": "Alternative text required for SEO and screen readers (accessibility)",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerContent",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleContent",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content",
+                                "subtitle" : "",
+                                "icon" : "all devices"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "content",
+            "name": "Type Below",
+            "attribute_definitions": [
+                {
+                    "id": "title",
+                    "name": "Title",
+                    "description": "Title of the banner",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "subTitle",
+                    "name": "Subtitle",
+                    "description": "Subtitle for the banner",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "imageLink",
+                    "name": "CTA Link",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "dividerPresentation",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titlePresentation",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Presentation",
+                                "subtitle" : "",
+                                "icon" : "all devices"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "presentation",
+            "name": "Presentation",
+            "attribute_definitions": [
+                {
+                    "id": "captionPosition",
+                    "name": "Caption Alignment (MD-LG)",
+                    "description": "Determines the caption position",
+                    "type": "custom",
+                    "required": false,
+                    "editor_definition": {
+                        "type": "bp.optionList",
+                        "configuration": {
+                            "options": {
+                                "config": [
+                                    "Left",
+                                    "Center",
+                                    "Right"
+                                ],
+                                "default": "Left"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "bannerLayout",
+                    "name": "Caption Placement (SM)",
+                    "description": "Caption position on Small (SM) breakpoint",
+                    "type": "custom",
+                    "required": false,
+                    "editor_definition": {
+                        "type": "bp.optionList",
+                        "configuration": {
+                            "options": {
+                                "config": [
+                                    "Text over",
+                                    "Text under"
+                                ],
+                                "default": "Text over"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "textColor",
+                    "name": "Text Color (SM-MD-LG)",
+                    "description": "Text color of caption (SM-MD-LG)",
+                    "type": "custom",
+                    "required": false,
+                    "editor_definition": {
+                        "type": "bp.colorpicker"
+                    }
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "buttons",
+            "name": "Buttons",
+            "max_components": 1,
+            "component_type_inclusions": [
+                {"type_id": "custom_assets.cta"}
+            ]
+        }
+    ]
+}

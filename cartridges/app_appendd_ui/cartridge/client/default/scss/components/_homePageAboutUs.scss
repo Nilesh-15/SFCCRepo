@@ -1,0 +1,77 @@
+.homepage {
+    //about us home start
+    &__about-us {
+        margin: pxToRem(40px) 0;
+
+        @include media-breakpoint-up(md) {
+            max-width: 1640px;
+            margin: 0 auto;
+            margin-top: pxToRem(16px);
+        }
+
+        .hero-banner {
+            max-width: pxToRem(523px);
+
+            img {
+                @include media-breakpoint-down(sm) {
+                    display: none;
+                }
+            }
+            &.aboutusgirl {
+                bottom: pxToRem(-2px);
+            }
+            
+            &.aboutusboy {
+                bottom: pxToRem(-40px);
+            }
+        }
+
+        .text-banner {
+            max-width: pxToRem(386px);
+            margin: 0 auto;
+            text-align: center;
+
+            @include media-breakpoint-up(md) {
+                max-width: pxToRem(543px);
+                margin-top: pxToRem(90px);
+            }
+
+            .caption-title {
+                font-size: pxToRem(24px);
+                line-height: pxToRem(28px);
+                margin-bottom: pxToRem(11px);
+
+                @include media-breakpoint-up(md) {
+                    font-size: pxToRem(40px);
+                    line-height: pxToRem(48px);
+                    margin-bottom: pxToRem(26px);
+                }
+            }
+
+            .caption-subtitle {
+                h3 {
+                    font-size: pxToRem(20px);
+                    margin-bottom: pxToRem(20px);
+                    margin-top: pxToRem(12px);
+
+                    @include media-breakpoint-up(md) {
+                        font-size: pxToRem(38px);
+                        margin-top: pxToRem(39px);
+                        margin-bottom: pxToRem(16px);
+                    }
+                }
+
+                p {
+                    font-size: pxToRem(16px);
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .region.col-12,
+        .box-caption.col-12 {
+            padding: 0;
+        }
+    }
+    //about us home end
+}

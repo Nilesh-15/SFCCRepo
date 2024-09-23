@@ -1,0 +1,43 @@
+<footer id="footercontent">
+    <div class="email-signup">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <form role="form" id="emailSubcribe">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="hpEmailSignUp"
+                                placeholder="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}"
+                                aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}">
+                            <span class="input-group-append">
+                                <button type="submit" class="btn btn-outline-primary subscribe-email"
+                                    data-href="${URLUtils.url('EmailSubscribe-Subscribe')}">${Resource.msg('button.form.emailsignup', 'homePage', null)} </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="footer-container row">
+            <div class="footer-item col-sm-3 collapsible-xs">
+                <iscontentasset aid="footer-support" />
+            </div>
+            <div class="footer-item col-sm-3 collapsible-xs">
+                <iscontentasset aid="footer-account" />
+            </div>
+            <div class="footer-item col-sm-3 collapsible-xs">
+                <iscontentasset aid="footer-about" />
+            </div>
+            <div class="footer-item col-sm-3 store">
+                <iscontentasset aid="footer-address" />
+            </div>
+        </div>
+        <hr class="hidden-xs-down" />
+        <div class="row">
+            <div class="col-12 text-center copyright-notice">
+                <iscontentasset aid="footer-copy" />
+            </div>
+        </div>
+    </div>
+</footer>

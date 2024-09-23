@@ -1,0 +1,61 @@
+{
+    "viewTypeMapping": {
+        "large": "large",
+        "medium": "large",
+        "small": "large"
+    },
+    "large": {
+        "scaleWidth": 690,
+        "scaleHeight": 707,
+        "mobile": {
+            "scaleWidth": 365,
+            "scaleHeight": 354
+        },
+        "tablet": {
+            "scaleWidth": 690,
+            "scaleHeight": 707
+        },
+        "desktop": {
+            "scaleWidth": 690,
+            "scaleHeight": 707
+        }
+    },
+    "medium": {
+        "scaleWidth": 334,
+        "scaleHeight": 280,
+        "mobile": {
+            "scaleWidth": 334,
+            "scaleHeight": 280
+        },
+        "tablet": {
+            "scaleWidth": 334,
+            "scaleHeight": 280
+        },
+        "desktop": {
+            "scaleWidth": 334,
+            "scaleHeight": 280
+        }
+    },
+    "small": {
+        "scaleWidth": 80,
+        "scaleHeight": 111,
+        "mobile": {
+            "scaleWidth": 86,
+            "scaleHeight": 132
+        },
+        "tablet": {
+            "scaleWidth": 80,
+            "scaleHeight": 111
+        },
+        "desktop": {
+            "scaleWidth": 80,
+            "scaleHeight": 111
+        }
+    },
+
+    "missingImages": {
+        "large": "large_missing.jpg",
+        "medium": "medium_missing.jpg",
+        "small": "small_missing.jpg"
+    }
+}

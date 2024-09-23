@@ -1,0 +1,34 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/components/heroBanner.css');
+</isscript>
+<isset name="isHeroBannerOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isHeroBannerOnline}">
+
+    <div class="hero-banner ${pdict.bannerClass}">
+        <isif condition="${(pdict.imageLink != null)}">
+            <a href="${pdict.imageLink}" aria-label="${pdict.imageAlt}">
+        </isif>
+        <picture class="hero-banner-img">
+            <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px) and (max-width: 1023px)" />
+            <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)" />
+            <img class="img-fluid" src="${pdict.imageMobile.src.mobile}" title="${pdict.imageAlt}"
+                alt="${pdict.imageAlt}" />
+        </picture>
+        <isif condition="${(pdict.imageLink != null)}">
+            </a>
+        </isif>
+        <isif condition="${(pdict.title != null)}">
+            <div class="hero-banner ${pdict.layoutClass} ${pdict.alignmentClass}"
+                style="${pdict.textColor ? 'color:' + pdict.textColor + ';' : ''}">
+                <h2>
+                    <isprint value="${pdict.title}" encoding="off" />
+                </h2>
+                <p>
+                    <isprint value="${pdict.subTitle}" encoding="off" />
+                </p>
+                <isprint value="${pdict.regions.buttons.setClassName('cta-link-section').render()}" encoding="off" />
+            </div>
+        </isif>
+    </div>
+</isif>

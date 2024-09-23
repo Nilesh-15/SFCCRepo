@@ -1,0 +1,54 @@
+@import "../variables";
+@import "../functions/pxToRem";
+
+.brandusp {
+    &__container {
+        @include media-breakpoint-up(md) {
+            display: flex;
+            max-width: pxToRem(1281px);
+            margin: 0 auto;
+            padding: pxToRem(72px) pxToRem(20px);
+        }
+    }
+
+    &__wrap {
+        display: flex;
+
+        @include media-breakpoint-down(sm) {
+            max-width: pxToRem(225px);
+            margin: 0 auto;
+            padding: pxToRem(23px) 0 pxToRem(17px);
+        }
+    }
+
+    &__textblock {
+        h3 {
+            font-size: pxToRem(16px);
+            text-align: left;
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(20px);
+            }
+        }
+
+        p {
+            font-size: pxToRem(12px);
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(16px);
+            }
+        }
+    }
+
+    &__picture {
+        img {
+            max-width: pxToRem(36px);
+            margin-right: pxToRem(16px);
+
+            @include media-breakpoint-up(md) {
+                max-width: pxToRem(45px);
+                margin-right: pxToRem(13px);
+            }
+        }
+    }
+}

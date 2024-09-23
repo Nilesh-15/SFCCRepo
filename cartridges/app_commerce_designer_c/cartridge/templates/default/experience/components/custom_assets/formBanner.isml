@@ -1,0 +1,29 @@
+<isset name="isFormBannerOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isFormBannerOnline}">
+    <section class="formBanner__container ${pdict.customContainerName}">
+        <div class="formBanner__main col-12">
+            <h2 class="formBanner__heading">
+                <isprint value="${pdict.headingForm}" encoding="off" />
+            </h2>
+            <isif condition="${pdict.subTxtForm}">
+                <div class="formBanner__subtxt">
+                    <isprint value="${pdict.subTxtForm}" encoding="off" />
+                </div>
+            </isif>
+            <form role="form" id="emailSubcribe">
+                <div class="formBanner__form-part input-group">
+                    <input type="text" class="form-control" name="hpEmailSignUp"
+                        placeholder="${Resource.msg('form.placeholder.email', 'pageDesigner', null)}"
+                        aria-label="${Resource.msg('form.placeholder.email', 'pageDesigner', null)}"/>
+
+                        <button type="submit" class="btn btn-primary subscribe-email"
+                            data-href="${URLUtils.url('EmailSubscribe-Subscribe')}">
+                            <isprint
+                                value="${pdict.formBtnTxt ? pdict.formBtnTxt : 
+                                Resource.msg('label.subscribe.now', 'pageDesigner', null)}" />
+                        </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</isif>

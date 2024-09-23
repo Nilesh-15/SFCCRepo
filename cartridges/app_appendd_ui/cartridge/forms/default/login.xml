@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+    <field 
+        formid="phonenumber"
+        label="label.enter.phonenumber"
+        mandatory="true"
+        max-length="10"
+        min-length="10"
+        regexp="[6-9]{1}[0-9]{9}"
+        missing-error="error.login.mobile.number.missing"
+        parse-error="error.message.parse.phone"
+        type="string"
+    /> 
+
+    <field 
+        formid="otp"
+        mandatory="true"
+        max-length="6"
+        min-length="6"
+        regexp="^[0-9]*$"
+        missing-error="error.message.required"
+        type="string"
+    />
+        
+</form>

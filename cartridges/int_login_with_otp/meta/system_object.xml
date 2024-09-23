@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+			<attribute-definition attribute-id="2factorAPIKey">
+                <display-name xml:lang="x-default">2Factor Api Key</display-name>
+                <description xml:lang="x-default">This field will use for store 2Factor api key.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+			
+            <attribute-definition attribute-id="resendOtpTimer">
+                <display-name xml:lang="x-default">Resend OTP Timer</display-name>
+                <description xml:lang="x-default">This field will use for define the resend OTP timer.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>30</default-value>
+            </attribute-definition>
+			
+            <attribute-definition attribute-id="loginOtpTemplate">
+                <display-name xml:lang="x-default">Login OTP Template</display-name>
+                <description xml:lang="x-default">Please pass the otp template.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>Login_OTP_Template</default-value>
+            </attribute-definition>
+			
+			<attribute-definition attribute-id="mobileAuthProvider">
+                <display-name xml:lang="x-default">Mobile Login Auth Provider</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>salesforce</default-value>
+            </attribute-definition>
+		</custom-attribute-definitions>
+		
+		<group-definitions>
+			<attribute-group group-id="LoginWithOTP">
+                <display-name xml:lang="x-default">Login With OTP</display-name>
+                <attribute attribute-id="2factorAPIKey"/>
+                <attribute attribute-id="resendOtpTimer"/>
+                <attribute attribute-id="loginOtpTemplate"/>
+                <attribute attribute-id="mobileAuthProvider"/>
+            </attribute-group>
+		</group-definitions>
+    </type-extension>
+
+</metadata>

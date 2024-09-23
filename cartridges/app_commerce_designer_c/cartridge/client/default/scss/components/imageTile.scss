@@ -1,0 +1,23 @@
+@import "../variables";
+@import "../functions/pxToRem";
+
+.image-tile-link-banner {
+    .m-caption_over {
+        .tile-caption {
+            position: absolute;
+            bottom: 0;
+            &.left {
+                left: pxToRem(15px);
+            }
+            &.center {
+                left: 30%;
+                right: 30%;
+                max-width: pxToRem(200px);
+                margin: 0 auto;
+            }
+            &.right {
+                right:  pxToRem(15px);
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<isset name="product" value="${pdict.wishlist ? item : product}" scope="page" />
+<div class="row tile-body-footer">
+    <div class="ratings col-12">
+        <iscomment> <span class="sr-only">${Resource.msgf('label.product.ratings', 'common', null, product.rating)}</span> </iscomment>
+        <isinclude template="product/components/ratings" />
+    </div>
+</div>

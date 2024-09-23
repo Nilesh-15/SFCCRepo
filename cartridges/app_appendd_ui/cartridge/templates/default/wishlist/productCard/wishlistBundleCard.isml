@@ -1,0 +1,31 @@
+<div class="col-12 product-info uuid-${item.UUID} pid-${item.pid}">
+
+    <div class="account__wishlist-bundle-tile">
+        <div class="account__bundle-main-title">
+            <div class="section-left">
+                <h4>
+                    ${item.name}
+                </h4>
+                <span>${Resource.msg('msg.bundle.includes', 'cart', null)}</span>
+            </div>
+
+            <div class="section-right">
+                <isinclude template="product/components/productDetailIcon" />
+                <button type="button"
+                    class="btn remove-btn-lg remove-from-wishlist-page wishlistTile prod-tile__wishlist-icon"
+                    data-url="${URLUtils.url('Wishlist-RemoveProduct', 'pid', item.pid)}" data-pid="${item.pid}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-heart"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="wishlist-bundle-item-section">
+            <isinclude template="wishlist/productCard/wishlistProductCardBundledItems" />
+        </div>
+
+        <div class="bundle-price">
+            <isinclude template="wishlist/components/productListItemProductPrice" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<isif condition="${slotcontent}">
+    <div class="recommendations">
+    <h2 class="title"> <isprint value="${slotcontent.calloutMsg ? slotcontent.calloutMsg : Resource.msg('label.recommendations', 'product', null)}" encoding="off" /></h2>
+        <div class="row">
+            <div class="value content">
+                <iscomment> <isset name="end" value="${5}" scope="page" /> </iscomment>
+                <isinclude template="components/products" />
+            </div>
+        </div>
+    </div>
+</isif>

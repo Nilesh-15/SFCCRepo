@@ -1,0 +1,44 @@
+<div class="account-navigation-container account__profile-container">
+    <div class="card account__profile-section">
+        <div class="card-header clearfix">
+            <h2 class="profile-header">${Resource.msg('label.personal.details', 'account', null)}</h2>
+        </div>
+        <div class="card-body">
+            <div class="col-12 col-lg-4 account__profile-img-section">
+                <span class="account__profile-img"></span>
+            </div>
+            <div class="col-12 col-lg-8 account__profile-data">
+                <dl>
+                    <dt>${Resource.msg('label.profile.firstname', 'account', null)}</dt>
+                    <dd>${pdict.account.profile.firstName}</dd>
+                </dl>
+                <dl>
+                    <dt>${Resource.msg('label.profile.lastname', 'account', null)}</dt>
+                    <dd>${pdict.account.profile.lastName}</dd>
+                </dl>
+                <dl>
+                    <dt>${Resource.msg('label.profile.email', 'account', null)}</dt>
+                    <dd>${pdict.account.profile.email}</dd>
+                </dl>
+                <isif condition="${pdict.account.profile.phone}">
+                    <dl>
+                        <dt>${Resource.msg('label.profile.phone', 'account', null)}</dt>
+                        <dd>${pdict.account.profile.phone}</dd>
+                    </dl>
+                </isif>
+            </div>
+        </div>
+
+        <div class="account__edit-section col-12">
+            <isif condition="${!pdict.account.isExternallyAuthenticated}">
+                <a href="${URLUtils.url('Account-EditProfile')}" class="pull-right"
+                    aria-label="${Resource.msg('label.profile.edit', 'account', null)}">${Resource.msg('link.edit', 'account', null)}</a>
+            </isif>
+            <a role="button" class="side-bar-link btn-primary edit-btn"
+                aria-label="${Resource.msg('label.header.menu.back', 'common', null)}"
+                href="${URLUtils.url('Account-EditProfile')}" data-url="${URLUtils.url('Account-EditProfile')}">
+                ${Resource.msg('label.profile.edit', 'account', null)}
+            </a>
+        </div>
+    </div>
+</div>

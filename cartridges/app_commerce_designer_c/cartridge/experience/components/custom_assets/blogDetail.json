@@ -1,0 +1,158 @@
+{
+    "name": "Blog Detail",
+    "description": "Blog Detail Component",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerContent",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleContent",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content Online/Offline",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "isOnline",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerImages",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "blogImages",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Images",
+                                "subtitle": "SM / MD / LG",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "image",
+                    "name": "Images (LG/MD)",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "tileImage",
+                    "name": "Images SM exclusive only",
+                    "description": "This image is to show on Blog Tile",
+                    "type": "image",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerDescription",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "blogDeatilSection",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Description",
+                                "subtitle": "SM / MD / LG",
+                                "icon": "detail over"
+                            }
+                        }
+                    }
+                },                
+                {
+                    "id": "title",
+                    "name": "Blog Title",
+                    "type": "markup",
+                    "required": true
+                },
+                {
+                    "id": "readtime",
+                    "name": "Read Time",
+                    "description": "Eg:- 20mins",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "creationdate",
+                    "name": "Blog Creation Date (MM/DD/YYYY)",
+                    "description": "Creation Date format should be MM/DD/YYYY",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "description",
+                    "name": "Description",
+                    "description": "Add / Update Blog Content here.",
+                    "type": "markup",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerPresentation",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "ColorSection",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Color For Title",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                }
+                
+            ]
+        },
+        {
+            "id": "presentation",
+            "name": "Presentation",
+            "attribute_definitions": [
+                {
+                    "id": "textColor",
+                    "name": "Select Color",
+                    "description": "Color For Blog Title",
+                    "type": "custom",
+                    "required": false,
+                    "editor_definition": {
+                        "type": "bp.colorpicker"
+                    }
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

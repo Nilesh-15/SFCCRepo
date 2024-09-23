@@ -1,0 +1,138 @@
+@import "../skin/skinVariables";
+@import "../functions/pxToRem";
+@import "./profile";
+@import "./addressbook";
+@import "../wishlist";
+
+.account {
+    &__main {
+        padding-top: pxToRem(22px);
+        margin-bottom: pxToRem(80px);
+
+        .account-navigation-container {
+            padding: 0 5%;
+        }
+    }
+
+    &__left-side-section {
+        border: pxToRem(1px) solid var(--COLOR-BLACK);
+        border-radius: pxToRem(4px);
+        max-width: pxToRem(420px);
+        width: 80%;
+        padding: pxToRem(30px) pxToRem(20px) pxToRem(30px) pxToRem(30px);
+        height: pxToRem(563px);
+        margin-left: pxToRem(24px);
+    }
+
+    &__user-short {
+        display: flex;
+        margin-bottom: pxToRem(30px);
+        align-items: center;
+
+        .profile-img-side {
+            height: pxToRem(77px);
+            width: pxToRem(77px);
+            background: var(--COLOR-GREY3);
+            display: block;
+            border-radius: pxToRem(36px);
+        }
+
+        .user-name-side {
+            font-size: pxToRem(14px);
+            line-height: pxToRem(16px);
+            margin-left: pxToRem(13px);
+
+            h4 {
+                font-size: pxToRem(18px);
+                line-height: pxToRem(21px);
+                margin-top: pxToRem(5px);
+                overflow-wrap: anywhere;
+            }
+        }
+    }
+
+    &__navigation-list {
+        .list-group-item {
+            border: 0;
+            a {
+                color: var(--COLOR-BLACK) !important;
+                display: flex;
+                font-size: pxToRem(16px);
+
+                &::before {
+                    content: " ";
+                    background-repeat: no-repeat;
+                    display: block;
+                    width: pxToRem(26px);
+                    height: pxToRem(26px);
+                    position: relative;
+                    margin-right: pxToRem(11px);
+                }
+
+                &.myaccount-accountprofile::before {
+                    background-image: url("../../images/all-icon-fragment.svg#icon-profile-round-border");
+                }
+
+                &.myaccount-addressbook::before {
+                    background-image: url("../../images/all-icon-fragment.svg#icon-header-profile");
+                    transform: scale(0.8);
+                }
+
+                &.myaccount-myorders::before {
+                    background-image: url("../../images/all-icon-fragment.svg#icon-order-bag");
+                }
+
+                &.myaccount-mywishlist::before {
+                    background-image: url("../../images/all-icon-fragment.svg#icon-wishlist-heart-account");
+                }
+
+                &.myaccount-logout::before {
+                    background-image: url("../../images/all-icon-fragment.svg#icon-account-logout");
+                }
+            }
+        }
+
+        .list-group-item.active {
+            background-color: transparent;
+            border: pxToRem(1px) solid var(--COLOR-BLACK);
+            border-radius: pxToRem(8px);
+            a {
+                color: var(--COLOR-BLACK) !important;
+            }
+        }
+    }
+
+    &__profile-container,
+    &__edit-container,
+    &__order-container,
+    &__addressbook-container,
+    &__edit-account-form-container,
+    &__wishList-landing-container {
+        .card {
+            border: 0;
+            border-radius: 0;
+        }
+
+        .card-header {
+            border-bottom: pxToRem(1px) solid var(--COLOR-BLACK);
+            border-radius: 0;
+            padding: pxToRem(20px) 0 pxToRem(17px);
+
+            @include media-breakpoint-up(md) {
+                padding-top: 0;
+            }
+        }
+
+        .profile-header {
+            font-size: pxToRem(24px);
+            line-height: pxtoRem(29px);
+            margin-bottom: 0;
+            font-weight: 400;
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(48px);
+                line-height: pxToRem(58px);
+            }
+        }
+    }
+}

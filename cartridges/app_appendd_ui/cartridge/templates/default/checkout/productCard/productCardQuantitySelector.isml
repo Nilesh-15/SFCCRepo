@@ -1,0 +1,25 @@
+<div class="quantity-form">
+    <label class="d-none line-item-pricing-info quantity-label"
+        for="quantity-${lineItem.UUID}">${Resource.msg('field.selectquantity', 'cart', null)}</label>
+    <div class="qty-layout">
+        <quantity-input class="qty-layout__quantity quantity change-qty-block">
+            <button class="btn  quantity-left-minus qty-layout__btn-minus no-js-hidden minus-${lineItem.uuid}" name="minus"
+                type="button" data-pid="${lineItem.id}" data-url="${URLUtils.url('Product-Variation')}"
+                data-uuid="${lineItem.UUID}">
+            </button>
+            <isset name="lineItemQuantity" value="${JSON.stringify(lineItem.quantity)}" scope="page" />
+            <input type="number" class="input-number qty-layout__change-qty-value tile-quantity-select"
+                value="${lineItemQuantity}" min="${lineItem.minimumQty}"
+                max="${lineItem.quantityOptions.maxOrderQuantity}" step="1" data-uuid="${lineItem.UUID}"
+                data-pid="${lineItem.id}" data-action="${pdict.actionUrls.updateQuantityUrl}"
+                data-pre-select-qty="${lineItem.quantity}" id="quantity-${lineItem.UUID}"
+                name="quantity-${lineItem.UUID}" aria-label="quantity: ${StringUtils.formatInteger(lineItem.quantity)}"
+                ${lineItem.isZeroPriceProduct ? "disabled" : ""} readonly />
+
+            <button class=" btn quantity-right-plus qty-layout__btn-plus no-js-hidden plus-${lineItem.uuid}" name="plus"
+                type="button" data-pid="${lineItem.id}" data-url="${URLUtils.url('Product-Variation')}"
+                data-uuid="${lineItem.UUID}">
+            </button>
+        </quantity-input>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+<div class="set-items" itemtype="http://schema.org/SomeProducts" itemid="#product">
+    <isloop items="${productCopy.individualProducts}" var="productItem" status="loopState">
+        <isset name="product" value="${productItem}" scope="page" />
+
+        <div class="set-item" data-pid="${product.id}">
+
+            <hr>
+            
+            <div class="product-detail__main .product-detail">
+                <!-- Product Images Carousel -->
+                <isinclude template="product/components/imageCarousel" />
+
+                <div class="col-12 col-sm-6">
+                    <!-- Product Name -->
+                    <div class="row product-detail__name">
+                        <div class="col">
+                            <h1 class="product-name d-flex align-items-center">
+                                ${product.productName} - ${product.price.sales.formatted}
+                            </h1>
+                        </div>
+                    </div>
+
+                    <div class="row product-detail__ratings-description">
+                        <div class="col-12 col-md-9">
+                            <isinclude template="product/components/pidRating" />
+                            <div class="short-description">
+                                <isprint value="${product.shortDescription}" encoding="off" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="attributes product-detail__attributes">
+                        <!-- Quantity selector Menu -->
+                        <div class="row">
+                            <div class="attribute quantity col-12 col-md-6">
+                                <isinclude template="product/components/quantity" />
+                            </div>
+                        </div>
+                        <!-- Attributes and Quantity -->
+                        <isinclude template="product/components/mainAttributes" />
+
+                        <isset name="isBundle" value="${false}" scope="page" />
+                        <isset name="loopState" value="{count: 1}" scope="page" />
+                        <div class="row" data-attr="${attr.id}">
+                            <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                                <div class="col-6 col-md-3">
+                                    <isinclude template="product/components/variationAttribute" />
+                                </div>
+                            </isloop>
+                            <!-- Social Sharing Icons -->
+                            <div
+                                class="col-6 col-md-6 attribute share-icon ${!product.variationAttributes ? '' : 'variation-section'}">
+                                <span class="non-input-label social-label">${Resource.msg('label.social.share.via', 'common', null)}</span>
+                                <isinclude template="product/components/socialIcons" />
+                            </div>
+                        </div>
+
+                        <div class="product-options d-none">
+                            <isif condition="${product.options && product.options.length > 0}">
+                                <isinclude template="product/components/options" />
+                            </isif>
+                        </div>
+
+                        <!-- Product Availability -->
+                        <div class="d-none">
+                            <isinclude template="product/components/productAvailability" />
+                        </div>
+
+                        <!-- Applicable Promotions -->
+                        <div class="row">
+                            <div class="col-12 promotions">
+                                <isinclude template="product/components/promotions" />
+                            </div>
+                        </div>
+
+                        <div class="prices-add-to-cart-actions">
+                            <div class="row d-none">
+                                <div class="col-12">
+                                    <!-- Prices -->
+                                    <div class="prices">
+                                        <isset name="price" value="${product.price}" scope="page" />
+                                        <isinclude template="product/components/pricing/main" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prices-add-to-cart-actions product-detail__add-to-cart-section">
+                        <!-- Cart and [Optionally] Apple Pay -->
+                        <isinclude template="product/components/addToCartProduct" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <iscomment>
+            <isinclude template="product/components/descriptionAndDetails" />
+        </iscomment>
+
+        <isif condition="${loopState.last === false}">
+            <hr>
+        </isif>
+    </isloop>
+</div>

@@ -1,0 +1,148 @@
+@import "../skin/skinVariables";
+
+.account {
+    &__addressbook-container {
+        .back-to-account {
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+
+            a {
+                color: var(--COLOR-WHITE) !important;
+                width: 100%;
+                padding: pxToRem(8px) 1%;
+                text-decoration: none;
+
+                &:hover,
+                &:focus {
+                    color: var(--COLOR-BLACK) !important;
+                }
+            }
+        }
+
+        .add-new-address a {
+            width: 100%;
+            padding: pxToRem(8px);
+
+            @include media-breakpoint-up(md) {
+                width: 50%;
+            }
+        }
+    }
+
+    &__no-address-msg {
+        margin-top: pxToRem(30px);
+
+        p {
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(20px);
+            }
+        }
+    }
+
+    &__row-address {
+        margin-left: unset;
+        margin-right: unset;
+    }
+
+    &__address-body {
+        padding: pxToRem(20px) 0;
+
+        .address-heading {
+            font-size: pxToRem(18px);
+            line-height: pxToRem(22px);
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(20px);
+                line-height: pxToRem(26px);
+            }
+
+            span {
+                font-size: pxToRem(12px);
+                color: var(--COLOR-GREY4);
+                font-weight: 300;
+
+                @include media-breakpoint-up(md) {
+                    font-size: pxToRem(14px);
+                }
+            }
+        }
+
+        .address-detail {
+            position: relative;
+
+            p {
+                font-size: pxToRem(12px);
+                margin-bottom: 0;
+                color: var(--ALCRO-ANIS-GREY);
+
+                @include media-breakpoint-up(md) {
+                    font-size: pxToRem(14px);
+                }
+            }
+        }
+    }
+
+    &__edit-btn {
+        .icon-edit {
+            content: " ";
+            background-image: url("../../images/all-icon-fragment.svg#icon-black-edit");
+            background-repeat: no-repeat;
+            display: block;
+            position: relative;
+            width: pxToRem(22px);
+            height: pxToRem(22px);
+            transform: scale(0.9);
+        }
+    }
+
+    &__address-btn-delete {
+        position: relative;
+        background: none;
+        border: 0;
+        margin: 0 pxToRem(8px);
+
+        .icon-delete {
+            content: " ";
+            background-image: url("../../images/all-icon-fragment.svg#icon-cart-delete");
+            background-repeat: no-repeat;
+            display: block;
+            width: pxToRem(26px);
+            height: pxToRem(26px);
+            position: relative;
+        }
+    }
+
+    &__address-icon-section {
+        margin-top: pxToRem(8px);
+
+        .card-make-default-link {
+            a {
+                color: var(--COLOR-BLACK) !important;
+            }
+        }
+    }
+
+    &__edit-form {
+        .form-group {
+            .form-control {
+                font-size: pxToRem(13px);
+                padding: pxToRem(6px);
+
+                @include media-breakpoint-up(lg) {
+                    font-size: pxToRem(15px);
+                    padding: pxToRem(6px) pxToRem(12px);
+                }
+            }
+
+            select {
+                height: pxToRem(56px);
+                border-radius: 0;
+            }
+        }
+
+        .btn-section {
+            margin-top: pxToRem(35px);
+        }
+    }
+}

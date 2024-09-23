@@ -1,0 +1,12 @@
+{
+    "name": "Color Picker",
+    "description": "Color picker with ability to have presets",
+    "resources": {
+        "scripts": [
+            "/experience/editors/bp/colorpicker.js"
+        ],
+        "styles": [
+            "/experience/editors/bp/colorpicker.css"
+        ]
+    }
+}

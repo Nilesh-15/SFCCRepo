@@ -1,0 +1,26 @@
+<isset name="product" value="${pdict.product}" scope="page" />
+
+    <div class="product-tile pd-tile">
+        <!-- dwMarker="product" dwContentID="${product.uuid}" -->
+        <isinclude template="product/components/productTileImage" />
+        <div class="tile-body prod-tile__body">
+            <div class="prod-tile__detail-items">
+                <isinclude template="product/components/productTileName" />
+
+                <isif condition="${pdict.display.ratings !== false}">
+                    <isinclude template="product/productTileFooter" />
+                </isif>
+            </div>
+
+            <isset name="price" value="${product.price}" scope="page" />
+            <div class="prod-tile__bottom">
+                <isif condition="${product.productType === 'set'}">
+                    <isinclude template="product/components/pricing/setPrice" />
+                    <iselse>
+                        <isinclude template="product/components/pricing/main" />
+                </isif>
+
+                <isinclude template="product/components/productDetailIcon" />
+            </div>
+        </div>
+    </div>

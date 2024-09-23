@@ -1,0 +1,6 @@
+<isset name="isCtaOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isCtaOnline}">
+    <a href="${pdict.url}" class="btn ${pdict.typeClassName}" aria-label="${pdict.ariaLabel}" title="${pdict.label}">
+        ${pdict.label}
+    </a>
+</isif>

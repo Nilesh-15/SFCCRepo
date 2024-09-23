@@ -1,0 +1,56 @@
+{
+    "name": "Contact Us",
+    "description": "This is a component combined Contact Us Information and Image",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "contactUs",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "alt",
+                    "name": "Alt Text",
+                    "description": "The image alt text shown by the component.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "contactFormHeading",
+                    "name": "Heading For Contact",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "phoneHeading",
+                    "name": "Phone Section Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "enterPhone",
+                    "name": "Enter Phone Number",
+                    "type": "markup",
+                    "required": false
+                },
+                {
+                    "id": "address",
+                    "name": "Address Section Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "enterAddress",
+                    "name": "Enter Address",
+                    "type": "markup",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

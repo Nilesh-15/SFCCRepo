@@ -1,0 +1,38 @@
+@import "../variables";
+
+:root {
+    /** ==================================================================== **/
+
+    /** Create Custom CSS Variables from "sfra bootstrap override" variables **/
+
+    /** ==================================================================== **/
+    --COLOR-WHITE: #{$white};
+    --COLOR-BLACK: #{$black};
+
+    // Consolidated values
+    --COLOR-GREY1: #{$grey1};
+    --COLOR-GREY2: #{$grey2};
+    --COLOR-GREY3: #{$grey3};
+    --COLOR-GREY4: #{$grey4};
+    --COLOR-GREY5: #{$grey5};
+    --COLOR-GREY6: #{$grey6};
+    --COLOR-GREY7: #{$grey7};
+    --COLOR-GREY8: #{$grey8};
+    --COLOR-GREY-TRANSPARENT-1: rgba(0, 0, 0, 0.65);
+    --COLOR-GREY-TRANSPARENT-2: rgba(0, 0, 0, 0.25);
+    --COLOR-LIGHT-GREY: var(--COLOR-GREY1);
+    --COLOR-SLIGHTLY-DARKER-GREY: var(--COLOR-GREY4);
+
+    --TRANSPARENT-WHITE: rgba(255, 255, 255, 0.25);
+    --COLOR-RED: #{$red};
+    --PURPLE: #9728dc;
+    --WISDOM-PURPLE: #744da9;
+    --DEEP-BLUE: #0e1a8ac2;
+    --MIST-VOILET: #280a51;
+    --COLOR-YELLOW: rgb(253, 249, 4);
+    --COLOR-MUSTURD: #e6c105;
+    /*Font Family*/
+    --UBUNTU-REGULAR: "UbuntuRegular", sans-serif;
+    --UBUNTU-BOLD: "UbuntuBold", sans-serif;   
+    --UBUNTU-MEDIUM: "UbuntuMedium", sans-serif;
+}

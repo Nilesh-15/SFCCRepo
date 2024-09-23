@@ -1,0 +1,18 @@
+
+<tr class="table-list-row">
+    <td class="table-list-item">
+        <isprint value="${loopState.count}" encoding="on" />
+    </td>
+    <td class="table-list-item item-name">
+        <isprint value="${order.firstLineItem.title}" />
+    </td>
+    <td class="table-list-item">
+        <isprint value="${order.creationDate}" formatter="d-MM-YYYY" />
+    </td>
+    <td class="table-list-item">
+        <a href="${URLUtils.url('Order-Details', 'orderID', order.orderNumber, 'orderFilter', pdict.orderFilter)}"
+            aria-label="${Resource.msgf('label.orderhistory.vieworderdetails', 'account', null, order.orderNumber)}">
+            ${Resource.msg('link.view', 'account', null)}
+        </a>
+    </td>
+</tr>

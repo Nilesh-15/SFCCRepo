@@ -1,0 +1,252 @@
+.confirmation {
+    &__page-title {
+        font-size: pxToRem(22px);
+        padding: pxToRem(25px) pxToRem(20px) pxToRem(40px);
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(md) {
+            font-size: pxToRem(40px);
+            padding: pxToRem(50px) pxToRem(15px) pxToRem(80px);
+        }
+    }
+
+    &__receipt {
+        margin-bottom: pxToRem(40px);
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: pxToRem(210px);
+        }
+    }
+
+    &__billing-section,
+    &__product-summary-section {
+        @include media-breakpoint-down(sm) {
+            padding-left: pxToRem(20px);
+            padding-right: pxToRem(20px);
+        }
+    }
+
+    &__billing-section {
+        @include media-breakpoint-down(sm) {
+            margin-bottom: pxToRem(25px);
+            display: grid;
+        }
+    }
+
+    &__section-heading {
+        font-size: pxToRem(28px);
+        font-weight: 800;
+        line-height: pxToRem(42px);
+        margin-bottom: pxToRem(18px);
+
+        @include media-breakpoint-up(md) {
+            font-size: pxToRem(40px);
+            line-height: pxToRem(60px);
+            margin-bottom: pxToRem(20px);
+        }
+    }
+
+    &__section-detail {
+        font-size: pxToRem(14px);
+        line-height: pxToRem(20px);
+        margin-bottom: pxToRem(40px);
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: pxToRem(50px);
+        }
+    }
+
+    &__billing-summary {
+        border: 0;
+        max-width: pxToRem(399px);
+        width: 99%;
+
+        @include media-breakpoint-down(sm) {
+            order: 2;
+        }
+
+        .card-header {
+            font-size: pxToRem(18px);
+            line-height: pxToRem(27px);
+            margin-bottom: pxToRem(10px);
+            border: 0;
+            border-radius: 0;
+            padding: 0;
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(24px);
+                line-height: pxToRem(36px);
+                margin-bottom: pxToRem(16px);
+            }
+        }
+
+        .card-body {
+            border: pxToRem(1px) solid var(--COLOR-BLACK);
+            padding-bottom: 0;
+        }
+    }
+
+    &__address-summary {
+        tr {
+            margin-bottom: pxToRem(20px);
+        }
+
+        .billing-summary-label {
+            vertical-align: text-top;
+            font-weight: 800;
+        }
+
+        .billing-summary-value {
+            vertical-align: text-top;
+            padding-left: pxToRem(50px);
+            padding-bottom: pxToRem(20px);
+            color: var(--TROLLEY-GREY);
+            overflow-wrap: anywhere;
+        }
+    }
+
+    &__continue-btn {
+        @include media-breakpoint-down(sm) {
+            order: 1;
+            margin-bottom: pxToRem(40px);
+        }
+
+        a {
+            width: pxToRem(215px);
+            padding: pxToRem(20px);
+            @include media-breakpoint-up(md) {
+                width: pxToRem(183px);
+            }
+        }
+    }
+
+    &__guest-user-section {
+        margin-bottom: pxToRem(20px);
+
+        .card {
+            border: pxToRem(1px) solid var(--COLOR-BLACK);
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+
+        .card-header-custom {
+            text-align: center;
+            padding-top: pxToRem(20px);
+            font-size: pxToRem(22px);
+        }
+
+        .save-password-section {
+            @include media-breakpoint-up(md) {
+                display: flex;
+            }
+
+            .form-group {
+                width: 100%;
+
+                @include media-breakpoint-up(md) {
+                    width: 50%;
+                    padding-right: pxToRem(15px);
+                }
+            }
+
+            .form-group + .form-group {
+                @include media-breakpoint-up(md) {
+                    padding-right: pxToRem(5px);
+                }
+            }
+        }
+    }
+
+    &__header-summary-section {
+        display: flex;
+
+        .header-section + .header-section {
+            border-left: pxToRem(1px) solid var(--COLOR-BLACK);
+        }
+
+        .header-section {
+            padding: pxToRem(15px) 1% pxToRem(18px);
+
+            @include media-breakpoint-up(md) {
+                padding: pxToRem(20px) 2%;
+            }
+        }
+
+        .summary-section-label {
+            font-size: pxToRem(12px);
+            line-height: pxToRem(18px);
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(16px);
+                line-height: pxToRem(24px);
+            }
+        }
+
+        .summary-details,
+        .payment-details {
+            font-size: pxToRem(14px);
+            line-height: pxToRem(21px);
+            font-weight: 800;
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(20px);
+                line-height: pxToRem(30px);
+            }
+        }
+    }
+
+    &__order-product-summary {
+        border: pxToRem(1px) solid var(--COLOR-BLACK);
+        border-radius: 0;
+
+        .card-header {
+            display: none;
+        }
+
+        .card {
+            border: 0;
+            border-radius: 0;
+        }
+
+        .card-body {
+            border-top: pxToRem(1px) solid var(--COLOR-BLACK);
+        }
+
+        .checkout__order-product-summary {
+            margin-bottom: 0;
+
+            .card-body {
+                @include media-breakpoint-up(md) {
+                    padding: pxToRem(20px) pxToRem(38px);
+                }
+            }
+        }
+
+        .order-total-summary {
+            padding: pxToRem(15px) pxToRem(10px) 0 0;
+
+            @include media-breakpoint-up(md) {
+                padding: pxToRem(20px) pxToRem(35px) pxToRem(4px) pxToRem(33px);
+            }
+        }
+    }
+
+    &__grand-total {
+        border-top: pxToRem(1px) solid var(--COLOR-BLACK);
+        padding: pxToRem(15px) pxToRem(25px) pxToRem(15px) pxToRem(18px);
+
+        @include media-breakpoint-up(md) {
+            padding: pxToRem(20px) pxToRem(50px);
+        }
+
+        .col-6 {
+            padding: 0;
+        }
+
+        .order-receipt-label,
+        .grand-total-sum {
+            font-weight: 800;
+            font-size: pxToRem(16px);
+        }
+    }
+}

@@ -1,0 +1,161 @@
+@import "./skin/skinVariables";
+@import "./functions/pxToRem";
+@import "./components/contactUs";
+@import "./components/shopByBrand";
+@import "./components/homePageAboutUs";
+@import "./components/subscibeNewsLetter";
+@import "./components/instagramFollowUs";
+@import "./components/reviewSlider";
+
+#homepage .container > div:has(.row) {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#homepage {
+    .hero-banner,
+    .shopByBrand__container,
+    .slick__new-arrival-home,
+    .homepage__about-us,
+    .homepage__instagram-section,
+    .homepage__subscribe-news {
+        @include media-breakpoint-down(sm) {
+            padding-left: pxToRem(24px);
+            padding-right: pxToRem(24px);
+        }
+    }
+
+    .hero-banner,
+    .shopByBrand__container,
+    .slick__new-arrival-home,
+    .homepage__about-us,
+    .homepage__subscribe-news,
+    .experience-custom_assets-brandUsp {
+        @include media-breakpoint-up(md) {
+            padding-left: pxToRem(0.56px);
+        }
+    }
+
+    .homepage__instagram-section {
+        .hero-banner {
+            padding: 0;
+        }
+    }
+
+    .homepage__instagram-section {
+        @include media-breakpoint-up(md) {
+            padding: 0;
+            padding-left: pxToRem(0.56px);
+        }
+    }
+
+    .contactUs__container {
+        padding-left: pxToRem(40px);
+        padding-right: pxToRem(40px);
+
+        @include media-breakpoint-up(md) {
+            padding: 0 pxToRem(20px);
+        }
+    }
+}
+
+#homepage {
+    > div:has(.container) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .container .row > div:has(.col-12) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+//new arrival carousel css start
+.slick__new-arrival-home {
+    padding: 0 pxToRem(15px);
+
+    @include media-breakpoint-up(md) {
+        padding: 0 pxToRem(2px);
+    }
+
+    .carousel-header {
+        @include media-breakpoint-up(md) {
+            border: pxToRem(1px) solid var(--COLOR-BLACK);
+        }
+    }
+
+    .slick-initialized.slick-slider{
+        @include media-breakpoint-up(md)  {
+            max-width: pxToRem(1920px);
+            width: 99.4%;
+            margin: 0 auto;
+        }
+    }
+
+    .slick-arrow {
+        &.slick-next {
+    
+            @include media-breakpoint-up(md) {
+                right: pxToRem(-4px);
+            }
+        }
+
+        &.slick-prev {
+    
+            @include media-breakpoint-up(md) {
+                left: (-4px);
+            }
+        }
+    }
+
+    .carousel-title {
+        max-width: pxToRem(380px);
+        margin: 0 auto;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            max-width: pxToRem(784px);
+        }
+
+        h2 {
+            font-size: pxToRem(20px);
+            margin-bottom: pxToRem(20px);
+            margin-top: pxToRem(35px);
+
+            @include media-breakpoint-up(xl) {
+                font-size: pxToRem(50px);
+                margin-bottom: pxToRem(11px);
+            }
+        }
+
+        p {
+            font-size: pxToRem(16px);
+            margin-bottom: pxToRem(20px);
+
+            @include media-breakpoint-up(xl) {
+                margin-bottom: pxToRem(36px);
+            }
+        }
+    }
+}
+//new arrival carousel us css end
+
+.homepage {
+    //brand-usp start
+    &__feature-site {
+        @include media-breakpoint-up(md) {
+            border: pxToRem(1px) solid var(--COLOR-BLACK);
+        }
+
+        .brandusp {
+            &__main {
+                @include media-breakpoint-down(sm) {
+                    background-color: var(--TUB-GREY);
+                    margin-bottom: pxToRem(15px);
+                }
+            }
+        }
+    }
+    //brand-usp end
+}

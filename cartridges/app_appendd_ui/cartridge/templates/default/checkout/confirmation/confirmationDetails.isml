@@ -1,0 +1,45 @@
+<div class="card confirmation__order-product-summary">
+    <div class="confirmation__header-summary-section">
+        <div class="col-4 header-section">
+            <h4 class="summary-section-label order-date-label">
+                ${Resource.msg('label.order.date', 'confirmation', null)}
+            </h4>
+            <span class="summary-details order-date">
+                <isprint value="${pdict.order.creationDate}" formatter="d MMMM YYYY" />
+            </span>
+        </div>
+        <div class="col-4 header-section">
+            <h4 class="summary-section-label order-number-label">
+                ${Resource.msg('label.order.number', 'confirmation', null)}
+            </h4>
+            <span class="summary-details order-number">
+                ${pdict.order.orderNumber}
+            </span>
+        </div>
+        <div class="col-4 header-section">
+            <h4 class="summary-section-label payment-method-label">
+                ${Resource.msg('heading.payment.method', 'checkout', null)}
+            </h4>
+            <isinclude template="checkout/billing/paymentOptions/paymentOptionsSummary" />
+        </div>
+    </div>
+    <isinclude template="checkout/orderProductSummary" />
+
+    <div class="card-body order-total-summary">
+        <isinclude template="checkout/orderTotalSummary" />
+    </div>
+
+    <!--- Grand Total --->
+    <div class="row confirmation__grand-total leading-lines">
+        <div class="col-6 ">
+            <span class="order-receipt-label">
+                ${Resource.msg('label.order.grand.total', 'confirmation', null)}
+            </span>
+        </div>
+        <div class="col-6 text-right">
+            <span class="grand-total-sum">
+                ${pdict.order.totals.grandTotal}
+            </span>
+        </div>
+    </div>
+</div>

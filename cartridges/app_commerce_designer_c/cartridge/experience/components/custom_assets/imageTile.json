@@ -1,0 +1,178 @@
+{
+    "name": "Image Tile",
+    "description": "Image tile component that serve as small (3x4) banner that could have integrated CTA or just clickable image",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerOnline",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleOnline",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content Online/Offline",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "isOnline",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerContent",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleContent",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content",
+                                "subtitle" : "SM / MD / LG",
+                                "icon" : "all devices"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "content",
+            "name": "Content",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "description": "Image used for tile",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "imageAlt",
+                    "name": "Image Alternative Text",
+                    "description": "Alternative text required for SEO and screen readers (accessibility)",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "caption",
+                    "name": "Caption / CTA Label",
+                    "description": "Tile caption / CTA label",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "category",
+                    "name": "Target",
+                    "type": "category",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "dividerPresentation",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titlePresentation",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Presentation",
+                                "subtitle" : "SM / MD / LG",
+                                "icon" : "all devices"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "presentation",
+            "name": "Presentation",
+            "attribute_definitions": [
+                {
+                    "id": "captionPosition",
+                    "name": "Caption Alignment Overlay Text",
+                    "description": "Determines the caption position",
+                    "type": "custom",
+                    "required": false,
+                    "editor_definition": {
+                        "type": "bp.optionList",
+                        "configuration": {
+                            "options": {
+                                "config": [
+                                    "Left",
+                                    "Center",
+                                    "Right"
+                                ],
+                                "default": "Left"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "tileLayout",
+                    "name": "Layout",
+                    "description": "Determines the tile layout",
+                    "type": "custom",
+                    "required": false,
+                    "editor_definition": {
+                        "type": "bp.optionList",
+                        "configuration": {
+                            "options": {
+                                "config": [
+                                    "Caption below",
+                                    "Caption over"
+                                ],
+                                "default": "Caption below"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "ctaType",
+                    "name": "CTA Type",
+                    "description": "Visual presentation of the CTA",
+                    "type": "custom",
+                    "required": false,
+                    "editor_definition": {
+                        "type": "bp.optionList",
+                        "configuration": {
+                            "options": {
+                                "config": [
+                                    "As link",
+                                    "Solid",
+                                    "Outline"
+                                ],
+                                "default": "As link"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

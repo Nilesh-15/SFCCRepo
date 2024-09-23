@@ -1,0 +1,20 @@
+<div class="checkout__shipping-section shipping-section">
+    <div class="single-shipping">
+        <isset name="shippingModel" value="${pdict.order.shipping[0]}" scope="page" />
+        <isset name="shipmentLoopState" value="${null}" scope="page" />
+        <isset name="lineItem" value="${null}" scope="page" />
+        <div data-shipment-uuid="${shippingModel.UUID}">
+            <div class="card-header checkout__header-toggle">
+                <button type="button" class="btn" data-toggle="collapse" data-target="#shipping-toggle">
+                    <h2 class="card-header-custom">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h2>
+                </button>
+            </div>
+
+            <div id="shipping-toggle" class="collapse show">
+                <div class="shipping-error"></div>
+
+                <isinclude template="checkout/shipping/shipmentCard" />
+            </div>
+        </div>
+    </div>
+</div>

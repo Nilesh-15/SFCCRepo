@@ -1,0 +1,13 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/components/desktop1r3c.css');
+</isscript>
+
+<isset name="isLayoutOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isLayoutOnline}">
+    <div class="container mobile-3r-1c desktop-1r-3c ${pdict.customContainerName}">
+        <div class="layout__custom-1r3c">
+            <isprint value="${pdict.regions.column1.setClassName("region col-12").render()}" encoding="off" />
+        </div>
+    </div>
+</isif>

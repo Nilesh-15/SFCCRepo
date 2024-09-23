@@ -1,0 +1,99 @@
+@import "../skin/skinVariables";
+@import "../functions/pxToRem";
+
+.categoryLanding {
+    max-width: pxToRem(1920px);
+    margin: 0 auto;
+    &[class] {
+        .mobile-3r-2c {
+            margin-top: pxToRem(20px);
+            margin-bottom: pxToRem(40px);
+
+            @include media-breakpoint-up(md) {
+                margin-top: pxToRem(30px);
+                margin-bottom: pxToRem(160px);
+            }
+        }
+
+        .region {
+            padding: 0 pxToRem(5px);
+        }
+
+        .image-tile-link-banner {
+            .image-tile {
+                border: pxToRem(2px) solid var(--COLOR-BLACK);
+            }
+
+            .tile-caption {
+                text-align: center;
+
+                p {
+                    background-color: var(--COLOR-WHITE);
+                    font-size: pxToRem(12px);
+                    padding: pxToRem(10px) 0;
+                    border: pxToRem(2px) solid var(--COLOR-BLACK);
+                    overflow-wrap: anywhere;
+                    font-weight: 700;
+
+                    @include media-breakpoint-up(md) {
+                        font-size: pxToRem(15px);
+                    }
+                }
+            }
+        }
+    }
+
+    &__top-region {
+        padding: 0;
+
+        .hero-banner-img {
+            img {
+                height: 35vw;
+
+                @include media-breakpoint-up(md) {
+                    height: 40vw;
+                }
+            }
+        }
+    }
+
+    &__top-wrapper {
+        position: relative;
+    }
+
+    &__title-section {
+        border: pxToRem(2px) solid var(--COLOR-BLACK);
+        background: var(--COLOR-WHITE);
+        position: absolute;
+        z-index: 1;
+        max-width: pxToRem(228px);
+        width: 99%;
+        top: 50%;
+        left: 50%;
+        padding: pxToRem(18px);
+        transform: translate(-50%, -50%);
+
+        @include media-breakpoint-up(md) {
+            max-width: pxToRem(746px);
+            border: pxToRem(3px) solid var(--COLOR-BLACK);
+            padding: pxToRem(75px) pxToRem(90px);
+        }
+
+        h1.title {
+            font-size: pxToRem(20px);
+            border: pxToRem(2px) solid var(--COLOR-BLACK);
+            background-color: var(--COLOR-GREY-BORDER);
+            color: var(--COLOR-BLACK);
+            text-transform: capitalize;
+            padding: pxToRem(10px) pxToRem(10px) pxToRem(12px);
+            text-align: center;
+            margin-bottom: 0;
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(40px);
+                padding: pxToRem(30px) pxToRem(10px) pxToRem(34px);
+                border: pxToRem(3px) solid var(--COLOR-BLACK);
+            }
+        }
+    }
+}

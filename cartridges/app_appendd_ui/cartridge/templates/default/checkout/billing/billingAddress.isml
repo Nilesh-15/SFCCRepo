@@ -1,0 +1,142 @@
+<isset name="billingFields" value="${pdict.forms.billingForm.addressFields}" scope="page" />
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group
+            ${billingFields.firstName.mandatory === true ? 'required' : ''}
+            ${billingFields.firstName.htmlName}">
+            <iscomment> <label class="form-control-label"
+                    for="billingFirstName">${Resource.msg('field.billing.address.first.name', 'address', null)}</label>
+            </iscomment>
+            <input autofocus type="text" class="form-control billingFirstName" id="billingFirstName" value="${pdict.order.billing.billingAddress.address && pdict.order.billing.billingAddress.address.firstName ? pdict.order.billing
+                                                                                                            .billingAddress.address.firstName : ''}" placeholder="${Resource.msg('field.shipping.address.first.name', 'address', null)}" <isprint
+                value=${billingFields.firstName.attributes} encoding="off" />
+            autocomplete="given-name" >
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group
+            ${billingFields.lastName.mandatory === true ? 'required' : ''}
+            ${billingFields.lastName.htmlName}">
+            <iscomment> <label class="form-control-label"
+                    for="billingLastName">${Resource.msg('field.billing.address.last.name', 'address', null)}</label>
+            </iscomment>
+            <input type="text" class="form-control billingLastName" id="billingLastName" value="${pdict.order.billing.billingAddress.address && pdict.order.billing.billingAddress.address.lastName ? pdict.order.billing
+                                                                                                .billingAddress.address.lastName : ''}" placeholder="${Resource.msg('field.shipping.address.last.name', 'address', null)}" <isprint
+                value=${billingFields.lastName.attributes} encoding="off" />
+            autocomplete="family-name">
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group
+            ${billingFields.address1.mandatory === true ? 'required' : ''}
+            ${billingFields.address1.htmlName}">
+            <iscomment> <label class="form-control-label"
+                    for="billingAddressOne">${Resource.msg('field.billing.address.one', 'address', null)}</label>
+            </iscomment>
+            <input type="text" class="form-control billingAddressOne" id="billingAddressOne" value="${pdict.order.billing.billingAddress.address && pdict.order.billing.billingAddress.address.address1 ? pdict.order.billing
+                                                                                                    .billingAddress.address.address1 : ''}" placeholder="${Resource.msg('field.shipping.address.one', 'address', null)}" <isprint
+                value=${billingFields.address1.attributes} encoding="off" />
+            autocomplete="billing address-line1">
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group
+            ${billingFields.address2.mandatory === true ? 'required' : ''}
+            ${billingFields.address2.htmlName}">
+            <iscomment> <label class="form-control-label"
+                    for="billingAddressTwo">${Resource.msg('field.billing.address.two', 'address', null)}</label>
+            </iscomment>
+            <input type="text" class="form-control billingAddressTwo" id="billingAddressTwo" value="${pdict.order.billing.billingAddress.address && pdict.order.billing.billingAddress.address.address2 ? pdict.order.billing
+                                                                                                    .billingAddress.address.address2 : ''}" placeholder="${Resource.msg('field.shipping.address.two', 'address', null)}" <isprint
+                value=${billingFields.address2.attributes} encoding="off" />
+            autocomplete="billing address-line2">
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group
+            ${billingFields.city.mandatory === true ? 'required' : ''}
+            ${billingFields.city.htmlName}">
+            <iscomment> <label class="form-control-label"
+                    for="billingAddressCity">${Resource.msg('field.billing.address.city', 'address', null)}</label>
+            </iscomment>
+            <input type="text" class="form-control billingAddressCity" id="billingAddressCity" value="${pdict.order.billing.billingAddress.address && pdict.order.billing.billingAddress.address.city ? pdict.order.billing
+                                                                                                      .billingAddress.address.city : ''}" placeholder="${Resource.msg('field.shipping.address.city', 'address', null)}" <isprint
+                value=${billingFields.city.attributes} encoding="off" />
+            autocomplete="billing address-level2">
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group
+            ${billingFields.postalCode.mandatory === true ? 'required' : ''}
+            ${billingFields.postalCode.htmlName}">
+            <iscomment> <label class="form-control-label"
+                    for="billingZipCode">${Resource.msg('field.billing.address.zip.code', 'address', null)}</label>
+            </iscomment>
+            <input type="text" class="form-control billingZipCode" id="billingZipCode" value="${pdict.order.billing.billingAddress.address && pdict.order.billing.billingAddress.address.postalCode ? pdict.order
+                                                                                              .billing.billingAddress.address.postalCode : ''}" placeholder="${Resource.msg('field.shipping.address.postal.code', 'address', null)}" <isprint
+                value=${billingFields.postalCode.attributes} encoding="off" />
+            autocomplete="billing postal-code">
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+</div>
+
+<!--- make drop down--->
+<div class="row">
+    <div class="col-sm-6">
+        <div class="form-group
+            ${billingFields.country.mandatory === true ? 'required' : ''}
+            ${billingFields.country.htmlName}">
+            <iscomment> <label class="form-control-label"
+                    for="billingCountry">${Resource.msg('field.billing.address.country', 'address', null)}</label>
+            </iscomment>
+            <select class="custom-select form-control billingCountry custom-select" id="billingCountry" <isprint
+                value=${billingFields.country.attributes} encoding="off" />
+            autocomplete="billing country">
+            <option label=" "></option>
+            <isloop items=${billingFields.country.options} var="country">
+                <option id="${country.id}" value="${country.htmlValue}" ${pdict.order.billing.billingAddress.address && country.id === pdict.order.billing.billingAddress.address.countryCode
+                                                                        .value ? "selected" : "selected"}>
+                    ${country.label}
+                </option>
+            </isloop>
+            </select>
+            <div class="invalid-feedback"></div>
+
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group
+            ${billingFields.states.stateCode.mandatory === true ? 'required' : ''}
+            ${billingFields.states.stateCode.htmlName}">
+            <iscomment> <label class="form-control-label"
+                    for="billingState">${Resource.msg('field.billing.address.state', 'address', null)}</label>
+            </iscomment>
+            <select class="custom-select form-control billingState custom-select" id="billingState" <isprint
+                value=${billingFields.states.stateCode.attributes} encoding="off" />
+            autocomplete="billing address-level1">
+            <isloop items=${billingFields.states.stateCode.options} var="state">
+                <option id="${state.id}" value="${state.htmlValue}" ${pdict.order.billing.billingAddress.address && state.id === pdict.order.billing.billingAddress.address.stateCode ?
+                                                                    "selected" : ""}>
+                    ${state.label}
+                </option>
+            </isloop>
+            </select>
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+</div>

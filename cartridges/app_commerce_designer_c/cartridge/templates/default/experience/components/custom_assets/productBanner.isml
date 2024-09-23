@@ -1,0 +1,68 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJs('/js/productDetail.js');
+    assets.addCss('/css/product/detail.css');
+</isscript>
+
+<isset name="product" value="${pdict.product}" scope="page" />
+<isset name="isproductBannerOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isproductBannerOnline}">
+
+    <div class="product-banner card col-12 product-${product.productType} product-detail" data-pid="${product.id}">
+        <div class="row">
+            <!-- Product Image -->
+            <isloop items="${product.images['large']}" var="image" status="loopStatus">
+                <isif condition="${loopStatus.index == 0}">
+                    <div class="col-sm-6">
+                        <img src="${image.url}" class="d-block img-fluid" alt="${image.alt} image number ${image.index}"
+                            itemprop="image" />
+                    </div>
+                </isif>
+            </isloop>
+
+            <!-- Product details-->
+            <div class="col-sm-6 pt-2">
+                <div class="detail-panel">
+                    <div class="product-headings pl-2 pr-3">
+                        <isinclude template="product/components/productBadge" />
+                        <h2 class="product-name">${product.productName}</h2>
+
+                        <isset name="price" value="${product.price}" scope="page" />
+                        <isinclude template="experience/components/commerce_assets/product/pricing/main" />
+
+                        <isinclude template="experience/components/commerce_assets/product/productTileRatings" />
+                    </div>
+
+                    <!-- Attributes -->
+                    <section class="attributes pl-2">
+
+                        <isset name="isBundle" value="${false}" scope="page" />
+                        <isset name="loopState" value="${{
+                                                       count: 1}}" scope="page" />
+                        <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                            <div data-attr="${attr.id}" class="swatch row">
+                                <div class="col-8">
+                                    <isinclude template="product/components/variationAttribute" />
+                                </div>
+
+                                <isif condition="${attributeStatus.last}">
+                                    <!-- Quantity Drop Down Menu -->
+                                    <div class="attribute quantity col-4">
+                                        <isif condition="${pdict.addToCartUrl || pdict.updateCartUrl}">
+                                            <isinclude template="product/components/quantity" />
+                                        </isif>
+                                    </div>
+                                </isif>
+                            </div>
+                        </isloop>
+                    </section>
+                </div>  
+                <div class="mt-4"> 
+                <isif condition="${pdict.addToCartUrl}">
+                    <isinclude template="product/components/addToCartGlobal" />
+                </isif>
+            </div>          
+            </div>
+        </div>
+    </div>
+</isif>

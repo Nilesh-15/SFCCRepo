@@ -1,0 +1,44 @@
+<div class="col-12 account__left-side-section">
+    <div class="account__user-short">
+        <span class="profile-img-side"></span>
+        <span class="user-name-side">
+            ${Resource.msg('account.sidebar.user.hello', 'account', null)}
+            <h4>${pdict.account.profile.firstName}</h4>
+        </span>
+    </div>
+    <ul class="account__navigation-list list-group">
+        <li class="list-group-item ${pdict.accountlanding ? 'active' : ''}" aria-current="true">
+            <a class="side-bar-link myaccount-accountprofile" title="${Resource.msg('account.sidebar.link.AccountDetails', 'account', null)}"
+                href="${URLUtils.url('Account-Profile')}" data-url="${URLUtils.url('Account-Profile')}">
+                ${Resource.msg('account.sidebar.link.AccountDetails', 'account', null)}
+            </a>
+        </li>
+
+        <li class="list-group-item ${pdict.addressBook ? 'active' : ''}">
+            <a class="side-bar-link myaccount-addressbook" title="${Resource.msg('account.sidebar.link.AddressBook', 'account', null)}"
+                href="${URLUtils.url('Address-List')}" data-url="${URLUtils.url('Address-List')}">
+                ${Resource.msg('account.sidebar.link.AddressBook', 'account', null)}
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a class="side-bar-link myaccount-myorders ${!pdict.accountlanding && !pdict.addressBook ? 'active' : ''}" title="${Resource.msg('account.sidebar.link.MyOrders', 'account', null)}"
+                href="${URLUtils.url('Order-History')}" data-url="${URLUtils.url('Order-History')}">
+                ${Resource.msg('account.sidebar.link.MyOrders', 'account', null)}
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a class="side-bar-link myaccount-mywishlist" title="${Resource.msg('account.sidebar.link.MyWishlist', 'account', null)}"
+                href="${URLUtils.url('Wishlist-Show')}" data-url="${URLUtils.url('Wishlist-Show')}">
+                ${Resource.msg('account.sidebar.link.MyWishlist', 'account', null)}
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a href="${URLUtils.url('Login-Logout')}" class="myaccount-logout" role="menuitem" tabindex="0">
+                ${Resource.msg('link.header.logout', 'account', null)}
+            </a>
+        </li>
+    </ul>
+</div>

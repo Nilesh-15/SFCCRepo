@@ -1,0 +1,32 @@
+<form action="${pdict.actionUrl}" class="login-form-modal" method="POST" name="login-modal-form">
+    <h3 class="text-center mb-3">${Resource.msg('label.login', 'login', null)}</h3>
+    
+    <div class="form-group required login-form">
+        <label class="form-control-label" for="login-mobile-number">
+            <isprint value="${pdict.loginForm.phonenumber.label}" encoding="htmlcontent" />
+        </label>
+        <i class="ind-tel-code"></i>
+        <input type="text" class="form-control user-mobileno" id="login-form-mobileno"
+            placeholder="${Resource.msg('placeholder.input.login', 'login', null)}"
+            data-pattern-mismatch="${Resource.msg('error.pattern.mismatch', 'login', null)}"
+            data-missing-error="${Resource.msg('error.message.required', 'login', null)}" <isprint
+            value=${pdict.loginForm.phonenumber.attributes} encoding="off" /> />
+        <div class="invalid-feedback" id="form-mobile-error"></div>
+    </div>
+<div class="no__account text-danger error__msg d-none"></div>
+    <div>
+        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+        <button type="submit" class="btn btn-primary send-otp-btn" disabled>
+            ${Resource.msg('button.text.continue', 'login', null)}
+        </button>
+    </div>
+
+</form>
+<div class="or-separator"> <span class='or-text'>${Resource.msg('label.login.or', 'login', null)}<span> </div>
+<isinclude template="account/components/oauth" />
+<div class="account__register">
+    <span>
+        ${Resource.msg('label.create.account', 'login', null)}
+        <a href="${pdict.registerUrl}" class="create_account link">${Resource.msg('create.account.link', 'login', null)}</a>
+    </span>
+</div>

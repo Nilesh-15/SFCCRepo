@@ -1,0 +1,93 @@
+//shop by brand css start
+.shopByBrand {
+    &__region {
+        @include media-breakpoint-up(sm) {
+            display: flex;
+        }
+    }
+
+    &__container {
+        @include media-breakpoint-down(sm) {
+            margin-top: pxToRem(40px);
+        }
+
+        div[parent_region="brandSection"] {
+            .custom-padding {
+                padding: 0;
+            }
+
+            .region::before {
+                display: none;
+            }
+
+            .region.col-12.col-sm-6 {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__title-wrap {
+        h2 {
+            font-size: pxToRem(20px);
+            padding-bottom: pxToRem(16px);
+            padding-top: pxToRem(16px);
+            margin-bottom: 0;
+            border: pxToRem(1px) solid var(--COLOR-BLACK);
+
+            @include media-breakpoint-up(xl) {
+                font-size: pxToRem(50px);
+                padding-top: pxToRem(35px);
+                padding-bottom: pxToRem(35px);
+            }
+        }
+    }
+
+    &__region {
+        border: pxToRem(1px) var(--COLOR-BLACK);
+        border-style: none solid none none;
+
+        @include media-breakpoint-up(md) {
+            border-style: none solid solid none;
+        }
+
+        .image-and-text {
+            border: pxToRem(1px) var(--COLOR-BLACK) ;
+            border-style: none none solid solid;
+
+            @include media-breakpoint-up(md) {
+                border-style: none none none solid;
+            }
+        }
+ 
+        .lg-left{
+            .image-text-side {
+                @include media-breakpoint-up(md) {
+                    border-left: pxToRem(1px) solid var(--COLOR-BLACK);
+                }
+            }
+        }
+        .sm-left {
+            .image-text-side {
+                @include media-breakpoint-down(sm) {
+                    border-left: pxToRem(1px) solid var(--COLOR-BLACK);
+                }
+            }
+        }
+        
+        .lg-right {            
+            .image-text-side {
+                @include media-breakpoint-up(md) {
+                    border-right: pxToRem(1px) solid var(--COLOR-BLACK);
+                }
+            }
+        }
+        .sm-right {            
+            .image-text-side {
+                @include media-breakpoint-down(sm) {
+                    border-right: pxToRem(1px) solid var(--COLOR-BLACK);
+                }
+            }
+        }
+    }
+}
+//shop by brand css end

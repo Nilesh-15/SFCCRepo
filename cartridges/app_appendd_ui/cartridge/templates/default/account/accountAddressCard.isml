@@ -1,0 +1,60 @@
+<div class="row account__row-address" id="uuid-${address.address.UUID}">
+    <div class="card-body account__address-body">
+        <h4 class="address-heading">
+            ${address.address.ID == pdict.addressBook[0].address.ID ? pdict.addressBook[0].address.ID : address.address.ID}
+            <span>
+                ${address.address.ID == pdict.addressBook[0].address.ID ? Resource.msg('label.address.book.default', 'account', null) : ''}
+            </span>
+        </h4>
+        <div class="address-detail">
+            <p>
+                ${address.address.firstName} ${address.address.lastName}
+            </p>
+            <p>
+                ${address.address.address1}
+            </p>
+            <isif condition="${address.address.address2 !== null}">
+                <p>
+                    ${address.address.address2}
+                </p>
+            </isif>
+            <p>
+                ${address.address.city}, ${address.address.stateCode} ${address.address.postalCode}
+            </p>
+            <p>
+                ${address.address.phone}
+            </p>
+            <div class="d-flex account__address-icon-section">
+                <a href="${URLUtils.url('Address-EditAddress', 'addressId', address.address.ID)}"
+                    class="account__edit-btn add-address"
+                    aria-label="${Resource.msg('label.addressbook.editaddress', 'account', null)} : ${address.address.ID == pdict.addressBook[0].address.ID ? pdict.addressBook[0].address.ID + ' (' + Resource.msg(
+                                                                                                    'label.addressbook.defaultaddress', 'account', null) + ')' : address.address.ID}">
+                    <i class="icon-edit"></i>
+                </a>
+                <button type="button" class="remove-btn remove-address account__address-btn-delete" data-toggle="modal"
+                    data-target="#deleteAddressModal" data-id="${address.address.ID}"
+                    data-url="${pdict.actionUrls.deleteActionUrl}"
+                    aria-label="${Resource.msg('label.addressbook.deleteaddress', 'account', null)}" <isprint
+                    value="${address.address.ID == pdict.addressBook[0].address.ID ? 'data-default=" true"' : ''}"
+                    encoding="off" />>
+                <i class="icon-delete"></i>
+                </button>
+                <iscomment> <button type="button" class="remove-btn remove-address btn-light" data-toggle="modal"
+                        data-target="#deleteAddressModal" data-id="${address.address.ID}"
+                        data-url="${pdict.actionUrls.deleteActionUrl}"
+                        aria-label="${Resource.msg('label.addressbook.deleteaddress', 'account', null)}" <isprint
+                        value="${address.address.ID == pdict.addressBook[0].address.ID ? 'data-default=" true"' : ''}"
+                        encoding="off" />>
+                    &times;
+                    </button> </iscomment>
+
+                <isif condition="${address.address.ID !== pdict.addressBook[0].address.ID}">
+                    <div class="card-make-default-link">
+                        <a href="${URLUtils.url('Address-SetDefault', 'addressId', address.address.ID)}" class="normal"
+                            aria-label="${Resource.msg('label.addressbook.makedefaultaddress', 'account', null)}">${Resource.msg('link.addressbook.makedefault', 'account', null)}</a>
+                    </div>
+                </isif>
+            </div>
+        </div>
+    </div>
+</div>

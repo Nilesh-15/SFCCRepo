@@ -1,0 +1,44 @@
+<ul class="menu__content-links col-12">
+    <li>
+        <a href="${URLUtils.url('Page-Show', 'cid', 'terms')}" class="dropdown-link" role="button">
+            ${Resource.msg('link.shipping.and.returns', 'common', null)}
+        </a>
+    </li>
+    <li>
+        <a href="${URLUtils.url('Page-Show', 'cid', 'terms')}" class="dropdown-link" role="button">
+            ${Resource.msg('link.terms.and.conditions', 'common', null)}
+        </a>
+    </li>
+    <li>
+        <a href="${URLUtils.url('Page-Show', 'cid', 'privacy-policy')}" class="dropdown-link" role="button">
+            ${Resource.msg('link.privacy.policy', 'common', null)}
+        </a>
+    </li>
+</ul>
+<ul class="menu__social-icon-list d-flex col-12">
+    <li class="menu__social-links">
+        <a class="socialIcons" aria-label="instagram" href="https://www.instagram.com/demandware" target="_blank">
+            <i class="icon-social instagram"></i>
+        </a>
+    </li>
+    <li class="menu__social-links">
+        <a class="socialIcons" aria-label="pinterest" href="https://www.pinterest.com/demandware0103/" target="_blank">
+            <i class="icon-social pinterest"></i>
+        </a>
+    </li>
+    <li class="menu__social-links">
+        <a class="socialIcons" aria-label="facebook" href="https://www.facebook.com/demandware" target="_blank">
+            <i class="icon-social facebook"></i>
+        </a>
+    </li>
+    <li class="menu__social-links">
+        <a class="socialIcons" aria-label="twitter" href="https://twitter.com/demandware" target="_blank">
+            <i class="icon-social twitter"></i>
+        </a>
+    </li>
+    <li class="menu__social-links">
+        <a class="socialIcons" aria-label="telegram" href="https://twitter.com/demandware" target="_blank">
+            <i class="icon-social telegram"></i>
+        </a>
+    </li>
+</ul>

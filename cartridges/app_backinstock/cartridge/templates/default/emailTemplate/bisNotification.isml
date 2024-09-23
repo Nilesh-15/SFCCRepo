@@ -1,0 +1,23 @@
+<body>
+    <span>
+        ${Resource.msg('label.customer.greeting','product',null)}
+    </span>
+    </br></br>
+    <span>
+        <isprint value="${Resource.msgf('label.msg.greeting','product',null,pdict.product.name)}" encoding="htmlcontent" />
+    </span>
+    </br></br>
+    <span>
+        ${Resource.msg('label.product.detail','product',null)}</br>
+        <isprint value="${Resource.msgf('lable.product.name','product',null,pdict.product.name)}" encoding="htmlcontent" /></br>
+        <a href="${pdict.redicrectURL}"></a></br>
+    </span>
+    </br>
+    <span>
+        ${Resource.msg('label.secure.product','product',null)}
+    </span>
+    </br></br>
+    <span>
+        ${Resource.msg('label.thanks','product',null)}
+    </span>
+</body>

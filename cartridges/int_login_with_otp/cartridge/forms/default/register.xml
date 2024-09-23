@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+	<group formid="customer">
+		<field 
+			formid="firstname" 
+			label="label.input.firstname.profile" 
+			mandatory="true" 
+			max-length="50"
+			missing-error="error.message.required"
+			type="string" />
+
+		<field 
+			formid="lastname" 
+			label="label.input.lastname.profile" 
+			mandatory="true" 
+			max-length="50" 
+			missing-error="error.message.required"
+			type="string" />
+
+        <field 
+            formid="phonenumber"
+            label="label.enter.phonenumber"
+            mandatory="true"
+            max-length="10"
+            min-length="10"
+            regexp="[6-9]{1}[0-9]{9}"
+            missing-error="error.login.mobile.number.missing"
+            parse-error="error.message.parse.phone"
+            type="string"/> 
+
+		<field
+			formid="email" 
+			label="label.input.email.profile" 
+			mandatory="true" 
+			max-length="50" 
+			missing-error="error.message.required"
+			parse-error="error.message.parse.email.profile.form"
+			type="string"/> 
+	</group>	
+</form>

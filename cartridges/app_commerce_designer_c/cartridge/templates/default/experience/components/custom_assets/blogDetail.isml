@@ -1,0 +1,33 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/components/blogDetail.css');
+</isscript>
+<div class="blog-detail-page">
+    <isset name="isBlogOnline" value="${(pdict.isOnline != null)}" scope="page" />
+    <isif condition="${isBlogOnline}">
+        <div class="container">
+            <div class="col-12 banner mb-3 mt-3">
+                <picture class="blog-detail-page__hero-figure">
+                    <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px) and (max-width: 1023px)" />
+                    <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)" />
+                    <img class="blog-detail-page__hero-image img-fluid"
+                        src="${pdict.tileImage.src.mobile}" title="${pdict.titleImage}" alt="${pdict.titleImage}" />
+                </picture>
+            </div>
+            <div class="col-12 blog-detail-page__details">
+                <div class="blog-detail-page__title mb-2"
+                    style="${pdict.textColor ? 'color:' + pdict.textColor + ';' : ''}" >
+                    <isprint value="${pdict.title}" encoding="off" />
+                </div>
+                <p class="blog-detail-page__read-time">
+                    <isprint value="${pdict.readTime ? pdict.readTime : ''}" encoding="off" />
+                    <isprint value="${pdict.readTime ? '|' : ''}" encoding="off" />
+                    <isprint value="${pdict.creationDate ? pdict.creationDate : ''}" encoding="off" />
+                </p>
+                <div class="blog-detail-page__content">
+                    <isprint value="${pdict.description}" encoding="off" />
+                </div>
+            </div>
+        </div>
+    </isif>
+</div>

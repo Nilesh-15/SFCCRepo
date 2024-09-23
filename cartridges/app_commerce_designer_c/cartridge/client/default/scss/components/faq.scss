@@ -1,0 +1,25 @@
+@import "../variables";
+@import "../functions/pxToRem";
+
+.faqs {
+    &__title-wrap {
+        margin-bottom: pxToRem(20px);
+    }
+    &__ques {
+            text-decoration: none;
+        &.collapsed {
+            text-decoration: underline;
+        }
+    }
+    &__section-regions {
+        border-radius: pxToRem(12px);
+        border: pxToRem(1px) solid var(--COLOR-WHITE);
+        background: var(--COLOR-WHITE);
+        box-shadow: pxToRem(2px) pxToRem(2px) pxToRem(8px) 0 rgba(0 0 0 / 12%);
+        padding: pxToRem(15px) pxToRem(20px);
+        margin-bottom: pxToRem(30px);
+    }
+    &__ques_ans_section {
+        margin: pxToRem(15px) 0;
+    }
+}

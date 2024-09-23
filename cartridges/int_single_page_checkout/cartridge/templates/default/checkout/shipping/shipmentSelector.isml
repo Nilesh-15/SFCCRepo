@@ -1,0 +1,48 @@
+<div class="form-group">
+    <label class="form-control-label" for="shipmentSelector-${lineItem ? lineItem.UUID : 'default'}">
+        ${Resource.msg('heading.ship.to.address', 'checkout', null)}
+    </label>
+
+    <div>
+        <isif condition="${pdict.customer.addresses && pdict.customer.addresses.length > 0}">
+            <div>
+                <input name="shipmentSelector" type="radio" class="form-check-input addressSelector d-none" value="new"
+                    data-first-name="" data-last-name="" data-address1="" data-address2="" data-city=""
+                    data-state-code="" data-country-code="" data-postal-code="" data-phone="">
+            </div>
+            <isloop items="${pdict.customer.addresses}" var="address" status="savedAddress">
+                <div class="row border-custom ${savedAddress.last ? 'last-address' : ''}">
+                    <div class="col-9">
+                        <div class="form-check">
+                            <input id="${address.ID}" name="shipmentSelector" type="radio"
+                                class="form-check-input addressSelector" value="${'ab_' + address.ID}"
+                                ${address.ID == shippingModel.matchingAddressId ? 'checked' : ''}
+                                data-first-name="${address.firstName || ''}" data-last-name="${address.lastName || ''}"
+                                data-address1="${address.address1 || ''}" data-address2="${address.address2 || ''}"
+                                data-city="${address.city || ''}" data-state-code="${address.stateCode || ''}"
+                                data-country-code="${address.countryCode.value || ''}"
+                                data-postal-code="${address.postalCode || ''}" data-phone="${address.phone || ''}"
+                                data-is-gift="${''}" data-gift-message="${''}" />
+                            <label class="form-check-label same-as-shipping-label" for="${address.ID}">
+                                <b class="address-id"> ${address.ID || ''} </b>
+                                <b class="address-name">  ${address.firstName || ''} ${address.lastName || ''}</b> <br/>
+                                <span class="display-name">
+                                    ${address.address1 || ''} ${address.address2 || ''} <br />
+                                    ${address.city || ''} ${address.stateCode || ''} ${address.postalCode || ''}
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <button class="text-center btn-show-details button-like-link" type="button" ${address.ID == shippingModel.matchingAddressId ? '' : 'disabled'}>${Resource.msg('action.update.address', 'checkout', null)}</button>
+                    </div>
+                </div>
+            </isloop>
+        </isif>
+    </div>
+
+    <div class="invalid-feedback"></div>
+    <div class="row">
+        <button class="text-center btn-add-new button-like-link" type="button">${Resource.msg('action.add.new.address', 'checkout', null)}</button>
+    </div>
+</div>

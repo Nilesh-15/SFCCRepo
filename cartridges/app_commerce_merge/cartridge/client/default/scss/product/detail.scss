@@ -1,0 +1,17 @@
+@charset "UTF-8";
+@import "~base/variables";
+@import "~base/product/detail";
+@import "../skin/skinVariables";
+
+.product-detail .variation-grid{
+    .variation-button{
+        background-color: var(--COLOR-WHITE);
+        border-color: var(--WISDOM-PURPLE);
+    }
+
+    .variation-button.selected{
+        background-color: var(--WISDOM-PURPLE) !important;
+        border-color: var(--WISDOM-PURPLE);
+        color: var(--COLOR-WHITE) !important;
+    }
+}

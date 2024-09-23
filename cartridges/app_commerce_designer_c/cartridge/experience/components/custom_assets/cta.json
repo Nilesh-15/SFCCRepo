@@ -1,0 +1,133 @@
+{
+    "name": "CTA",
+    "description": "Call to action component that designed to be included into other complex components where could be several CTAs",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerOnline",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleOnline",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content Online/Offline",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "isOnline",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerContent",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleContent",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content",
+                                "subtitle" : "SM / MD / LG",
+                                "icon" : "all devices"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "content",
+            "name": "Content",
+            "attribute_definitions": [
+                {
+                    "id": "label",
+                    "name": "Label",
+                    "description": "Button Label",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "ariaLabel",
+                    "name": "Label for screen readers (only in case if regular label not descriptive)",
+                    "description": "More detailed label that put more context for users with disabilities",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "url",
+                    "name": "URL",
+                    "description": "Target URL (in case of external link it should starts with https://, http://)",
+                    "type": "url",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerPresentation",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titlePresentation",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Presentation",
+                                "subtitle" : "SM / MD / LG",
+                                "icon" : "all devices"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "presentation",
+            "name": "Presentation",
+            "attribute_definitions": [
+                {
+                    "id": "type",
+                    "name": "Type",
+                    "description": "Visual presentation of the CTA",
+                    "type": "custom",
+                    "required": false,
+                    "editor_definition": {
+                        "type": "bp.optionList",
+                        "configuration": {
+                            "options": {
+                                "config": [
+                                    "Solid",
+                                    "Outline",
+                                    "As link"
+                                ],
+                                "default": "Solid"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

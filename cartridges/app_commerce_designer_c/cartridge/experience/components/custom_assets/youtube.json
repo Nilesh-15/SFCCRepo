@@ -1,0 +1,65 @@
+{
+    "name": "YouTube Video",
+    "description": "YouTube Embedded Video",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerOnline",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleOnline",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content Online/Offline",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "isOnline",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+          "id": "dividerid",
+          "name": "",
+          "attribute_definitions": [
+              {
+                  "id": "youtubeIdSection",
+                  "name": " ",
+                  "required": false,
+                  "type": "custom",
+                  "editor_definition": {
+                      "type": "bp.heading",
+                      "configuration": {
+                          "options": {
+                              "title": "Youtube Video Component",
+                              "subtitle": " ",
+                              "icon": "all devices"
+                          }
+                      }
+                  }
+              },
+              {
+                  "id": "videoId",
+                  "name": "Enter ID Below In Text Area",
+                  "description": "Enter here youtube video ID retirved by url eg:-bhSk_s99HvM",
+                  "type": "string",
+                  "required": true
+              }
+          ]
+        }
+    ],
+    "region_definitions": []
+}

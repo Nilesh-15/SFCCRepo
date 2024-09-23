@@ -1,0 +1,47 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJs('/js/productDetail.js');
+    assets.addCss('/css/product/detail.css');
+</isscript>
+
+<iscomment>
+    It is necessary to set both "set" and "product" to pdict.product here as the downstream.
+</iscomment>
+
+<isset name="product" value="${pdict.product}" scope="page" />
+<isset name="productCopy" value="${pdict.product}" scope="page" />
+<isset name="isBundle" value="${false}" scope="page" />
+<isset name="isProductSet" value="${true}" scope="page" />
+<isset name="isQuickView" value="${false}" scope="page" />
+<isobject object="${product.raw}" view="detail" />
+
+<div class="container product-detail product-set-detail product-wrapper" data-pid="${product.id}">
+    <div class="row">
+        <div class="col-12">
+            <!---Breadcrumbs--->
+            <div class="product-breadcrumb col">
+                <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+            </div>
+
+            <!-- Product Name -->
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <h2>${Resource.msg('label.set.contains', 'product', null)}</h2>
+                    <h4 class="product-name">${product.productName} - ${product.price.sales.formatted}</h4>
+                </div>
+                <div class="col-12 col-sm-6 bundle-footer">
+                    <!-- Quantity -->
+                    <div class="col-12 prices-add-to-cart-actions">
+                        <isset name="product" value="${productCopy}" scope="page" />
+                        <iscomment> <!-- Prices -->
+                        <isinclude template="product/components/pricing/setPrice" /> </iscomment>                     
+                        <!-- Cart and [Optionally] Apple Pay -->
+                        <isinclude template="product/components/addToCartGlobal" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <isinclude template="product/components/setItems" />
+</div>
+</isobject>

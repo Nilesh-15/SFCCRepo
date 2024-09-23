@@ -1,0 +1,38 @@
+<tr>
+    <td class="billing-summary-label">
+        ${Resource.msg('table.label.name', 'confirmation', null)}
+    </td>
+    <td class="billing-summary-value">
+        <span class="firstName">
+            <isif condition="${address && address.firstName}">${address.firstName}</isif>
+        </span>
+        <span class="lastName">
+            <isif condition="${address && address.lastName}">${address.lastName}</isif>
+        </span>
+    </td>
+</tr>
+
+<tr>
+    <td class="billing-summary-label">
+        ${Resource.msg('table.label.address', 'confirmation', null)}
+    </td>
+    <td class="billing-summary-value">
+        <div class="address1">
+            <isif condition="${address && address.address1}">${address.address1}</isif>
+        </div>
+
+        <div class="address2">
+            <isif condition="${address && address.address2}">${address.address2}</isif>
+        </div>
+
+        <span class="city">
+            <isif condition="${address && address.city}">${address.city},</isif>
+        </span>
+        <span class="stateCode">
+            <isif condition="${address && address.stateCode}">${address.stateCode}</isif>
+        </span>
+        <span class="postalCode">
+            <isif condition="${address && address.postalCode}">${address.postalCode}</isif>
+        </span>
+    </td>
+</tr>

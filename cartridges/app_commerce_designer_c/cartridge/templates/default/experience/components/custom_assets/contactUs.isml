@@ -1,0 +1,86 @@
+<div class="container contactUs__container">
+    <div class="row">
+        <div class="col-12 col-md-6 form-div">
+            <div class="contactUs__form-section">
+                <div class="contactUs__main-heading">
+                    <h2>
+                        <isprint value="${pdict.contactFormHeading ? pdict.contactFormHeading : null}" encoding="off" />
+                    </h2>
+                    <p>${Resource.msg('msg.we.will.call.back', 'pageDesigner', null)}</p>
+                </div>
+                <form action="" class="pdcontactUs__us form-group" name="pdcontactUs__us">
+                    <div class="contactUs__form input-group">
+                        <input type="text" class="customer__Phone form-control" name="customer__Phone" value=""
+                            placeholder="${Resource.msg('form.number.placeholder', 'pageDesigner', null)}"
+                            aria-label="${Resource.msg('form.number.placeholder', 'pageDesigner', null)}" />
+                        <button type="button" class="book__call btn btn-primary" name="book__call">
+                            ${Resource.msg('contactus.phone.button', 'pageDesigner', null)}
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="contactUs__information-container">
+                <div class="col-5 contactUs__phone-section">
+                    <h4 class="contactUs__phone-heading">
+                        <isprint value="${pdict.phoneHeading ? pdict.phoneHeading : null}" encoding="off" />
+                    </h4>
+                    <div class="contactUs__phone-container">
+                        <isprint value="${pdict.enterPhone ? pdict.enterPhone : null}" encoding="off" />
+                    </div>
+                </div>
+                <div class="col-7 contactUs__address-section">
+                    <h4 class="contactUs__address-heading">
+                        <isprint value="${pdict.address ? pdict.address : null}" encoding="off" />
+                    </h4>
+                    <div class="contactUs__address-container">
+                        <isprint value="${pdict.enterAddress ? pdict.enterAddress : null}" encoding="off" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 img-div">
+            <picture class="contactUs__img-cover">
+                <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)" />
+                <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)" />
+                <img class="img-fluid" src="${pdict.image.src.mobile}"
+                    style="width:100%; --focal-point-x:${pdict.image.focalPointX}; --focal-point-y:${pdict.image.focalPointY}"
+                    alt="${pdict.alt ? pdict.alt : ''}" title="${pdict.alt ? pdict.alt : ''}" />
+            </picture>
+            <div class="contactUs__social-msg-section">
+                <p>${Resource.msg('title.follow.us', 'pageDesigner', null)}</p>
+                <ul class="contactUs__social">
+                    <li class="menu__social-links">
+                        <a class="socialIcons" aria-label="instagram" href="https://www.instagram.com/demandware"
+                            target="_blank">
+                            <i class="icon-social instagram"></i>
+                        </a>
+                    </li>
+                    <li class="menu__social-links">
+                        <a class="socialIcons" aria-label="pinterest" href="https://www.pinterest.com/demandware0103/"
+                            target="_blank">
+                            <i class="icon-social pinterest"></i>
+                        </a>
+                    </li>
+                    <li class="menu__social-links">
+                        <a class="socialIcons" aria-label="facebook" href="https://www.facebook.com/demandware"
+                            target="_blank">
+                            <i class="icon-social facebook"></i>
+                        </a>
+                    </li>
+                    <li class="menu__social-links">
+                        <a class="socialIcons" aria-label="twitter" href="https://twitter.com/demandware"
+                            target="_blank">
+                            <i class="icon-social twitter"></i>
+                        </a>
+                    </li>
+                    <li class="menu__social-links">
+                        <a class="socialIcons" aria-label="telegram" href="https://twitter.com/demandware"
+                            target="_blank">
+                            <i class="icon-social telegram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

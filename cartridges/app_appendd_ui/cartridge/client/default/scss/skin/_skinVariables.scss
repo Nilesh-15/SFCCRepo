@@ -1,0 +1,33 @@
+@import "../variables";
+
+:root {
+
+    --COLOR-GREY1: #{$grey1};
+    --COLOR-GREY2: #{$grey2};
+    --COLOR-GREY3: #{$grey3};
+    --COLOR-GREY4: #{$grey4};
+    --COLOR-GREY5: #{$grey5};
+    --COLOR-GREY6: #{$grey6};
+    --COLOR-GREY7: #{$grey7};
+    --COLOR-GREY8: #{$grey8};
+    --COLOR-BLACK: #{$black};
+    --COLOR-WHITE: #{$white};
+    --COLOR-GREY-BORDER: #D2D2D7;
+    --TROLLEY-GREY: #808080;
+    --TUB-GREY: #F9F9F9;
+    --TITANLUX: #484848;
+    --ALCRO-ANIS-GREY: #484848;
+    --FLORAL-BLUE: #030712;
+    --CORAL-RED: #FF4646;
+    --PIGMENT-GREEN: #16A34A;
+    --LEAF-ORANGE: #FCA120;
+    --TITAMIUM: #F0F0F0;
+    --TONY-GREY: #9CA3AF;
+    --COLOR-D0D0D0: #D0D0D0;
+
+    
+    /*Font Family*/
+    --POPPINS-REGULAR: "PoppinsRegular", sans-serif;
+    --POPPINS-BOLD: "PoppinsBold", sans-serif;   
+    --POPPINS-MEDIUM: "PoppinsMedium", sans-serif;
+}

@@ -1,0 +1,153 @@
+@import "./orders";
+@import "./orderDetail";
+
+.account {
+    
+    &__profile-section {
+        @include media-breakpoint-down(sm) {
+            padding: 0 15px;
+        }
+
+        .card-body {
+            padding: pxToRem(25px) 0;
+
+            @include media-breakpoint-up(md) {
+                display: flex;
+            }
+        }
+    }
+
+    &__profile-data,
+    &__profile-img-section {
+        @include media-breakpoint-down(sm) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__profile-img {
+        height: pxToRem(86px);
+        width: pxToRem(86px);
+        background: var(--COLOR-GREY3);
+        display: block;
+        border-radius: pxToRem(110px);
+        margin-bottom: pxToRem(33px);
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+            height: pxToRem(200px);
+            width: pxToRem(200px);
+        }
+
+        .update-profile-img {
+            content: " ";
+            background-image: url("../../images/all-icon-fragment.svg#icon-edit-profile-img");
+            background-repeat: no-repeat;
+            display: block;
+            width: pxToRem(42px);
+            height: pxToRem(42px);
+            position: absolute;
+            right: pxToRem(-11px);
+            bottom: 0;
+            transform: scale(0.7);
+
+            @include media-breakpoint-up(md) {
+                right: pxToRem(9px);
+                bottom: pxToRem(13px);
+                transform: scale(1);
+            }
+        }
+    }
+
+    &__profile-data {
+        dl {
+            border: pxToRem(1px) solid var(--COLOR-GREY-BORDER);
+            border-radius: pxToRem(5px);
+            padding: pxToRem(3px) pxToRem(10px);
+        }
+
+        dt {
+            font-size: pxToRem(14px);
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(16px);
+            }
+        }
+
+        dd {
+            font-size: pxToRem(18px);
+            margin-bottom: 0;
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(20px);
+            }
+        }
+    }
+
+    &__edit-section {
+        padding: 0;
+        margin-top: pxToRem(35px);
+
+        @include media-breakpoint-up(md) {
+            display: contents;
+        }
+        .edit-btn {
+            padding: pxToRem(10px) pxToRem(19px);
+
+            @include media-breakpoint-up(md) {
+                text-align: center;
+                max-width: pxToRem(230px);
+                padding: pxToRem(5px);
+                align-self: end;
+                width: 100%;
+            }
+        }
+    }
+
+    &__edit-container {
+        .cancel-edit {
+            padding-left: 0;
+        }
+
+        .submit-edit-details {
+            padding-right: 0;
+        }
+
+        .submit-edit-details button,
+        .cancel-edit a {
+            padding: 10px;
+        }
+    }
+
+    &__profile-edit-section {
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: pxToRem(50px);
+
+        input.form-control {
+            border-radius: pxToRem(5px);
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: pxToRem(120px);
+        }
+    }
+
+    &__back-to-account {
+        display: none;
+
+        @include media-breakpoint-down(sm) {
+            text-align: center;
+            display: block;
+        }
+
+        a {
+            color: var(--COLOR-BLACK) !important;
+            padding-left: pxToRem(8px);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

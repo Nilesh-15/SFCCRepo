@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+.heading_pd {
+    position: relative;
+    min-height: 55px;
+}
+.heading_pd.m-border_show {
+    border-top: 4px solid #2F80ED;
+}
+.m-border_hidden .heading_pd-content {
+    margin-top: 0;
+}
+.heading_pd-title {
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 12px;
+}
+.heading_pd-subtitle {
+    text-transform: uppercase;
+    color: #757575;
+    padding-top: 8px;
+}
+.heading_pd-icon {
+    position: absolute;
+    top: 11px;
+    right: 5px;
+}
+.heading_pd-content {
+    margin-top: 5px;
+}
+.heading_pd-notification {
+    margin-top: 25px;
+    background-color: #F5F5F5;
+    padding: 20px;
+}
+.heading_pd-notification_title {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.heading_pd-notification_text {
+    line-height: 18px;
+}
+
+/*Warning type notification*/
+.heading_pd.m-warning .heading_pd-notification {
+    position: relative;
+    background-color: #FEF3E3;
+    padding-left: 60px;
+}
+.heading_pd.m-warning .heading_pd-notification::before {
+    content: '';
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url("../../../images/warning-sign.svg");
+}

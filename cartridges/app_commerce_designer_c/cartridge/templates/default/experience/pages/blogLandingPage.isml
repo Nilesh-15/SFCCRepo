@@ -1,0 +1,26 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+<isdecorate template="common/layout/pdStorePage">
+
+    <div class="main_blogLandingPage" id="${pdict.page.ID}">
+        <isif condition="${pdict.regions.blogHeader}">
+            <isprint value="${pdict.regions.blogHeader.render()}" encoding="off" />
+        </isif>
+        <div class="blogpage">
+            <div class="container">
+                <div class="row main-section">
+                    <h1 class="col-12 blog-landing-title text-center mt-3 mb-3">${Resource.msg('blog.landing.title', 'pageDesigner', null)}</h1>
+                    <isif condition="${pdict.notFound}">
+                        <p class="text-center">${pdict.notFound}</p>
+                    <iselse/>
+
+                    </isif>
+                    <isloop items="${pdict.blogContent}" var="pdict">
+                        <isinclude template="experience/components/custom_assets/blogTile" />
+                    </isloop>
+                    <isprint value="${pdict.regions.blogMainSection.setClassName(" bottom-section").render()}"
+                        encoding="off" />
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

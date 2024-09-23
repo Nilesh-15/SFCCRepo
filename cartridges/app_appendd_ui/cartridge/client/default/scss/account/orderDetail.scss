@@ -1,0 +1,31 @@
+@import "../skin/skinVariables";
+@import "../functions/pxToRem";
+@import "../checkout/checkout";
+
+.account {
+    &__order-detail-container {
+        margin-bottom: pxToRem(120px);
+
+        h1.page-title {
+            color: var(--COLOR-BLACK);
+            background-color: var(--COLOR-WHITE);
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .my-account {
+            margin-top: pxToRem(30px);
+
+            a {
+                color: var(--COLOR-WHITE) !important;
+
+                &:focus,
+                &:hover {
+                    color: var(--COLOR-BLACK) !important;
+                }
+            }
+        }
+    }
+}

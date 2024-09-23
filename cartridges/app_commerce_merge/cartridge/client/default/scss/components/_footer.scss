@@ -1,0 +1,31 @@
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "../skin/skinVariables";
+@import "../functions/pxToRem";
+
+#footercontent {
+    background: linear-gradient(180deg, var(--DEEP-BLUE), var(--MIST-VOILET));
+    color: var(--COLOR-WHITE);
+    h2,
+    button {
+        color: var(--COLOR-YELLOW);
+        font-family: var(--UBUNTU-MEDIUM);
+        font-weight: 400;
+    }
+    a {
+        color: var(--COLOR-WHITE);
+    }
+    p {
+        font-size: pxToRem(14px);
+    }
+    .social-links {
+        display: flex;
+        li {
+            margin: 0 pxToRem(5px) 0 0;
+            text-align: left;
+        }
+        img {
+            max-width: pxToRem(42px);
+        }
+    }
+}

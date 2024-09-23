@@ -1,0 +1,5 @@
+<a class="btn btn-outline-primary viewDetail-link" href="${pdict.productUrl}"
+    title="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
+    aria-label="${Resource.msgf('button.quickview', 'common', null, product.productName)}">
+    ${Resource.msg('label.button.label', 'productTile', 'View Detail')}
+</a>

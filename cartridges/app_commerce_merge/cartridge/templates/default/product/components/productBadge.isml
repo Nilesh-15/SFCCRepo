@@ -1,0 +1,6 @@
+<isset name="badge" value="${product.badge}" scope="page" />
+<isif condition="${badge !== null}">
+    <span class="product-badge ${badge.value} ${badge.displayValue ? '' : 'd-none'}">
+        ${badge.displayValue}
+    </span>
+</isif>

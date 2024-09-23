@@ -1,0 +1,248 @@
+{
+    "name": "Slick Carousel",
+    "group": "custom_layouts",
+    "attribute_definition_groups": [
+        {
+            "id": "carouselContainerClass",
+            "attribute_definitions": [
+                {
+                    "id": "isOnline",
+                    "name": "Online",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "containerClass",
+                    "name": "Carousel Container Class",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "textHeadline",
+                    "name": "Carousel Title",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "subTextHeadline",
+                    "name": "Carousel Sub Title",
+                    "type": "markup",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "carouselAutoPlay",
+            "attribute_definitions": [
+                {
+                    "id": "carouselAutoPlayValue",
+                    "name": "Carousel Auto Play",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "carouselInfinitePlay",
+            "attribute_definitions": [
+                {
+                    "id": "carouselInfinitePlayValue",
+                    "name": "Carousel Infinite Play",
+                    "description": "Configuration to rotate slider one by one in a loop",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "carouselIndicators",
+            "attribute_definitions": [
+                {
+                    "id": "carouselIndicatorsAlignment",
+                    "name": "Carousel Dot-Indicators Alignment",
+                    "type": "enum",
+                    "values": ["Left", "Center", "Right"],
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "extraSmallConfiguration",
+            "name": "Phone configurations",
+            "description": "Configuration for how the carousel will display on phones. Please put like sized items in the carousel",
+            "attribute_definitions": [
+                {
+                    "id": "xsCarouselIndicators",
+                    "name": "Display carousel indicators on phones",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "xsCarouselControls",
+                    "name": "Display carousel controls on phones",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "xsCarouselSlidesToDisplay",
+                    "name": "Number of slides to display on phones",
+                    "type": "enum",
+                    "values": [1, 2, 3, 4, 5, 6],
+                    "required": true
+                },
+                {
+                    "id": "xsCarouselSlidesToScroll",
+                    "name": "Number of slides to scroll on phones",
+                    "type": "enum",
+                    "values": [1, 2, 3, 4, 5, 6],
+                    "required": true
+                },
+                {
+                    "id": "xsCarouselCenterModeValue",
+                    "name": "Carousel Half Slide on Mobile View",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "smallConfiguration",
+            "name": "Tablet configurations",
+            "description": "Configuration for how the carousel will display on tablets. Please put like sized items in the carousel",
+            "attribute_definitions": [
+                {
+                    "id": "smCarouselIndicators",
+                    "name": "Display carousel indicators on tablets",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "smCarouselControls",
+                    "name": "Display carousel controls on tablets",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "smCarouselSlidesToDisplay",
+                    "name": "Number of slides to display on tablets",
+                    "type": "enum",
+                    "values": [1, 2, 3, 4, 5, 6],
+                    "required": true
+                },
+                {
+                    "id": "smCarouselSlidesToScroll",
+                    "name": "Number of slides to scroll on tablets",
+                    "type": "enum",
+                    "values": [1, 2, 3, 4, 5, 6],
+                    "required": true
+                },
+                {
+                    "id": "smCarouselCenterModeValue",
+                    "name": "Carousel Half Slide on tablet View",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "mediumConfiguration",
+            "name": "Desktop configurations",
+            "description": "Configuration for how the carousel will display on desktop. Please put like sized items in the carousel",
+            "attribute_definitions": [
+                {
+                    "id": "mdCarouselIndicators",
+                    "name": "Display carousel indicators on desktop",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "mdCarouselControls",
+                    "name": "Display carousel controls on desktop",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "mdCarouselSlidesToDisplay",
+                    "name": "Number of slides to display on desktop",
+                    "type": "enum",
+                    "values": [1, 2, 3, 4, 5, 6],
+                    "required": true
+                },
+                {
+                    "id": "mdCarouselSlidesToScroll",
+                    "name": "Number of slides to scroll on desktop",
+                    "type": "enum",
+                    "values": [1, 2, 3, 4, 5, 6],
+                    "required": true
+                },
+                {
+                    "id": "mdCarouselCenterModeValue",
+                    "name": "Carousel Half Slide on Desktop View",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "slides",
+            "name": "Slides",
+            "component_type_exclusions": [
+                {
+                    "type_id": "commerce_layouts.slickCarousel"
+                },
+                {
+                    "type_id": "commerce_layouts.mobileGrid1r1c"
+                },
+                {
+                    "type_id": "commerce_layouts.mobileGrid2r1c"
+                },
+                {
+                    "type_id": "commerce_layouts.mobileGrid2r2c"
+                },
+                {
+                    "type_id": "commerce_layouts.mobileGrid2r3c"
+                },
+                {
+                    "type_id": "commerce_layouts.mobileGrid3r1c"
+                },
+                {
+                    "type_id": "commerce_layouts.mobileGrid3r2c"
+                },
+                {
+                    "type_id": "commerce_layouts.popularCategories"
+                },
+                {
+                    "type_id": "commerce_layouts.katesStoryContainer"
+                },
+                {
+                    "type_id": "commerce_layouts.carousel"
+                },
+                {
+                    "type_id": "commerce_assets.mobileGrid4r1c"
+                },
+                {
+                    "type_id": "einstein.einsteinCarousel"
+                },
+                {
+                    "type_id": "einstein.einsteinMockCarousel"
+                },
+                {
+                    "type_id": "einstein.einsteinCarouselCategory"
+                },
+                {
+                    "type_id": "einstein.einsteinCarouselProduct"
+                },
+                {
+                    "type_id": "commerce_layouts.mobileGridLookBook"
+                }
+            ]
+        }
+    ]
+}

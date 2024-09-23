@@ -1,0 +1,64 @@
+{
+    "name": "Blog Tile",
+    "description": "Blog Tile",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerContent",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleContent",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content Online/Offline",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "isOnline",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerblog",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "blogTile",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Blog Tile Content",
+                                "subtitle": "Search Id Below ",
+                                "icon": "slider"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "page",
+                    "name": "Enter Here",
+                    "type": "page",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

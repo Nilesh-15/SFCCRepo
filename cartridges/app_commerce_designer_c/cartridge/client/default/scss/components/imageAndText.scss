@@ -1,0 +1,54 @@
+@import "../variables";
+@import "../functions/pxToRem";
+
+.image-text-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.brand-img,
+.image-text-side {
+    &.col-6 {
+        padding: 0;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .lg-left {
+        .brand-img {
+            float: left;
+        }
+        .image-text-side {
+            float: right;
+        }
+    }
+
+    .lg-right {
+        .brand-img {
+            float: right;
+        }
+        .image-text-side {
+            float: left;
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .sm-left {
+        .brand-img {
+            float: left;
+        }
+        .image-text-side {
+            float: right;
+        }
+    }
+
+    .sm-right {
+        .brand-img {
+            float: right;
+        }
+        .image-text-side {
+            float: left;
+        }
+    }
+}

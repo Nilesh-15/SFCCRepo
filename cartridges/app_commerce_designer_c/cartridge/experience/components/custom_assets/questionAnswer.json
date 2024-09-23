@@ -1,0 +1,66 @@
+{
+    "name": "FAQ Question & Answer",
+    "description": "This component we will use for FAQ",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerQuestion",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "question",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Question",
+                                "subtitle": " ",
+                                "icon": "question"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "faqQuestion",
+                    "name": "Enter Below",
+                    "description": "Enter your question",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerAnswer",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "answer",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Answer",
+                                "subtitle": " ",
+                                "icon": "answer"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "faqAnswer",
+                    "name": "Enter Below",
+                    "description": "Enter your answer",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

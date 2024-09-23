@@ -1,0 +1,31 @@
+
+
+(Integration Documentation)
+#######################Razorpay Integration####################################
+1. Prerequisites
+- Create Razorpay account  at  https://razorpay.com/
+- Go to dashboard of Razorpay ("https://dashboard.razorpay.com/app/dashboard") and then select "Test Mode" .
+- Go To Settings-> API Keys-> (then hit there to generate API "id" and "secret key").
+
+2. Create Service at BM
+-Create service as "razorpay.service.new"
+-Also set profile data and credentials data in BM. At credentials tab use URL:https://api.razorpay.com/v1/orders   and also set secret key ,id at with your secret key ,id
+-Set service with there "profile" and "credentials".
+
+
+3.Create configuration/site preferences for following data
+-razorId
+-razorKey
+-razorpayApikey
+-razorEnable
+-razorPayStoreName
+
+
+5. Create "Processor" and "Payment method" at BM as "razorPay_Processor", "RAZORPAY" respectively
+
+6.Use integration cartridge
+-Use "int_razorpay" cartride in use code
+-Also set cartridge path at BM site setting. Then hit the site.
+
+
+

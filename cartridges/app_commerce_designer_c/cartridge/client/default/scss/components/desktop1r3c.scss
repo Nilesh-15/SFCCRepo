@@ -1,0 +1,17 @@
+@import "../variables";
+@import "../functions/pxToRem";
+
+.layout__custom-1r3c {
+
+    .region {
+        margin-bottom: 0;
+        
+        &::before {
+            display: none;
+        }
+
+        @include media-breakpoint-up(md) {
+            display: flex;
+        }
+    }    
+}

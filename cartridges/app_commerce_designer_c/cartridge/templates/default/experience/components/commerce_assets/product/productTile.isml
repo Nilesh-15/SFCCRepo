@@ -1,0 +1,65 @@
+<isset name="product" value="${pdict.product}" scope="page" />
+
+<div class="product-tile-pd">
+    <div class="row">
+        <div class="col-12">
+            <figure class="product-tile-component-figure product_centered-text product-tile-figure">
+                <isinclude template="product/components/productBadge" />
+                <picture>
+                    <div class="product-tile-image">
+                        <a class="product-tile-image-link" href="${pdict.urls.product}">
+                            <img class="product-tile-component-image"
+                                 src="${product.images.medium[0].url}"
+                                 alt="${product.productName}"
+                                 title="${product.images.medium[0].title}"
+                            />
+                        </a>
+
+                        <a class="wishlistTile wishlist-tile-plp" href="${URLUtils.url('Wishlist-AddProduct')}" data-pid="${product.id}" title="${Resource.msg('wishlist.addto.wishlist.heart', 'wishlist', null)}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+                                <i class="fa fa-heart-o fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a class="wishlistTile remove-from-wishlist d-none" href="${URLUtils.url('Wishlist-RemoveProduct','pid', product.id)}" data-pid="${product.id}" title="${Resource.msg('wishlist.addto.wishlist.heart', 'wishlist', null)}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+                                <i class="fa fa-heart fa-stack-1x"></i>
+                            </span>
+                        </a>
+
+                        <a id="quickShopButton" class="quick-shop btn btn-space"
+                           title="${Resource.msgf('button.assistive.text.quickShop', 'productTile', null, product.productName)}"
+                           aria-label="${Resource.msgf('button.assistive.text.quickShop', 'productTile', null, product.productName)}"
+                           href="#"
+                        >
+                           ${Resource.msg('button.name.quickShop', 'productTile', null)}
+                        </a>
+                    </div>
+                </picture>
+
+                <figcaption>
+                    <div class="product-tile-body">
+                        <div class="product-name-link">
+                            <a href="${pdict.urls.product}">${product.productName}</a>
+                        </div>
+
+                        <isset name="price" value="${product.price}" scope="page" />
+                        <isinclude template="experience/components/commerce_assets/product/pricing/main" />
+
+                        <isif condition="${pdict.display && pdict.display.ratings !== false}">
+                            <isinclude template="experience/components/commerce_assets/product/productTileRatings" />
+                        </isif>
+
+                        <isif condition="${pdict.display && pdict.display.swatches !== false &&
+                               product.variationAttributes && product.variationAttributes.length > 0 &&
+                               product.variationAttributes[0].values && product.variationAttributes[0].values.length > 1}">
+                            <isinclude template="experience/components/commerce_assets/product/productTileSwatch" />
+                        </isif>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+

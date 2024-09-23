@@ -1,0 +1,166 @@
+@import "skinVariables";
+@import "../functions/pxToRem";
+
+body,
+html {
+    font-size: pxToRem(16px);
+    font-family: var(--POPPINS-REGULAR);
+    background-color: var(--COLOR-WHITE);
+    color: var(--COLOR-BLACK);
+}
+
+h1,
+h2,
+h3,
+h4,
+h6 {
+    font-family: var(--POPPINS-REGULAR);
+    font-weight: 600;
+    color: var(--COLOR-BLACK);
+}
+
+a {
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+//Button css global start here
+.btn-primary {
+    background-color: var(--COLOR-BLACK);
+    color: var(--COLOR-WHITE);
+    padding: pxToRem(16px) pxToRem(24px) pxToRem(14px) pxToRem(24px);
+    font-size: pxToRem(16px);
+    font-weight: 500;
+    transition: all ease-in-out 0.2s;
+    border-radius: 0;
+    border: pxToRem(1px) solid var(--COLOR-BLACK);
+    text-decoration: none;
+
+    @include media-breakpoint-up(md) {
+        font-size: pxToRem(14px);
+    }
+
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus {
+        background-color: var(--COLOR-WHITE) !important;
+        color: var(--COLOR-BLACK) !important;
+        text-decoration: none;
+        border: pxToRem(1px) solid var(--COLOR-BLACK);
+        box-shadow: none;
+    }
+}
+
+.btn-outline-primary {
+    font-size: pxToRem(16px);
+    border: pxToRem(1px) solid var(--COLOR-BLACK);
+    background-color: transparent;
+    color: var(--COLOR-BLACK);
+    padding: pxToRem(16px) pxToRem(24px) pxToRem(14px) pxToRem(24px);
+    position: relative;
+    border-radius: 0;
+    transition: all ease-in-out 0.3s;
+    @include media-breakpoint-up(md) {
+        font-size: pxToRem(14px);
+    }
+
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus {
+        background: var(--COLOR-BLACK);
+        color: var(--COLOR-WHITE);
+        border: pxToRem(1px) solid var(--COLOR-BLACK);
+        box-shadow: none;
+    }
+}
+.btn-primary.disabled,
+.btn-primary:disabled,
+.btn-secondary.disabled,
+.btn-secondary:disabled,
+.btn-outline-primary:disabled,
+.btn-outline-primary.disabled {
+    background: var(--COLOR-GREY2);
+    border-color: var(--COLOR-GREY2);
+    color: var(--COLOR-WHITE);
+    opacity: 0.5;
+}
+
+.btn-secondary {
+    background: var(--COLOR-BLACK);
+    color: var(--COLOR-WHITE) !important;
+    padding: pxToRem(16px) pxToRem(24px) pxToRem(14px) pxToRem(24px);
+    font-size: pxToRem(16px);
+    font-weight: 500;
+    transition: all ease-in-out 0.2s;
+    border-radius: 0;
+    border: pxToRem(1px) solid var(--COLOR-BLACK);
+
+    @include media-breakpoint-up(md) {
+        font-size: pxToRem(14px);
+    }
+
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus {
+        background: var(--COLOR-WHITE);
+        color: var(--COLOR-BLACK);
+        border: pxToRem(1px) solid var(--COLOR-BLACK);
+        box-shadow: none;
+        text-decoration: none;
+    }
+}
+//Button css global end here
+
+//form css
+input.form-control {
+    border: pxToRem(1px) solid var(--COLOR-GREY-BORDER);
+    border-radius: 0;
+    background-color: var(--COLOR-WHITE);
+    height: pxToRem(56px);
+    color: var(--COLOR-BLACK);
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input {
+    accent-color: var(--COLOR-BLACK);
+}
+
+.form-control:focus,
+.form-control:active {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: pxToRem(1px) solid var(--COLOR-GREY-BORDER);
+    color: var(--COLOR-BLACK);
+}
+//end
+
+//Custom select field
+.custom-select {
+    position: relative;
+    border: pxToRem(1px) solid var(--COLOR-GREY-BORDER);
+    background-image: url("../../images/all-icon-fragment.svg#icon-chevron-down");
+    background-repeat: no-repeat;
+    background-size: pxToRem(14px);
+    background-position: 94% pxToRem(22px);
+    border-radius: 0;
+    appearance: none;
+    
+    &:focus {
+        box-shadow: none;
+    }
+}

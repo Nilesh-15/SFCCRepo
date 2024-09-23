@@ -1,0 +1,19 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+<div class="row">
+    <div class="modal fade login__otp-modal" data-keyboard="false" data-backdrop="static" id="loginModal" tabindex="-1"
+        role="dialog" aria-labelledby="requestPasswordlessLoginModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img class="btn-modal-close pull-right" data-dismiss="modal" aria-label="Close"
+                        src="${URLUtils.staticURL('/images/Dismiss.svg')}" alt="" />
+                </div>
+                <div class="modal-body col-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

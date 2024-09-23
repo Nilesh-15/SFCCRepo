@@ -1,0 +1,19 @@
+<isset name="randomValue" value="${pdict.randomValue ? pdict.randomValue : ''}" scope="page" />
+<isset name="parent_id" value="${!empty(pdict.parent_id) ? pdict.parent_id : parent_id}" scope="page" />
+
+<div class="faqs__ques_ans_section">
+    <div class="card-head">
+        <h5 class="faqs__ques text-left collapsed" type="button" data-toggle="collapse"
+            data-target="${'#'}collapse-ans${parent_id}${randomValue ? randomValue : loopstatus.index}"
+            aria-expanded="true"
+            aria-controls="collapse-ans${parent_id}${randomValue ? randomValue : loopstatus.index}">
+            <isprint value="${pdict.faqQuestion}" encoding="off" />
+        </h5>
+    </div>
+    <div id="collapse-ans${parent_id}${randomValue ? randomValue : loopstatus.index}" class="collapse"
+        data-parent="${'#'}${parent_id}">
+        <div class="faqs__ans_panel">
+            <isprint value="${pdict.faqAnswer}" encoding="off" />
+        </div>
+    </div>
+</div>

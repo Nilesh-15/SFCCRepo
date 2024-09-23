@@ -1,0 +1,23 @@
+<p class="login__social-label">
+    ${Resource.msg('label.login.social', 'login', null)}
+</p>
+<form action="" class="login-oauth login__social-login" method="post" name="login-oauth-form">
+    <div class="col-12 col-md-6 form-group">
+        <a href="${URLUtils.https('Login-OAuthLogin', 'oauthProvider', 'Google', 'oauthLoginTargetEndPoint', pdict.oAuthReentryEndpoint)}"
+            class="oauth-google" role="button" aria-pressed="true">
+            <img src="${URLUtils.staticURL('/images/flat-color-icons_google.svg')}" alt="Google" />
+            <span class="social-name">
+                ${Resource.msg("btn.continue.google", "login", null)}
+            </span>
+        </a>
+    </div>
+    <div class="col-12 col-md-6 form-group">
+        <a href="${URLUtils.https('Login-OAuthLogin', 'oauthProvider', 'Facebook', 'oauthLoginTargetEndPoint', pdict.oAuthReentryEndpoint)}"
+            class="oauth-facebook" role="button" aria-pressed="true">
+            <img src="${URLUtils.staticURL('/images/logos_facebook.svg')}" alt="Facebook" />
+            <span class="social-name">
+                ${Resource.msg("btn.continue.facebook", "login", null)}
+            </span>
+        </a>
+    </div>
+</form>

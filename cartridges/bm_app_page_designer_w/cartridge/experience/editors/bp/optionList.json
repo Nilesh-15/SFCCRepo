@@ -1,0 +1,12 @@
+{
+    "name": "Option list",
+    "description": "Select list with icon and text",
+    "resources": {
+        "scripts": [
+            "/experience/editors/bp/optionList.js"
+        ],
+        "styles": [
+            "/experience/editors/bp/optionList.css"
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+<div class="image-container prod-tile__image-container">
+    <a href="${pdict.urls.product}">
+        <img class="tile-image"
+             src="${product.images.medium[0].url}"
+             alt="${product.productName}"
+             title="${product.images.medium[0].title}"
+             itemprop="image"/>
+    </a>
+    <a class="wishlistTile wishlist-tile-plp prod-tile__wishlist-icon" href="${URLUtils.url('Wishlist-AddProduct')}" title="${Resource.msg('wishlist.addto.wishlist.heart', 'wishlist', null)}" data-pid="${product.id}">
+        <iscomment> <i class="custom-heart-icon"></i> </iscomment>
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-heart-o"></i>
+        </span>
+    </a>
+    <a class="wishlistTile remove-from-wishlist prod-tile__wishlist-icon d-none" href="${URLUtils.url('Wishlist-RemoveProduct','pid', product.id)}" title="${Resource.msg('wishlist.addto.wishlist.heart', 'wishlist', null)}" data-pid="${product.id}">
+        <span class="fa-stack fa-lg">
+            <i class="fa fa-heart"></i>
+        </span>
+    </a>
+
+</div>

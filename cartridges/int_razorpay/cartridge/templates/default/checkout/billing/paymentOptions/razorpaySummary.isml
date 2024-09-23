@@ -1,0 +1,5 @@
+<span>
+    <isif condition="${payment.paymentMethod === 'RAZOR_PAY'}">
+        ${Resource.msg('order.payment.method.' + payment.paymentMethod, 'confirmation', null)}
+    </isif>
+</span>

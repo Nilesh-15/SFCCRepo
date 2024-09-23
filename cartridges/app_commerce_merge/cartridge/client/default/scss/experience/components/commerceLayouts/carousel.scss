@@ -1,0 +1,29 @@
+@import "~base/experience/components/commerceLayouts/carousel";
+
+// line of ootb code css is changed due to breaking while slide changes next or pres slide
+.carousel.slide {
+    .carousel-item {
+        margin-right: 0;
+    }
+    @include media-breakpoint-only(xs) {
+        &[data-xs="1"] {
+            .carousel-item {
+                margin-right: -100%;
+            }
+        }
+    }
+    @include media-breakpoint-only(sm) {
+        &[data-sm="1"] {
+            .carousel-item {
+                margin-right: -100%;
+            }
+        }
+    }
+    @include media-breakpoint-up(md) {
+        &[data-md="1"] {
+            .carousel-item {
+                margin-right: -100%;
+            }
+        }
+    }
+}

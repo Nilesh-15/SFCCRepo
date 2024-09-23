@@ -1,0 +1,29 @@
+<isset name="isTextBannerOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isTextBannerOnline}">
+    <section class="text-banner ${pdict.customContainerName}" aria-label="<isprint value=" ${pdict.title}"
+        encoding="htmlunquote" />"
+    <isif condition="${pdict.backgroundColor || pdict.textColor}">
+        style="${pdict.backgroundColor ? 'background-color:' + pdict.backgroundColor + ';' : ''} ${pdict.textColor ? 'color:' + pdict.textColor + ';' : ''}"
+    </isif>
+    >
+    <div class="box-caption col-12">
+        <isset name="image" value="${(pdict.image != null)}" scope="page" />
+        <isif condition="${image}">
+            <picture class="small-logo w-50">
+                <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px)" />
+                <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)" />
+                <img class="img-fluid" src="${pdict.image.src.mobile}" alt="${pdict.alt ? pdict.alt : pdict.title}" title="${pdict.alt ? pdict.alt : pdict.title}" />
+            </picture>
+        </isif>
+        <h2 class="caption-title">
+            <isprint value="${pdict.title}" encoding="off" />
+        </h2>
+        <isif condition="${pdict.subTitle}">
+            <div class="caption-subtitle">
+                <isprint value="${pdict.subTitle}" encoding="off" />
+            </div>
+        </isif>
+        <isprint value="${pdict.regions.buttons.setClassName('cta-section').render()}" encoding="off" />
+    </div>
+    </section>
+</isif>

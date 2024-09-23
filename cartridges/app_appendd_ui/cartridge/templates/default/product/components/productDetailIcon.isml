@@ -1,0 +1,3 @@
+<a class="link-by-icon" href="${pdict.urls && pdict.urls.product ? pdict.urls.product : URLUtils.url('Product-Show','pid', item.pid)}">
+    <i class="icon-bk-bg-shop-bag"></i>
+</a>

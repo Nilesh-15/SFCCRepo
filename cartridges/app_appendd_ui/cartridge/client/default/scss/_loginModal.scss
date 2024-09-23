@@ -1,0 +1,245 @@
+@import "./functions/pxToRem";
+@import "./skin/skinVariables";
+
+.login {
+    &__otp-modal {
+        .modal-dialog {
+            @include media-breakpoint-up(md) {
+                max-width: pxToRem(1027px);
+                width: 54%;
+            }
+        }
+
+        .modal-body {
+            padding: pxToRem(15px) pxToRem(20px) pxToRem(60px);
+
+            @include media-breakpoint-up(md) {
+                max-width: pxToRem(585px);
+                margin: pxToRem(40px) auto;
+                padding: 0 pxToRem(30px);
+            }
+        }
+
+        .modal-header {
+            border: 0;
+            display: block;
+
+            img {
+                position: relative;
+                right: pxToRem(30px);
+                top: pxToRem(10px);
+            }
+        }
+
+        .or-separator {
+            height: 1px;
+            background-color: var(--COLOR-GREY-BORDER);
+            width: 100%;
+            margin: pxToRem(24px) auto;
+            position: relative;
+
+            .or-text {
+                font-size: pxToRem(14px);
+                font-weight: 800;
+                position: absolute;
+                left: calc(50% - 13px);
+                top: -5px;
+                background-color: var(--COLOR-WHITE);
+                color: var(--COLOR-GREY-BORDER);
+                height: pxToRem(12px);
+                width: pxToRem(40px);
+                line-height: 1;
+                text-align: center;
+            }
+        }
+
+        .account__register {
+            font-size: pxToRem(14px);
+            text-align: center;
+            margin-top: pxToRem(40px);
+
+            @include media-breakpoint-up(md) {
+                margin-top: pxToRem(60px);
+                font-size: pxToRem(16px);
+            }
+        }
+
+        .resendOTPLink,
+        .resendOTPContainer {
+            font-size: pxToRem(14px);
+            text-align: left;
+            margin-top: pxToRem(20px);
+            color: var(--TROLLEY-GREY);
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(16px);
+            }
+        }
+
+        .resend-code-timer,
+        .resend-code-msg,
+        .create_account.link {
+            color: var(--COLOR-BLACK);
+            margin-left: pxToRem(3px);
+        }
+
+        .no__account {
+            font-size: pxToRem(12px);
+            margin-bottom: pxToRem(8px);
+        }
+    }
+
+    &__heading-form {
+        font-size: pxToRem(34px);
+        line-height: pxToRem(40px);
+        margin-bottom: pxToRem(24px);
+        max-width: pxToRem(330px);
+        width: 97%;
+
+        @include media-breakpoint-up(md) {
+            font-size: pxToRem(50px);
+            line-height: pxToRem(60px);
+            max-width: pxToRem(560px);
+        }
+    }
+
+    &__login-form {
+        label {
+            font-size: pxToRem(16px);
+            color: var(--COLOR-BLACK);
+            font-weight: 600;
+        }
+
+        input {
+            padding: pxToRem(15px) pxToRem(16px);
+        }
+    }
+
+    &__send-btn-section {
+        margin-bottom: pxToRem(24px);
+
+        button {
+            width: 100%;
+            text-transform: uppercase;
+        }
+    }
+
+    &__social-label {
+        font-size: pxToRem(16px);
+        margin-top: pxToRem(24px);
+        margin-bottom: pxToRem(12px);
+    }
+
+    &__social-login {
+        margin-left: pxToRem(-15px);
+        margin-right: pxToRem(-15px);
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            display: flex;
+        }
+
+        .form-group a {
+            border: pxToRem(1px) solid var(--COLOR-BLACK);
+            width: 100%;
+            display: block;
+            padding: pxToRem(17px) pxToRem(14px) pxToRem(16px);
+
+            img {
+                width: pxToRem(24px);
+                @include media-breakpoint-down(sm) {
+                    margin-right: pxToRem(5px);
+                }
+            }
+
+            .social-name {
+                font-size: pxToRem(14px);
+                text-transform: uppercase;
+
+                @include media-breakpoint-up(md) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__verify-btn-section,
+    &__sign-up button {
+        width: 100%;
+        text-transform: uppercase;
+    }
+
+    &__description {
+        font-size: pxToRem(16px);
+        line-height: pxToRem(19px);
+        margin-bottom: pxToRem(24px);
+    }
+
+    &__logged-phone-number {
+        font-size: pxToRem(18px);
+        display: flex;
+
+        &::before {
+            content: " ";
+            background-image: url("../../images/all-icon-fragment.svg#icon-checkmark-thin");
+            background-repeat: no-repeat;
+            display: block;
+            width: pxToRem(19px);
+            height: pxToRem(16px);
+            position: relative;
+            margin-right: pxToRem(5px);
+            top: pxToRem(8px);
+        }
+    }
+
+    &__otp-form {
+        margin-top: pxToRem(24px);
+        border-top: pxToRem(1px) solid var(--COLOR-BLACK);
+        padding-top: pxToRem(16px);
+
+        label {
+            font-size: pxToRem(16px);
+            color: var(--COLOR-BLACK);
+            font-weight: 600;
+        }
+
+        input {
+            padding: pxToRem(15px) pxToRem(16px);
+        }
+    }
+
+    &__check-phone-msg {
+        font-size: pxToRem(12px);
+        color: var(--TROLLEY-GREY);
+        margin-top: pxToRem(8px);
+    }
+
+    &__policy-terms {
+        margin-top: pxToRem(10px);
+        display: block;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            display: flex;
+            justify-content: center;
+        }
+
+        a {
+            padding: 0 pxToRem(10px);
+            font-size: pxToRem(14px);
+            color: var(--COLOR-BLACK);
+            text-decoration: underline;
+
+            @include media-breakpoint-down(sm) {
+                display: inline-block;
+                width: 100%;
+            }
+        }
+
+        a + a {
+            @include media-breakpoint-up(md) {
+                border-left: pxToRem(1px) solid var(--COLOR-BLACK);
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+			<attribute-definition attribute-id="razorEnable">
+				<display-name xml:lang="x-default">Enable</display-name>
+				<type>boolean</type>
+				<mandatory-flag>false</mandatory-flag>
+				<externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+			</attribute-definition>
+			<attribute-definition attribute-id="razorId">
+				<display-name xml:lang="x-default">Key ID</display-name>
+				<type>string</type>
+				<mandatory-flag>false</mandatory-flag>
+				<externally-managed-flag>false</externally-managed-flag>
+				<min-length>0</min-length>
+			</attribute-definition>
+			<attribute-definition attribute-id="razorKey">
+				<display-name xml:lang="x-default">Secret Key</display-name>
+				<type>string</type>
+				<mandatory-flag>false</mandatory-flag>
+				<externally-managed-flag>false</externally-managed-flag>
+				<min-length>0</min-length>
+			</attribute-definition>
+			<attribute-definition attribute-id="razorPayStoreName">
+				<display-name xml:lang="x-default">RazorPay Store Name</display-name>
+				<type>string</type>
+				<mandatory-flag>false</mandatory-flag>
+				<externally-managed-flag>false</externally-managed-flag>
+				<min-length>0</min-length>
+			</attribute-definition>
+			<attribute-definition attribute-id="razorpayCheckouturlPreference">
+                <display-name xml:lang="x-default">RazorPay Checkout URL</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+			<attribute-definition attribute-id="razorAuthStatus">
+                <display-name xml:lang="x-default">razor Auth Status</display-name>
+                <description xml:lang="x-default">razor Auth Status</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+			<attribute-definition attribute-id="razorpayPriceConversionFactor">
+                <display-name xml:lang="x-default">RazorPay Price Conversion Factor</display-name>
+                <description xml:lang="x-default">RazorPay Price Conversion Factor</description>
+                <type>double</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+			<attribute-definition attribute-id="razorpayCaptureStatus">
+                <display-name xml:lang="x-default">RazorPay Capture Status</display-name>
+                <description xml:lang="x-default">RazorPay Capture Status</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+		</custom-attribute-definitions>
+
+		<group-definitions>
+			<attribute-group group-id="Razorpay Payment Config">
+				<display-name xml:lang="x-default">Razorpay Payment Config</display-name>
+                <attribute attribute-id="razorEnable"/>
+                <attribute attribute-id="razorId"/>
+				<attribute attribute-id="razorKey"/>
+                <attribute attribute-id="razorPayStoreName"/>
+                <attribute attribute-id="razorpayCheckouturlPreference"/>
+                <attribute attribute-id="razorAuthStatus"/>
+                <attribute attribute-id="razorpayPriceConversionFactor"/>
+                <attribute attribute-id="razorpayCaptureStatus"/>
+			</attribute-group>
+		</group-definitions>
+    </type-extension>
+
+</metadata>

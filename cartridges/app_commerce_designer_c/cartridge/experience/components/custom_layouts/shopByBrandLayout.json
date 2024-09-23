@@ -1,0 +1,34 @@
+{
+    "name": "Shop By Brand Layout",
+    "description": "This is a Shop By Brand Layout component",
+    "group": "custom_layouts",
+    "attribute_definition_groups": [
+        {
+            "id": "Brand",
+            "attribute_definitions": [
+                {
+                    "id": "shopByBrand",
+                    "name": "Shop By Brand Heading",
+                    "description": "Message to be displayed on the banner.",
+                    "type": "markup",
+                    "required": true
+                },
+                {
+                    "id": "customContainerName",
+                    "name": "Custom Container Name",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id": "brandSection",
+            "name": "Brands Section",
+            "component_type_inclusions": [
+                { "type_id": "custom_assets.shopByBrand" }
+            ]
+        }
+    ]
+}

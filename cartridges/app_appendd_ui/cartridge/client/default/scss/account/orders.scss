@@ -1,0 +1,87 @@
+@import "../skin/skinVariables";
+@import "../functions/pxToRem";
+
+.account {
+    &__order-table {
+        margin-top: pxToRem(42px);
+
+        @include media-breakpoint-up(md) {
+            margin-top: pxToRem(55px);
+        }
+
+        table {
+            width: 100%;
+        }
+
+        thead {
+            @include media-breakpoint-up(md) {
+                border-bottom: pxToRem(1px) solid var(--COLOR-BLACK);
+            }
+        }
+
+        .table-header {
+            font-size: pxToRem(14px);
+            line-height: pxToRem(16px);
+            padding-bottom: pxToRem(10px);
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(16px);
+                line-height: pxToRem(19px);
+                padding-bottom: pxToRem(20px);
+            }
+        }
+
+        .table-list-item {
+            padding: pxToRem(15px) 0 pxToRem(10px);
+            font-size: pxToRem(14px);
+            width: 20%;
+            vertical-align: top;
+            color: var(--TITANLUX);
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(16px);
+                padding: pxToRem(20px) 0;
+                width: 16%;
+            }
+
+            a {
+                color: var(--TITANLUX) !important;
+                text-decoration: underline;
+            }
+        }
+
+        .table-list-item + .table-list-item {
+            width: 30%;
+
+            @include media-breakpoint-up(md) {
+                width: unset;
+            }
+
+            &.item-name {
+                @include media-breakpoint-up(md) {
+                    width: 50%;
+                }
+            }
+        }
+
+        .table-list-row {
+            border-bottom: pxToRem(1px) solid var(--COLOR-GREY3);
+        }
+    }
+
+    &__order-container {
+        @include media-breakpoint-down(sm) {
+            margin-bottom: pxToRem(300px);
+        }
+
+        .back-to-account {
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+
+            a {
+                color: var(--COLOR-BLACK) !important;
+            }
+        }
+    }
+}

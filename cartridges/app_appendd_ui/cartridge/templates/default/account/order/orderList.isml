@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <tr>
+            <td class="table-header">
+                ${Resource.msg('table.head.srno', 'account', null)}
+            </td>
+            <td class="table-header">
+                ${Resource.msg('table.head.item', 'account', null)}
+            </td>
+            <td class="table-header">
+                ${Resource.msg('table.head.orderdate', 'account', null)}
+            </td>
+            <td class="table-header">
+                ${Resource.msg('table.head.invoice', 'account', null)}
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <isloop items="${pdict.orders}" var="order" status="loopState">
+            <isinclude template="account/order/orderHistoryCard" />
+        </isloop>
+    </tbody>
+</table>

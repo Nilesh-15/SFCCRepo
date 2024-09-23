@@ -1,0 +1,74 @@
+{
+    "name": "Product Banner",
+    "description": "Product Banner",
+    "group": "custom_assets",
+    "attribute_definition_groups": [
+        {
+            "id": "dividerOnline",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "titleOnline",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content Online/Offline",
+                                "subtitle": "Check Box Below",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "isOnline",
+                    "name": " ",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "dividerContent",
+            "name": "",
+            "attribute_definitions": [
+                {
+                    "id": "contentId",
+                    "name": " ",
+                    "required": false,
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "bp.heading",
+                        "configuration": {
+                            "options": {
+                                "title": "Content",
+                                "subtitle": " ",
+                                "icon": "all devices"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "productBanner",
+            "name": "Product Banner Config",
+            "description": "Product Banner Config",
+            "attribute_definitions": [
+                {
+                    "id": "product",
+                    "name": "Product",
+                    "type": "product",
+                    "required": true,
+                    "dynamic_lookup": {
+                        "aspect_attribute_alias": "product"
+                    }
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

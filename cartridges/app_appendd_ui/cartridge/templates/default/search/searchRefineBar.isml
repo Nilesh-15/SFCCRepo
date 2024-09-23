@@ -1,0 +1,73 @@
+<div class="refinement__wrap">
+    <div class="refinements">
+        <div class="refinement__main-title">
+            <h2> ${Resource.msg('heading.filter', 'search', null)}</h2>
+
+            <!--- Close button --->
+            <div class="d-md-none clearfix">
+                <button class="pull-right close">
+                    <i class="icon__close-btn"></i>
+                </button>
+            </div>
+        </div>
+        <isloop items="${pdict.productSearch.refinements}" var="refinement">
+            <isif condition="${refinement.displayName != "Product Category"}">
+
+                <isset name="refinementName" value="${refinement.displayName.toLowerCase().replace(/ /g, '-')}" scope="page" />
+                
+                <div class="refinement__content refinement-${refinementName}">
+                    <div class="refinement__header">                        
+                        <button class="btn text-left btn-block ${refinement.isSelected ? '':'collapsed'}" type="button"
+                            data-toggle="collapse"
+                            data-target="${'#'}refinement-${refinementName}"
+                            aria-expanded="false"
+                            aria-controls="refinement-${refinementName}"
+                            >
+                            <span>${refinement.displayName}</span>
+                        </button>
+                    </div>
+                    <div class="content value collapse refinement__body-collapse ${refinement.isSelected ? 'show':''}"
+                        id="refinement-${refinementName}">
+                        
+                        <!--- ATTRIBUTE REFINEMENTS --->
+                        <isif condition="${refinement.isAttributeRefinement || refinement.isPromotionRefinement}">
+                            <isinclude template="search/refinements/attributes" />
+                        </isif>
+
+                        <!--- PRICE REFINEMENTS --->
+                        <isif condition="${refinement.isPriceRefinement}">
+                            <isinclude template="search/refinements/prices" />
+                        </isif>
+                    </div>
+                </div>
+            <iselse/>
+            <div class="refinement refinement-${refinement.displayName.toLowerCase().replace(/ /g, '-')}">
+                    <div class="refinement__header">
+                        <h2 aria-label="${refinement.displayName}" class="refinement__title">
+                            ${refinement.displayName}
+                        </h2>
+                    </div>
+                    <div class="content value refinement__body"
+                        id="refinement-${refinement.displayName.toLowerCase().replace(/ /g, '-')}">
+                        <!--- CATEGORY REFINEMENTS --->
+                        <isif condition="${refinement.isCategoryRefinement}">
+                            <isset name="categories" value="${refinement.values}" scope="page" />
+                            <isinclude template="search/refinements/categories" />
+                        </isif>
+                    </div>
+                </div>
+               
+            </isif>
+        </isloop>
+    </div>
+
+    <!---Reset button --->
+    <isif condition="${pdict.productSearch.productIds.length > 0}">
+        <div class="refinement__reset-btn">
+            <button class="reset btn btn-block btn-outline-primary" data-href="${pdict.productSearch.resetLink}">
+                ${Resource.msg('label.clear.filter', 'search', null)}
+            </button>
+        </div>
+    </isif>
+</div>
+

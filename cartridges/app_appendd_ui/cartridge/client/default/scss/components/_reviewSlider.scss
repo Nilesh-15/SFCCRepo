@@ -1,0 +1,116 @@
+.homepage {
+     //review-slider start
+     &__review-slider {
+        margin: pxToRem(40px) 0 pxToRem(100px);
+
+        @include media-breakpoint-up(md) {
+            margin: pxToRem(100px) 0;
+        }
+
+        .slick-carousel-inner.slick-slider {
+            max-width: pxToRem(385px);
+            margin: 0 auto;
+            
+            @include media-breakpoint-up(md) {
+                max-width: pxToRem(750px);
+            }
+        }
+
+        .slick-initialized .slick-slide {
+            @include media-breakpoint-down(sm) {
+                padding: 0;
+            }
+        } 
+
+        .slick-arrow {
+            &.slick-prev {
+                left: pxToRem(20px);
+
+                @include media-breakpoint-up(md) {
+                    left: pxToRem(6px);
+                }
+
+                &::before {
+                    content: " ";
+                    background-image: url("../../images/all-icon-fragment.svg#icon-carousel-sm-prev");
+                    background-repeat: no-repeat;
+                }
+            }
+
+            &.slick-next {
+                right: pxToRem(24px);
+
+                @include media-breakpoint-up(md) {
+                    right: pxToRem(10px);
+                }
+
+                &::before {
+                    content: " ";
+                    background-image: url("../../images/all-icon-fragment.svg#icon-carousel-sm-next");
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+
+        button.slick-arrow {
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border: 0;
+            top: 55%;
+
+            @include media-breakpoint-up(md) {
+                top: 71%;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: transparent;
+            }
+        }
+
+        .slick-initialized {        
+            @include media-breakpoint-up(md) {
+                button.slick-arrow {
+                    opacity: 1;
+                }
+        
+                &:hover,
+                &:focus {
+                    button.slick-arrow {
+                        opacity: 1;
+                        border: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &__google-review {
+        text-align: center;
+
+        img {
+            margin: 0 auto;
+        }
+
+        .caption-title {
+            font-size: pxToRem(20px);
+            margin: pxToRem(24px) 0 pxToRem(11px);
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(40px);
+                margin-bottom: pxToRem(40px);
+            }
+        }
+
+        .caption-subtitle {
+            max-width: pxToRem(308px);
+            margin: 0 auto;
+
+            @include media-breakpoint-up(md) {
+                max-width: pxToRem(676px);
+            }
+        }
+    }
+    //review-slider end
+}

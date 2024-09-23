@@ -1,0 +1,56 @@
+<header>
+    <isinclude template="/components/header/skipNav" />
+    <nav role="navigation">
+        <div class="header container header__main">
+            <div class="row">
+                <div class="col-9 col-md-3 header__nav-logo">
+                    <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="icon-header-sm-menu"></i>
+                    </button>
+                    <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.appendd', 'common', null), Resource.msg(
+                                                                                    'global.home', 'common', null))}">
+                        <img class="img-fluid" src="${URLUtils.staticURL('/images/appendd.jpg')}"
+                            alt="${Resource.msg('global.appendd', 'common', null)}" />
+                    </a>
+                </div>
+                <div class="col-3 col-md-9 header__nav-bar">
+                    <div class="header__nav-menu">
+                        <div class="header__search-bar">
+                            <i class="icon-search-header"></i>
+                        </div>
+                        <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block"
+                            id="sg-navbar-collapse">
+                            <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}" />
+                        </div>
+                        <div class="navbar-header header__user-profile hidden-sm-down">
+                            <isinclude url="${URLUtils.url('Account-Header')}" />
+                            <isinclude url="${URLUtils.url('Page-Locale')}" />
+                        </div>
+                        <div class="header__cart">
+                            <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                                <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="header-banner header__banner slide-up d-none">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div></div>
+                <div class="content">
+                    <isslot id="header-banner-m" description="Slot above the site header" context="global" />
+                </div>
+                <div class="close-button">
+                    <button type="button" class="close"
+                        aria-label="${Resource.msg('label.header.banner.close', 'common', null)}">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

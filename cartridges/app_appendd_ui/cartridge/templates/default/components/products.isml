@@ -1,0 +1,9 @@
+<div class="${slotcontent.custom.slickConfig ? 'pdp-recommendation-carousel' : 'pdp-recommendation-slider-nav'}" data-slick="${slotcontent.custom.slickConfig}">
+    <isloop items="${slotcontent.content}" var="product">
+        <isobject object="${product}" view="none">
+            <div class="product-custom-tile">
+                <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'swatches', true, 'ratings', true, 'showQuickView', false)}" />
+            </div>
+        </isobject>
+    </isloop>
+</div>

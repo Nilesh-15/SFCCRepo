@@ -1,0 +1,93 @@
+.homepage {
+    //news-letter start
+    &__subscribe-news {
+        margin-bottom: pxToRem(40px);
+
+        @include media-breakpoint-up(md) {
+            max-width: pxToRem(1400px);
+            margin: 0 auto;
+            margin-bottom: pxToRem(100px);
+        }
+
+        .region {
+            padding: 0;
+        }
+
+        .hero-banner {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+    }
+
+    &__news-letter-text {
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            margin-top: pxToRem(207px);
+        }
+
+        .formBanner {
+            &__main {
+                padding: 0;
+            }
+            &__heading {
+                font-size: pxToRem(20px);
+                line-height: 30px;
+                margin-bottom: 18px;
+                color: var(--TITANLUX);
+
+                @include media-breakpoint-up(md) {
+                    font-size: pxToRem(46px);
+                    line-height: 68px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            &__subtxt {
+                padding: 0 pxToRem(15px);
+
+                @include media-breakpoint-up(md) {
+                    padding: 0 pxToRem(46px);
+                }
+            }
+
+            &__form-part {
+                display: block;
+
+                @include media-breakpoint-up(md) {
+                    padding: 0 pxToRem(48px);
+                }
+
+                input {
+                    width: 100%;
+                    padding: pxToRem(16px) 0 pxToRem(16px) pxToRem(18px);
+                    height: pxToRem(60px);
+                    border: pxToRem(1px) solid var(--COLOR-BLACK);
+                    margin: pxToRem(18px) 0 pxToRem(20px);
+
+                    @include media-breakpoint-up(md) {
+                        padding: pxToRem(28px) 0 pxToRem(32px) pxToRem(30px);
+                        height: pxToRem(86px);
+                        margin: pxToRem(30px) 0;
+                    }
+                }
+
+                button {
+                    height: pxToRem(52px);
+                    padding: pxToRem(18px) pxToRem(40px);
+                    font-size: pxToRem(14px);
+                    box-shadow: pxToRem(-16px) pxToRem(-32px) pxToRem(99px) pxToRem(58px) rgb(47 38 38 / 14%);
+
+                    @include media-breakpoint-up(md) {
+                        font-size: pxToRem(16px);
+                        height: pxToRem(56px);
+                        padding: pxToRem(20px) pxToRem(44px);
+                        box-shadow: pxToRem(-1px) pxToRem(15px) pxToRem(99px) pxToRem(58px) rgb(47 38 38 / 14%);
+                    }
+                }
+            }
+        }
+    }
+    //news letter end
+}

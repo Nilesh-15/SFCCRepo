@@ -1,0 +1,92 @@
+<div class="checkout__product-line-item" data-product-line-item="${lineItem.UUID}">
+
+    <isif condition="${lineItem.productType === 'bundle'}">
+        <div class="bundle-includes">${Resource.msg('msg.bundle.includes', 'cart', null)}</div>
+        <!--- individual bundled line items --->
+        <isinclude template="cart/productCard/cartProductCardBundledItems" />
+    <iselse/>
+        <div class="col-7 col-sm-9 checkout__product-line-item-details">
+            <div class="item-image">
+                <img class="product-image" src="${lineItem.images.small[0].url}" alt="${lineItem.images.small[0].alt}"
+                    title="${lineItem.images.small[0].title}">
+            </div>
+            <div class="checkout__summary-item-attributes flex-column">
+                <div class="checkout__summary-product-name">
+                    <isif condition=${miniCart}>
+                        <isinclude template="checkout/productCard/productCardProductNameAndRemove" />
+                        <iselse>
+                            <isinclude template="checkout/productCard/productCardProductName" />
+                    </isif>
+                </div>
+
+                <div class="items-set-bottom">
+                    <isloop items="${lineItem.variationAttributes}" var="attribute">
+                        <p class="line-item-attributes">${attribute.displayName} :-${attribute.displayValue}</p>
+                    </isloop>
+
+                    <div class="item-options">
+                        <isloop items="${lineItem.options}" var="option">
+                            <div class="line-item-option">${option.displayName}</div>
+                        </isloop>
+                    </div>
+
+                    <iscomment>
+                        <isif condition="${(pdict.order && !pdict.order.orderStatus) || miniCart}">
+                            <isinclude template="cart/productCard/cartProductCardAvailability" />
+                        </isif>
+                    </iscomment>
+                </div>
+            </div>
+        </div>
+    </isif>
+
+    <isif condition="${lineItem.productType === 'bundle' && ((pdict.order && !pdict.order.orderStatus) || miniCart)}">
+        <isinclude template="cart/productCard/cartProductCardAvailability" />
+    </isif>
+    <div class="col-5 col-sm-3 checkout__right-section">
+        <!--- item price --->
+        <iscomment>
+            <div class="col line-item-unit-price">
+                <isif condition="${lineItem.price}">
+                    <p class="line-item-pricing-info">
+                        <span class="line-item-total-text unit-price-label">
+                            ${Resource.msg('label.each.item.price', 'cart', null)}
+                        </span><br />
+                        <isset name="price" value="${lineItem.price}" scope="page" />
+                        <div class="unit-price">
+                            <isinclude template="/product/components/pricing/main" />
+                        </div>
+                    </p>
+                </isif>
+            </div>
+        </iscomment>
+
+        <!--- line item total price --->
+        <div class="col line-item-total-price">
+            <iscomment>
+                <p class="line-item-pricing-info">
+                    <span class="line-item-total-text line-item-total-price-label">
+                        ${Resource.msg('label.total.price', 'cart', null)}
+                    </span>
+                </p>
+            </iscomment>
+            <div class="item-total-${lineItem.UUID} price">
+                <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+            </div>
+        </div>
+        <!--- quantity --->
+        <div class="col line-item-quantity">
+            <isif condition=${miniCart}>
+                <isinclude template="checkout/productCard/productCardQuantitySelector" />
+                <iselse>
+                    <isinclude template="checkout/productCard/productCardQuantityDisplay" />
+            </isif>
+        </div>
+
+    </div>
+    <isif condition=${miniCart}>
+        <div class="line-item-promo item-${lineItem.UUID}">
+            <isinclude template="checkout/productCard/productCardProductPromotions" />
+        </div>
+    </isif>
+</div>

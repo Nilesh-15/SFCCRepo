@@ -1,0 +1,3 @@
+<div class="pdp-link prod-tile__title-link">
+    <a class="link" href="${pdict.urls.product}">${product.productName}</a>    
+</div>

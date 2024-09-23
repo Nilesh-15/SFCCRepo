@@ -1,0 +1,8 @@
+<div class="tab-pane razor-content" id="razor-content" role="tabpanel">
+    <isset name="razorpayCheckouturl" value="${pdict.razorpayCheckouturl}" scope="page" />
+    <div id="razorUrlPre" url="${razorpayCheckouturl}"></div>
+    <fieldset class="payment-form-fields">
+        <input type="hidden" class="form-control" name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+            value="RAZOR_PAY" />
+    </fieldset>
+</div>

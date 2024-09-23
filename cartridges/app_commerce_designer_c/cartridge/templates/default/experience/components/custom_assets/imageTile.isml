@@ -1,0 +1,24 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/components/imageTile.css');
+</isscript>
+<isset name="isImageTileOnline" value="${(pdict.isOnline != null)}" scope="page" />
+<isif condition="${isImageTileOnline}">
+    <a class="image-tile-link-banner" href="${pdict.url}">
+        <figure class="image-tile position-relative ${pdict.layoutClassName}">
+            <picture class="promo-img">
+                <source srcset="${pdict.image.src.tablet}" media="(min-width: 768px) and (max-width: 1023px)" />
+                <source srcset="${pdict.image.src.desktop}" media="(min-width: 1024px)" />
+                <img class="tile-img w-100" src="${pdict.image.src.mobile}" title="${pdict.imageAlt}"
+                    alt="${pdict.imageAlt}" />
+            </picture>
+            <isif condition="${pdict.caption}">
+                <figcaption class="tile-caption ${pdict.captionAlignmentClass}">
+                    <p class="${pdict.ctaTypeClassName}">
+                        <isprint value="${pdict.caption}" encoding="off" />
+                    </p>
+                </figcaption>
+            </isif>
+        </figure>
+    </a>
+</isif>

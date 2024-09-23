@@ -1,0 +1,51 @@
+<isdecorate template="common/layout/pageAccount">
+<div class="account-navigation-container">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/addressBook.css');
+    </isscript>
+
+    <isinclude template="account/deleteAddressModal" />
+    <div class="container account__addressbook-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="profile-heading">
+                            ${Resource.msg('label.address.book', 'account', null)}
+                        </h2>
+                    </div>
+                    <!-- Rows for addresses in the Address Book -->
+                    <isif condition="${pdict.addressBook.length === 0}">
+                        <div class="row">
+                            <div class="col-12 account__no-address-msg">
+                                <p>${Resource.msg('msg.no.saved.addresses', 'address', null)}</p>
+                            </div>
+                        </div>
+                    </isif>
+                    <isloop items="${pdict.addressBook}" var="address">
+                        <isinclude template="account/accountAddressCard" sf-toolkit="off" />
+                    </isloop>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6 text-left back-to-account">
+                        <a href="${URLUtils.url('Account-Show')}" class="normal btn btn-primary">
+                            ${Resource.msg('link.profile.backtoprofile', 'account', null)}
+                        </a>
+                    </div>
+                    <div class="col-6 add-new-address">
+                        <a href="${URLUtils.url('Address-AddAddress')}" class="btn btn-save btn-block btn-primary add-address"
+                            aria-label="${Resource.msg('label.addressbook.addnewaddress', 'account', null)}">
+                            ${Resource.msg('button.addnew', 'account', null)}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</isdecorate>

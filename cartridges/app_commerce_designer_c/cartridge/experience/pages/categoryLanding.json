@@ -1,0 +1,56 @@
+{
+  "name": "Category Landing Page",
+  "description": "Category Landing page",
+  "attribute_definition_groups": [
+    {
+      "id": "categoryLanding",
+      "name": "Settings",
+      "description": "Category Landing Settings",
+      "attribute_definitions": [
+        {
+          "id": "category",
+          "name": "Category",
+          "type": "category",
+          "required": true,
+          "dynamic_lookup": {
+            "aspect_attribute_alias": "category"
+          }
+        }
+      ]
+    }
+  ],
+  "region_definitions": [
+    {
+      "id": "top",
+      "name": "Top Region",
+      "max_components": 1,
+      "component_type_inclusions": [
+        {
+          "type_id": "custom_assets.heroBanner"
+        }
+      ]
+    },
+    {
+      "id": "main",
+      "name": "Main Region",
+      "component_type_exclusions": [
+        {
+          "type_id": "commerce_assets.campaignBanner"
+        }
+      ]
+    },
+    {
+      "id": "bottom",
+      "name": "Bottom Region",
+      "max_components": 1,
+      "component_type_exclusions": [
+        {
+          "type_id": "commerce_assets.campaignBanner"
+        }
+      ]
+    }
+  ],
+  "supported_aspect_types": [
+    "clp"
+  ]
+}

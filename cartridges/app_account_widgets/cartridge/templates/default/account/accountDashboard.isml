@@ -1,0 +1,10 @@
+<isdecorate template="common/layout/pageAccount">
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+    <!---Breadcrumbs--->
+        <iscomment>
+            <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+        </iscomment>
+    <isinclude template="account/profileCard"/>
+</isdecorate>

@@ -1,0 +1,50 @@
+<div class="col-4 col-lg-6 product-card-footer">
+    <isif condition="${!lineItem.isBonusProductLineItem}"/>
+        <div class="row">
+            <!---item price--->
+            <div class="d-none col-4 line-item-price-${lineItem.UUID}">
+                <p class="line-item-price-info">${Resource.msg('label.each.item.price','cart',null)}</p>
+                <isset name="price" value="${lineItem.price}" scope="page"/>
+                <div class="unit-price">
+                    <isinclude template="/product/components/pricing/main" />
+                </div>
+            </div>
+            
+            <!--- line item total price --->
+            <div class="col-12 col-md-4 line-item-total-price text-md-left text-right mb-md-0 mb-4">
+                <p class="d-none line-item-price-info">
+                    ${Resource.msg('label.total.price','cart',null)}
+                </p>
+                <div class="item-total-${lineItem.UUID} price">
+                    <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+                </div>
+            </div>
+
+            <!--- quantity --->
+            <div class="col-10 col-md-6 text-md-center text-right line-item-quantity">
+                <isinclude template="checkout/productCard/productCardQuantitySelector" />
+                
+                <iscomment> <isif condition="${!lineItem.isBonusProductLineItem}"/>
+                    <div class="">
+                        <isinclude template="components/deleteButton" />
+                    </div>
+                </isif> </iscomment>
+            </div>
+            <div class="col-2 pl-0 pr-0">
+                <isif condition="${!lineItem.isBonusProductLineItem}"/>
+                    <div class="">
+                        <isinclude template="components/deleteButton" />
+                    </div>
+                </isif>
+            </div>
+
+            <!--- extra slot for spacing reasons due to large remove button --->
+            <div class="col-lg-1 hidden-md-down remove-line-item-lg"></div>
+        </div>
+
+        <!--- promotions --->
+        <div class="line-item-promo item-${lineItem.UUID}">
+            <isinclude template="checkout/productCard/productCardProductPromotions" />
+        </div>
+    </isif>
+</div>

@@ -1,0 +1,5 @@
+<span>
+    <isif condition="${payment.paymentMethod === 'CASH_ON_DELIVERY'}">
+        ${Resource.msg('order.payment.method.' + payment.paymentMethod, 'confirmation', null)}
+    </isif>
+</span>

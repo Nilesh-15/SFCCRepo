@@ -1,0 +1,56 @@
+<isset name="productCopy" value="${pdict.product}" scope="page" />
+<isset name="product" value="${pdict.product}" scope="page" />
+<isset name="isBundle" value="${false}" scope="page" />
+<isset name="isQuickView" value="${true}" scope="page" />
+<isset name="isProductSet" value="${false}" scope="page" />
+<isset name="loopState" value="${{
+                               count: 1}}" scope="page" />
+<div class="tilePrev">
+    <div class="product-productTilePreview product-${product.productType} product-wrapper product-detail"
+        data-pid="${product.id}">
+        <div class="preview-scroll">
+            <div class="close-button">
+                <button type="button" class="btn tile-preview-close"
+                    aria-label="${Resource.msg('label.close.dialog.button', 'common', null)}"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="">
+                <div class="detail-panel col-12">
+                    <!-- Attributes -->
+                    <section class="attributes">
+                        <isinclude template="product/components/mainAttributes" />
+                        <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                            <div data-attr="${attr.id}" class="swatch row">
+                                <div class="col-12">
+                                    <isinclude template="product/components/variationAttribute" />
+                                </div>
+                            </div>
+                        </isloop>
+                    </section>
+                    <isif condition="${product.productType !== 'bundle'}">
+                        <!-- Options -->
+                        <isif condition="${product.options && product.options.length > 0}">
+                            <isinclude template="product/components/options" />
+                        </isif>
+                    </isif>
+                </div>
+            </div>
+            <isif condition="${product.productType === 'bundle'}">
+                <div class="hidden-xs-down">
+                    <hr>
+                </div>
+                <isinclude template="product/components/bundleItems" />
+                <hr>
+            </isif>
+
+            <isset name="product" value="${productCopy}" scope="page" />
+        </div>
+        <div class="set-bottom col-12">
+            <div class="btn-section">
+                <isinclude template="product/components/viewDetails" />
+                <isinclude template="product/components/tileAddToCart" />
+            </div>
+        </div>
+    </div>
+
+</div>

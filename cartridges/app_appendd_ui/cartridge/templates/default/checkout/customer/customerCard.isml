@@ -1,0 +1,12 @@
+<div class="card-body">
+    <fieldset class="customer-information-block">
+        <p>${Resource.msg('msg.guest.customer.exists', 'checkout', null)}
+            <button type="button" class="checkout__login-btn user-login-modal" href="${URLUtils.https('Login-Show')}" data-rurl="${!customer.authenticated ? 2 : ''}" role="button"
+                    aria-label="${Resource.msg('label.header.loginbutton', 'account', null)}">
+                <span class="user-message">${Resource.msg('label.log.in', 'checkout', null)}</span>
+            </button>
+            ${Resource.msg('msg.for.faster.checkout', 'checkout', null)}
+        </p>
+    </fieldset>
+
+</div>

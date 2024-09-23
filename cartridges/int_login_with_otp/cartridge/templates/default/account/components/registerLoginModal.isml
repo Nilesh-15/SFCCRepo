@@ -1,0 +1,28 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+<div class="row">
+    <div class="modal fade" data-keyboard="false" data-backdrop="static" id="loginModal" tabindex="-1" role="dialog"
+        aria-labelledby="requestPasswordlessLoginModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <iscomment> <div class="brand-logo pull-left">
+                        <h2 class="header__title">${Resource.msg('label.welcome.back', 'login', null)}</h2>
+                        <img src="${URLUtils.staticURL('/images/logo.svg')}" alt="login-brand-logo" class="login-image" />
+                    </div> </iscomment>
+                    <img class="btn-modal-close pull-right" data-dismiss="modal" aria-label="Close"
+                        src="${URLUtils.staticURL('/images/Dismiss.svg')}" alt="" />
+                    <iscomment> <svg viewBox="0 0 50 55" style="width:30px; height:30px;" class="btn-modal-close">
+                        <use xlink:href="${URLUtils.staticURL('/images/all-icon-fragment.svg#icon-close')}" alt="" />
+                    </svg> </iscomment>
+                </div>
+                <div class="row">
+                    <div class="modal-body col-12">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

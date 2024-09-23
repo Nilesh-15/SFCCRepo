@@ -1,0 +1,21 @@
+{
+    "name":"Blog Page",
+    "description":"Blog Page Only For Blog Detail Component",
+    "region_definitions":[
+      {
+        "id":"blogRegion",
+        "name":"Blog Region",
+        "max_components": 1,
+        "component_type_inclusions": [
+          { "type_id": "custom_assets.blogDetail" }
+        ]
+      },
+      {
+        "id":"main",
+        "name":"Main Region",
+        "component_type_exclusions": [
+          { "type_id": "custom_assets.blogDetail" }
+        ]
+      }
+    ]
+  }

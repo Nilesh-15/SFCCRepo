@@ -1,0 +1,40 @@
+<footer id="footer__content">
+    <div class="container">
+        <div class="row">
+            <div class="footer__item footer__border-right col-12 col-md-3">
+                 <a class="logo-home" href="${URLUtils.url('Home-Show')}">
+                   <img class="img-fluid" src="${URLUtils.staticURL('/images/appendd.jpg')}"  alt="${Resource.msg('global.appendd', 'common', null)}" />
+                </a>
+                <p class="footer__email-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis
+                    ultrices sollicitudin
+                    aliquam sem. Scelerisque duis ultrices sollicitudin
+                </p>
+            </div>
+            <div class="footer__item footer__border-right col-12 col-md-3">
+                <iscontentasset aid="footer-contact-us-social-icons" />
+            </div>
+
+            <div class="footer__item footer__border-right col-12 col-md-3">
+                <iscontentasset aid="footer-shop-links" />
+            </div>
+
+            <div class="footer__item col-12 col-md-3">
+                <iscontentasset aid="footer-about-us-links" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer__back-to-top">
+                <button class="back-to-top" title="${Resource.msg('button.back_to_top', 'common', null)}"
+                    aria-label="${Resource.msg('button.back_to_top', 'common', null)}">
+                    <span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
+                        <i class="fa fa-arrow-up fa-stack-1x"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="col-12 footer__copyright-notice">
+                <iscontentasset aid="footer-copy-right" />
+            </div>
+        </div>
+    </div>
+</footer>

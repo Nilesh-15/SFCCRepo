@@ -1,0 +1,27 @@
+<h2 class="linkgroup-title"></h2>
+<div class="row">
+    <ul class="col-12 account list-group">
+        <li class="list-group-item active" aria-current="true">
+            <a class="side-bar-link" title="${Resource.msg('account.sidebar.link.profiledetails','account',null)}" href="${URLUtils.url('Account-Profile')}"
+            data-url="${URLUtils.url('Account-Profile')}">
+                ${Resource.msg('account.sidebar.link.profiledetails','account',null)}
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a class="side-bar-link" title="${Resource.msg('account.sidebar.link.AddressBook','account',null)}" href="${URLUtils.url('Address-List')}"
+            data-url="${URLUtils.url('Address-List')}">
+                ${Resource.msg('account.sidebar.link.AddressBook','account',null)}
+            </a>
+        </li>
+
+        <li class="list-group-item">
+            <a class="side-bar-link" title="${Resource.msg('account.sidebar.link.MyOrders','account',null)}" href="${URLUtils.url('Order-History')}"
+            data-url="${URLUtils.url('Order-History')}">
+                ${Resource.msg('account.sidebar.link.MyOrders','account',null)}
+            </a>
+        </li
+    </ul>
+
+
+</div>

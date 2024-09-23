@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+	<field formid="stateCode" label="label.input.state" type="string" mandatory="true" binding="stateCode" missing-error="address.state.missing" value-error="address.field.invalid" parse-error="error.message.required">
+		<options>
+			<option optionid="" label="resource.select" value=""/>
+			<option optionid="AN" label="state.in.andamanandnicobarislands" value="Andaman and Nicobar Islands"/>
+			<option optionid="AP" label="state.in.andhrapradesh" value="Andhra Pradesh"/>
+			<option optionid="AR" label="state.in.arunachalpradesh" value="Arunachal Pradesh"/>
+			<option optionid="AS" label="state.in.assam" value="Assam"/>
+			<option optionid="BR" label="state.in.bihar" value="Bihar"/>
+			<option optionid="CH" label="state.in.chandigarh" value="Chandigarh"/>
+			<option optionid="CT" label="state.in.chhattisgarh" value="Chhattisgarh"/>
+			<option optionid="DN" label="state.in.dadraandnagarhaveli" value="Dadra and Nagar Haveli"/>
+			<option optionid="DD" label="state.in.damananddiu" value="Daman and Diu"/>
+			<option optionid="DL" label="state.in.delhi" value="Delhi"/>
+			<option optionid="GA" label="state.in.goa" value="Goa"/>
+			<option optionid="GJ" label="state.in.gujarat" value="Gujarat"/>
+			<option optionid="HR" label="state.in.haryana" value="Haryana"/>
+			<option optionid="HP" label="state.in.himachalpradesh" value="Himachal Pradesh"/>
+			<option optionid="JK" label="state.in.jammukashmir" value="Jammu and Kashmir"/>
+			<option optionid="JH" label="state.in.jharkhand" value="Jharkhand"/>
+			<option optionid="KA" label="state.in.karnataka" value="Karnataka"/>
+			<option optionid="KL" label="state.in.kerala" value="Kerala"/>
+			<option optionid="LD" label="state.in.lakshadweep" value="Lakshadweep"/>
+			<option optionid="MP" label="state.in.madhyapradesh" value="Madhya Pradesh"/>
+			<option optionid="MH" label="state.in.maharashtra" value="Maharashtra"/>
+			<option optionid="MN" label="state.in.manipur" value="Manipur"/>
+			<option optionid="ML" label="state.in.meghalaya" value="Meghalaya"/>
+			<option optionid="MZ" label="state.in.mizoram" value="Mizoram"/>
+			<option optionid="NL" label="state.in.nagaland" value="Nagaland"/>
+			<option optionid="OR" label="state.in.odisha" value="Odisha"/>
+			<option optionid="PY" label="state.in.puducherry" value="Puducherry"/>
+			<option optionid="PB" label="state.in.punjab" value="Punjab"/>
+			<option optionid="RJ" label="state.in.rajasthan" value="Rajasthan"/>
+			<option optionid="SK" label="state.in.sikkim" value="Sikkim"/>
+			<option optionid="TN" label="state.in.tamilnadu" value="Tamil Nadu"/>
+			<option optionid="TS" label="state.in.telangana" value="Telangana"/>
+			<option optionid="TR" label="state.in.tripura" value="Tripura"/>
+			<option optionid="UP" label="state.in.uttarpradesh" value="Uttar Pradesh"/>
+			<option optionid="UK" label="state.in.uttarakhand" value="Uttarakhand"/>
+			<option optionid="WB" label="state.in.westbengal" value="West Bengal"/>
+		</options>
+	</field>
+</form>

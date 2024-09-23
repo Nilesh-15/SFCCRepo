@@ -1,0 +1,141 @@
+@import "../variables";
+@import "../functions/pxToRem";
+
+.product-tile {
+    position: relative;
+    margin-bottom: pxToRem(30px);
+
+    .color-attribute {
+        border: 0;
+        background: transparent;
+    }
+
+    .product-badge {
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .swatch-circle {
+        &.color-value.selected {
+            border: 0;
+            background: transparent;
+            &::after {
+                left: pxToRem(2px);
+                top: pxToRem(4px);
+            }
+        }
+    }
+
+    .swatch {
+        margin-bottom: pxToRem(8px);
+    }
+
+    .preview-scroll {
+        height: 75%;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .product-tilePreview {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--COLOR-WHITE);
+        z-index: 3;
+        height: 100%;
+        min-width: 100%;
+        border: pxToRem(1px) var(--COLOR-GREY2) solid;
+        border-radius: pxToRem(5px);
+        padding: pxToRem(15px) 0;
+
+        .tilePrev {
+            display: flex;
+            position: relative;
+            flex-wrap: wrap;
+            height: 100%;
+            > * {
+                flex: 0 0 100%;
+                display: flex;
+            }
+            .set-bottom {
+                align-self: flex-end;
+            }
+        }
+
+        .variation-grid {
+            .variation-button {
+                background-color: var(--COLOR-WHITE);
+                border-color: var(--WISDOM-PURPLE);
+                margin-bottom: pxToRem(4px);
+                font-size: pxToRem(10px);
+                @include media-breakpoint-up(xl) {
+                    font-size: pxToRem(14px);
+                }
+            }
+
+            .variation-button.selected {
+                background-color: var(--WISDOM-PURPLE) !important;
+                border-color: var(--WISDOM-PURPLE);
+                color: var(--COLOR-WHITE) !important;
+            }
+        }
+        .close-button {
+            position: absolute;
+            right: 0;
+            top: pxToRem(-14px);
+            border: 0;
+            z-index: 2;
+            @include media-breakpoint-up(xl) {
+                top: pxToRem(-20px);
+            }
+            button span {
+                font-size: pxToRem(20px);
+                @include media-breakpoint-up(xl) {
+                    font-size: pxToRem(30px);
+                }
+            }
+        }
+
+        .set-bottom {           
+            position: absolute;
+            padding-left: 0;
+            padding-right: 0;           
+            .btn-section {
+                display: flex;
+                
+                .add-to-cart,
+                .btn-outline-primary {
+                        padding: pxToRem(12px) pxToRem(24.4px);
+                        width: 100%;
+                        font-size: pxToRem(8px);
+                        @include media-breakpoint-up(xl) {
+                            font-size: pxToRem(12px);
+                        }
+                }
+            }
+        }
+        .attribute {
+            font-size: pxToRem(14px);
+            margin-top: 0;
+            @include media-breakpoint-up(xl) {
+                font-size: pxToRem(16px);
+            }
+        }
+    }
+
+    .productTilePreview {
+        display: none;
+    }
+
+    &:hover {
+        .productTilePreview {
+            display: unset;
+            padding: pxToRem(12px) pxToRem(10px);
+            position: absolute;
+            bottom: 30px;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,316 @@
+@import "skinVariables";
+@import "../functions/pxToRem";
+
+body,
+.page {
+    font-family: var(--UBUNTU-REGULAR);
+    background-color: var(--COLOR-WHITE);
+}
+
+body,
+html {
+    font-size: pxToRem(16px);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--UBUNTU-REGULAR);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+//checkbox css start
+.custom-checkbox .custom-control-label {
+    &::before,
+    &::after {
+        background-color: var(--COLOR-WHITE);
+        border: pxToRem(1px) solid var(--COLOR-GREY4);
+        width: pxToRem(20px);
+        height: pxToRem(20px);
+        border-radius: pxToRem(5px);
+    }
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z'/%3e%3c/svg%3e");
+        background-color: var(--PURPLE);
+        border-color: var(--PURPLE);
+    }
+    &::before {
+        display: none;
+    }
+}
+//checkbox css end here
+
+//form css start here
+.form-group.required .form-control-label::before {
+    content: "*";
+    color: var(--COLOR-RED);
+}
+
+input.form-control {
+    border: pxToRem(1px) solid var(--COLOR-GREY3);
+    border-radius: 0.5rem;
+    background-color: var(--COLOR-WHITE);
+    height: 3rem;
+}
+
+.form-control:focus,
+.form-control:active {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: pxToRem(1px) solid var(--COLOR-GREY3);
+}
+
+label,
+.form-control-label {
+    color: var(--COLOR-BLACK);
+    font-family: var(--UBUNTU-MEDIUM);
+}
+
+header ~ #maincontent .container a:not(.btn-primary, .btn-outline-primary) {
+    color: var(--COLOR-BLACK);
+    font-family: var(--UBUNTU-MEDIUM);
+}
+.nav-tabs .nav-link.active {
+    border-bottom: pxToRem(2px) solid var(--WISDOM-PURPLE);
+}
+// forms css end here
+
+// drop down css start here
+.custom-select {
+    background-image: url("../../images/arrow-down-black.svg");
+    border-radius: pxToRem(5px);
+    &:focus {
+        box-shadow: none;
+        border-color: var(--COLOR-GREY5);
+    }
+}
+// drop down css end here
+
+//Button css global start here
+.btn-primary {
+    background: linear-gradient(91deg, var(--DEEP-BLUE), var(--PURPLE));
+    color: var(--COLOR-WHITE);
+    border-radius: pxToRem(2px);
+    padding: pxToRem(13px) pxToRem(25px);
+    font-size: pxToRem(12px);
+    font-weight: 500;
+    font-family: var(--UBUNTU-REGULAR);
+    transition: all ease-in-out 0.2s;
+    border: 0;
+
+    @include media-breakpoint-up(md) {
+        font-size: pxToRem(14px);
+    }
+
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus {
+        background-color: var(--COLOR-GREY6) !important;
+        color: var(--COLOR-WHITE) !important;
+        text-decoration: none;
+        border: 0;
+        box-shadow: none;
+    }
+}
+
+.btn-outline-primary {
+    border-radius: pxToRem(2px);
+    font-size: pxToRem(12px);
+    font-family: var(--UBUNTU-REGULAR);
+    border: pxToRem(1px) solid var(--PURPLE);
+    background-color: var(--TRANSPARENT-WHITE);
+    color: var(--PURPLE);
+    padding: pxToRem(12px) pxToRem(25px);
+    position: relative;
+    transition: all ease-in-out 0.3s;
+    @include media-breakpoint-up(md) {
+        font-size: pxToRem(14px);
+    }
+
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus {
+        background: linear-gradient(91deg, var(--DEEP-BLUE), var(--PURPLE));
+        color: var(--COLOR-WHITE);
+        border: pxToRem(1px) solid var(--DEEP-BLUE);
+        box-shadow: none;
+    }
+}
+.btn-primary.disabled,
+.btn-primary:disabled,
+.btn-secondary.disabled,
+.btn-secondary:disabled,
+.btn-outline-primary:disabled,
+.btn-outline-primary.disabled {
+    background: var(--COLOR-GREY2);
+    border-color: var(--COLOR-GREY2);
+    color: var(--COLOR-WHITE);
+    opacity: 0.5;
+}
+
+.btn-secondary {
+    background: linear-gradient(91deg, var(--COLOR-MUSTURD), var(--COLOR-YELLOW));
+    color: var(--COLOR-GREY6) !important;
+    border-radius: pxToRem(2px);
+    padding: pxToRem(13px) pxToRem(25px);
+    font-size: pxToRem(12px);
+    font-weight: 500;
+    font-family: var(--UBUNTU-REGULAR);
+    transition: all ease-in-out 0.2s;
+    border: 0;
+    @include media-breakpoint-up(md) {
+        font-size: pxToRem(14px);
+    }
+
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus {
+        background: linear-gradient(91deg, var(--COLOR-MUSTURD), var(--COLOR-YELLOW));
+        color: var(--COLOR-BLACK);
+        border: pxToRem(1px) solid var(--COLOR-GREY2);
+        box-shadow: none;
+    }
+}
+//Button css global end here
+
+// radio css for all form
+.radio {
+    label {
+        margin-right: pxToRem(15px);
+    }
+}
+
+input[type="radio"] {
+    appearance: none;
+    background-color: var(--COLOR-WHITE);
+    border: pxToRem(1px) solid var(--COLOR-GREY4);
+    border-radius: pxToRem(24px);
+    display: inline-block;
+    position: relative;
+    width: pxToRem(18px);
+    height: pxToRem(18px);
+    vertical-align: text-bottom;
+}
+
+input[type="radio"]:checked:after {
+    content: "";
+    height: pxToRem(10px);
+    width: pxToRem(10px);
+    background-color: var(--COLOR-WHITE);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transform: translate(2.8px, -4px);
+}
+
+input[type="radio"]:checked {
+    background-color: var(--PURPLE);
+}
+
+input[type="radio"].form-control.is-invalid {
+    padding-right: pxToRem(14px) !important;
+}
+// radio css for all form end here
+
+// modal pop up global css start here
+.modal-dialog {
+    .modal-content {
+        border-radius: pxToRem(8px);
+        padding: pxToRem(15px) pxToRem(20px);
+        border: 0;
+    }
+    .btn-modal-close {
+        position: absolute;
+        top: pxToRem(12px);
+        right: pxToRem(12px);
+        cursor: pointer;
+    }
+    .header-section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: pxToRem(20px);
+
+        .title {
+            font-size: pxToRem(20px);
+            line-height: 1.5;
+        }
+    }
+
+    .body-section {
+        font-size: pxToRem(14px);
+        p {
+            font-size: pxToRem(16px);
+        }
+    }
+
+    .footer-section {
+        text-align: right;
+        margin: pxToRem(10px) 0;
+    }
+}
+// modal popup end here
+
+// css for card global start
+.card {
+    border-radius: pxToRem(12px);
+    border: pxToRem(1px) solid var(--COLOR-WHITE);
+    background: var(--COLOR-WHITE);
+    box-shadow: pxToRem(2px) pxToRem(2px) pxToRem(8px) 0 rgba(0 0 0 / 12%);
+}
+.card-header {
+    border-top-left-radius: pxToRem(12px) !important;
+    border-top-right-radius: pxToRem(12px) !important;
+    padding: 2rem;
+}
+.card-body {
+    padding: 2rem;
+}
+// css for card global end
+
+// code for all ootb banner on pages
+.hero.slant-down {
+    display: none;
+}
+
+// for breadcrum bottom border
+.container .breadcrumb {
+    border-bottom: none;
+}
+
+// badge css start here
+.product-badge {
+    font-size: pxToRem(8px);
+    color: var(--COLOR-WHITE);
+    padding: pxToRem(6px) pxToRem(10px) pxToRem(4px);
+    background-color: -webkit-linear-gradient(
+        270deg, var(--DEEP-BLUE), var(--PURPLE)
+    );
+    background: -moz-linear-gradient(
+        270deg, var(--DEEP-BLUE), var(--PURPLE)
+    );
+    background: -o-linear-gradient(
+        270deg, var(--DEEP-BLUE), var(--PURPLE)
+    );
+    background: linear-gradient(
+        270deg, var(--DEEP-BLUE), var(--PURPLE)
+    );
+    @include media-breakpoint-up(md) {
+        font-size: pxToRem(12px);
+    }
+}
+
+// temporary search mobile css 
+.search-mobile {
+    margin-bottom: 0.625rem;
+}

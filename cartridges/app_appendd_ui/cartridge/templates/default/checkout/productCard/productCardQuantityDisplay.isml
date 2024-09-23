@@ -1,0 +1,5 @@
+<p class="line-item-pricing-info">
+    <span class="line-item-total-text qty-card-quantity-label">
+    ${Resource.msgf('attribute.value.quantity','checkout',null, lineItem.quantity)}
+    </span>
+</p>

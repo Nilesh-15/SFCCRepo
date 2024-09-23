@@ -1,0 +1,35 @@
+<div class="col-6 col-sm-4 product-info uuid-${item.UUID} pid-${item.pid}">
+    <div class="account__wishList-card product-tile">
+        <div class="image-container prod-tile__image-container">
+            <img class="tile-image" src="${item.imageObj.medium[0].url}" alt="${item.imageObj.medium[0].alt}"
+                title="${item.imageObj.medium[0].title}">
+            <button type="button" class="btn remove-btn-lg remove-from-wishlist-page wishlistTile prod-tile__wishlist-icon"
+                data-url="${URLUtils.url('Wishlist-RemoveProduct', 'pid', item.pid)}" data-pid="${item.pid}">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-heart"></i>
+                </span>
+            </button>
+        </div>
+        <div class="account__wishList-card-body prod-tile__body">
+
+            <div class="prod-tile__detail-items">
+                <div class="pdp-link prod-tile__title-link">
+                    <h4 class="">${item.name}</h4>
+                </div>
+                <isif condition="${pdict.display.ratings !== false}">
+                    <isinclude template="product/productTileFooter" />
+                </isif>
+            </div>
+
+            <div class="prod-tile__bottom">
+                <isset name="price" value="${item.priceObj}" scope="page" />
+                <isif condition="${product.productType === 'set'}">
+                    <isinclude template="product/components/pricing/setPrice" />
+                    <iselse>
+                        <isinclude template="product/components/pricing/main" />
+                </isif>
+                <isinclude template="product/components/productDetailIcon" />
+            </div>
+        </div>
+    </div>
+</div>

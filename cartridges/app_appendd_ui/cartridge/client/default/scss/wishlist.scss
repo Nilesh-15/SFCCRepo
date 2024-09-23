@@ -1,0 +1,199 @@
+@import "./functions/pxToRem";
+@import "./skin/skinVariables";
+
+.account {
+    &__wishList-landing-container {
+        margin-bottom: pxToRem(20px);
+
+        .card-body {
+            padding-left: pxToRem(1px);
+            padding-right: pxToRem(1px);
+        }
+
+        .my-account {
+            padding: 0;
+            margin-top: 30px;
+
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+            a {
+                padding: pxToRem(8px) pxToRem(12px);
+            }
+        }
+
+        .product-info {
+            padding: pxToRem(12px) pxToRem(13px);
+        }
+    }
+
+    &__wishList-card {
+        box-shadow: -0.0625rem 0.9375rem 2rem 0rem rgba(47, 38, 38, 0.14);
+
+        .image-container {
+            width: 100%;
+
+            .tile-image {
+                width: 100%;
+            }
+
+            .wishlistTile {
+                border: 0;
+                background: transparent;
+                padding: 0;
+
+                @include media-breakpoint-up(md) {
+                    margin-right: pxToRem(15px);
+                }
+
+                &:focus,
+                &:active {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        .prod-tile__title-link {
+            h4 {
+                font-size: pxToRem(11px);
+
+                @include media-breakpoint-up(md) {
+                    font-size: pxToRem(20px);
+                }
+            }
+        }
+
+        .prod-tile__body {
+            @include media-breakpoint-up(md) {
+                padding: pxToRem(12px) pxToRem(20px) pxToRem(31px);
+            }
+        }
+
+        .prod-tile__bottom {
+            padding-top: pxToRem(8px);
+        }
+    }
+
+    &__wishlist-bundle-tile {
+        border: pxToRem(1px) solid var(--COLOR-BLACK);
+        box-shadow: -0.0625rem 0.9375rem 2rem 0rem rgba(47, 38, 38, 0.14);
+
+        .wishlist-bundle-item-section {
+            @include media-breakpoint-up(md) {
+                display: flex;
+            }
+
+            .item-attributes {
+                max-width: pxToRem(206px);
+                margin-top: pxToRem(12px);
+                margin-bottom: pxToRem(20px);
+
+                h6 {
+                    font-size: pxToRem(14px);
+
+                    @include media-breakpoint-up(md) {
+                        font-size: pxToRem(16px);
+                    }
+                }
+            }
+        }
+    }
+
+    //Code for bundle product card only
+    &__bundle-main-title {
+        padding: pxToRem(15px);
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        @include media-breakpoint-up(md) {
+            padding: pxToRem(20px);
+        }
+
+        h4 {
+            font-size: pxToRem(16px);
+            font-weight: 600;
+            color: var(--COLOR-BLACK);
+
+            @include media-breakpoint-up(xl) {
+                font-size: pxToRem(20px);
+            }
+        }
+
+        span {
+            font-size: pxToRem(12px);
+            font-weight: 600;
+
+            @include media-breakpoint-up(md) {
+                font-size: pxToRem(14px);
+            }
+        }
+
+        .section-right {
+            display: flex;
+        }
+
+        .link-by-icon {
+            @include media-breakpoint-up(md) {
+                margin-right: pxToRem(20px);
+            }
+
+            .icon-bk-bg-shop-bag::before {
+                content: " ";
+                background-image: url("../../images/all-icon-fragment.svg#icon-black-bg-shopping-bag");
+                background-repeat: no-repeat;
+                display: block;
+                width: pxToRem(32px);
+                height: pxToRem(32px);
+                position: relative;
+                transform: scale(0.7);
+                top: pxToRem(-3px);
+
+                @include media-breakpoint-up(lg) {
+                    width: pxToRem(35px);
+                    height: pxToRem(35px);
+                    transform: scale(0.9);
+                }
+            }
+        }
+
+        .wishlistTile {
+            position: relative;
+            top: pxToRem(-12px);
+            right: 0;
+
+            @include media-breakpoint-up(md) {
+                top: pxToRem(-14px);
+            }
+
+            .fa-heart {
+                font-size: pxToRem(20px);
+
+                @include media-breakpoint-up(md) {
+                    font-size: pxToRem(24px);
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    &__wishlist-product-card-price {
+        display: flex;
+        justify-content: space-around;
+        max-width: pxToRem(375px);
+        margin: 0 auto pxToRem(16px);
+        border-top: pxToRem(1px) solid var(--COLOR-BLACK);
+        padding-top: pxToRem(10px);
+
+        p {
+            margin-bottom: 0;
+        }
+
+        .price {
+            color: var(--ALCRO-ANIS-GREY);
+        }
+    }
+}

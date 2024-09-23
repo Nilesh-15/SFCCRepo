@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30" height="18" version="1.1" viewBox="0 0 7.9375 4.7625" xmlns="http://www.w3.org/2000/svg">
+ <g transform="rotate(90 4.0214 2.0015)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".39688">
+  <rect x="2.3608" y=".50519" width="3.1766" height="3.098" ry=".13229" fill-rule="evenodd" style="paint-order:markers fill stroke"/>
+  <g transform="rotate(-90 5.46 .74341)">
+   <g transform="translate(0 -.099149)" stroke-linecap="round" stroke-linejoin="round" stroke-width=".39688">
+    <path d="m2.7482 1.4379 2.7747-0.010394"/>
+    <path d="m2.9287 1.9313 2.4165-0.010394"/>
+   </g>
+  </g>
+ </g>
+</svg>

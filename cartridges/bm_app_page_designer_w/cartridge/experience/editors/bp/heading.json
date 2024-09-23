@@ -1,0 +1,12 @@
+{
+    "name": "Section Title",
+    "description": "Section Title component",
+    "resources": {
+        "scripts": [
+            "/experience/editors/bp/heading.js"
+        ],
+        "styles": [
+            "/experience/editors/bp/heading.css"
+        ]
+    }
+}

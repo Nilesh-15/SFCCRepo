@@ -1,0 +1,10 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+<div class="shopByBrand__container ${pdict.customContainerName}">
+    <div class="shopByBrand__title-wrap text-center">
+        <isprint value="${pdict.heading ? pdict.heading : ''}" encoding="off" />
+    </div>
+    
+    <isprint value="${pdict.regions.brandSection.setComponentAttribute('parent_region', 'brandSection').render()}" encoding="off" />
+</div>

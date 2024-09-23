@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-md col-12">
+    <div class="close-menu clearfix d-lg-none">
+        <div class="close-button pull-left">
+            <button role="button" aria-label="${Resource.msg('label.header.menu.close', 'common', null)}">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <div class="menu-group" role="navigation">
+        <ul class="nav navbar-nav" role="menu">
+            <isif condition="${pdict.categories}">
+                <isloop items="${pdict.categories}" var="category">
+                    <isif condition="${category.subCategories}">
+                        <li class="nav-item dropdown" role="presentation">
+                            <!-- mobile label for category -->
+                            <a href="<isprint value=" ${category.url}" encoding="htmldoublequote" />"
+                            id="${category.id}" class="nav-link dropdown-toggle d-md-none" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            tabindex="0">${category.name}</a>
+
+                            <!-- desktop icon for category -->
+                            <a href="<isprint value=" ${category.url}" encoding="htmldoublequote" />"
+                            id="${category.id}" class="nav-link dropdown-toggle hidden-sm-down" role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" tabindex="0">
+                            <i class="header__icon-category ${category.id}"></i>
+                            </a>
+                            <isset name="menuLevel" value="${1}" scope="page" />
+                            <isset name="menuItem" value="${category}" scope="page" />
+                            <isinclude template="components/header/menuItem" />
+                        </li>
+                    <iselse/>
+                        <li class="nav-item" role="presentation">
+                            <!-- mobile label for category -->
+                            <a href="<isprint value=" ${category.url}" encoding="htmldoublequote" />"
+                            id="${category.id}" class="nav-link no-dropdown d-md-none" role="link"
+                            tabindex="0">${category.name}</a>
+
+                            <!-- desktop icon for category -->
+                            <a href="<isprint value=" ${category.url}" encoding="htmldoublequote" />"
+                            id="${category.id}" class="nav-link hidden-sm-down" role="link" tabindex="0">
+                            <i class="header__icon-category ${category.id}"></i>
+                            </a>
+                        </li>
+                    </isif>
+                </isloop>
+            </isif>
+            <isinclude url="${URLUtils.url('Account-Header', 'mobile', true)}" />
+            <isinclude url="${URLUtils.url('Page-Locale', 'mobile', true)}" />
+        </ul>
+    </div>
+</nav>
+<div class="col-12 menu__footer d-md-none">
+    <isinclude template="components/header/menuFooter" />        
+</div>

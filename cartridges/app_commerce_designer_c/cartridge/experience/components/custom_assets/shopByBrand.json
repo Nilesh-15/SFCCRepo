@@ -1,0 +1,30 @@
+{
+  "name": "Brand Section",
+  "description": "This is a layout component of 2 row by 1 column for mobile and 1 row by 2 columns for desktop/tablet.",
+  "group": "commerce_layouts",
+  "attribute_definition_groups": [
+    {
+        "id": "Brand",
+        "attribute_definitions": [
+            {
+                "id": "customContainerName",
+                "name": "Custom Container Name",
+                "type": "string",
+                "required": false
+            }
+        ]
+    }
+  ],
+  "region_definitions": [
+      {
+          "id":"column1",
+          "name":"Column 1",
+          "component_type_exclusions": []
+      },
+      {
+          "id":"column2",
+          "name":"Column 2",
+          "component_type_exclusions": []
+      }
+  ]
+}

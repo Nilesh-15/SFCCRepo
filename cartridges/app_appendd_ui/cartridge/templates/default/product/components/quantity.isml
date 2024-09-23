@@ -1,0 +1,23 @@
+<label class="qty-label" for="quantity-${loopState && loopState.count ? loopState.count : '1'}">
+    ${Resource.msg('label.quantity', 'common', null)}
+</label>
+
+<div class="qty-layout">
+    <quantity-input class="qty-layout__quantity quantity-${product.uuid}">
+        <button class="btn quantity-minus qty-layout__btn-minus no-js-hidden minus-${product.uuid}" name="minus"
+            type="button" data-pid="${product.id}" data-url="${URLUtils.url('Product-Variation')}"
+            data-uuid="${product.uuid}">
+        </button>
+
+        <input type="number" id="quantity" name="quantity"
+            class="qty-layout__change-qty-value input-number change-qty-value quantity-select" value="<isprint value="
+            ${pdict.product.minimumQty}" formatter="##" />"
+        min="${pdict.product.minimumQty}" data-uuid="${product.uuid}" max="${pdict.product.maxOrderQuantity}"
+        step="1" readonly />
+
+        <button class=" btn quantity-plus qty-layout__btn-plus no-js-hidden plus-${product.uuid}" name="plus"
+            type="button" data-pid="${product.id}" data-uuid="${product.uuid}"
+            data-url="${URLUtils.url('Product-Variation')}">
+        </button>
+    </quantity-input>
+</div>
